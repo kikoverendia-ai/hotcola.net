@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,59 +10,100 @@
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial, sans-serif;
-background: linear-gradient(#c9993a,#000000);
+}
+
+body{
+background:#000;
 color:white;
+}
+
+.hero{
+display:flex;
+min-height:100vh;
+}
+
+.left{
+flex:1;
+background:linear-gradient(135deg,#d4a24c,#a67c1c);
+padding:80px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.left h1{
+font-size:60px;
+color:#000;
+margin-bottom:20px;
+}
+
+.left p{
+font-size:18px;
+max-width:500px;
+margin-bottom:30px;
+color:#111;
+}
+
+.button{
+background:black;
+color:#d4a24c;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+font-size:18px;
+width:200px;
 text-align:center;
-padding:40px;
+transition:0.3s;
 }
 
-.container{
-max-width:600px;
-margin:auto;
-background:rgba(0,0,0,0.6);
-padding:40px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(0,0,0,0.7);
+.button:hover{
+background:#222;
 }
 
-h1{
-font-size:36px;
-color:#ffd700;
-margin-bottom:5px;
-}
-
-h2{
-font-weight:normal;
-margin-bottom:25px;
+.right{
+flex:1;
+background:url("spa.jpg");
+background-size:cover;
+background-position:center;
 }
 
 .services{
-line-height:1.8;
+background:#000;
+text-align:center;
+padding:60px 20px;
+}
+
+.services h2{
+color:#d4a24c;
+margin-bottom:20px;
+font-size:36px;
+}
+
+.services p{
+line-height:2;
 font-size:18px;
 }
 
 .price{
 margin-top:20px;
-font-size:20px;
-color:#ffd700;
+font-size:22px;
+color:#d4a24c;
 }
 
-.button{
+.whatsapp{
 display:inline-block;
 margin-top:30px;
-padding:15px 30px;
 background:#25D366;
 color:white;
-font-size:20px;
-text-decoration:none;
+padding:15px 30px;
 border-radius:10px;
-}
-
-.button:hover{
-background:#1ebc59;
+text-decoration:none;
+font-size:18px;
 }
 
 </style>
@@ -70,29 +112,46 @@ background:#1ebc59;
 
 <body>
 
-<div class="container">
+<section class="hero">
+
+<div class="left">
 
 <h1>Sweet Cola</h1>
-<h2>Wellness Massage Spa – Riyadh</h2>
 
-<p>Relax and refresh your body with professional massage therapy.</p>
+<p>
+Wellness Massage Spa in Riyadh.  
+Relax your body and mind with professional massage therapy.
+</p>
 
-<div class="services">
+<a class="button" href="#services">Explore Services</a>
+
+</div>
+
+<div class="right"></div>
+
+</section>
+
+<section id="services" class="services">
+
+<h2>Our Services</h2>
+
+<p>
 Thai Massage<br>
 Swedish Massage<br>
 Oil Massage<br>
 Moroccan Bath
-</div>
+</p>
 
 <div class="price">
 40 Minutes – 150 SAR
 </div>
 
-<a class="button" href="https://wa.me/966560369386?text=Hello%20I%20would%20like%20to%20book%20a%20massage%20session">
+<a class="whatsapp"
+href="https://wa.me/966560369386?text=Hello%20I%20would%20like%20to%20book%20a%20massage%20session">
 Book on WhatsApp
 </a>
 
-</div>
+</section>
 
 </body>
 </html>
