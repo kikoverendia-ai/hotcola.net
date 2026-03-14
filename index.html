@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sweet Cola Wellness Massage Spa – Riyadh</title>
+<title>Sweet Cola Massage Riyadh</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,90 +20,92 @@ box-sizing:border-box;
 
 body{
 font-family:Inter,sans-serif;
-background:linear-gradient(135deg,#000000,#c89b3c);
-color:white;
-min-height:100vh;
+background:#f3b500;
+}
+
+/* header */
+
+header{
 display:flex;
+justify-content:space-between;
 align-items:center;
-justify-content:center;
+padding:20px 60px;
+font-size:18px;
 }
 
-/* hero card */
-
-.hero{
-width:90%;
-max-width:900px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-border-radius:18px;
-padding:50px 40px;
-text-align:center;
-box-shadow:0 20px 50px rgba(0,0,0,0.5);
-}
-
-/* logo */
-
-.logo{
-width:120px;
-display:block;
-margin:auto;
-margin-bottom:25px;
-}
-
-/* title */
-
-h1{
-font-size:42px;
-color:#f1d48a;
-margin-bottom:10px;
-}
-
-h2{
-font-weight:400;
-margin-bottom:20px;
-}
-
-p{
-color:#ddd;
-line-height:1.6;
-margin-bottom:30px;
-}
-
-/* buttons */
-
-.buttons{
-margin-top:20px;
-}
-
-.btn{
-display:inline-block;
-padding:12px 28px;
-margin:10px;
-border-radius:30px;
+header nav a{
+margin-left:25px;
 text-decoration:none;
-font-weight:600;
-}
-
-.book{
-background:#e0b95a;
 color:black;
 }
 
-.call{
-border:2px solid #e0b95a;
-color:#e0b95a;
+/* hero layout */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+padding:80px;
+}
+
+/* logo circle */
+
+.logo-circle{
+width:420px;
+height:420px;
+border-radius:50%;
+overflow:hidden;
+}
+
+.logo-circle img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* right text */
+
+.hero-text{
+max-width:450px;
+}
+
+.hero-text h1{
+font-family:"Playfair Display",serif;
+font-size:42px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+margin-bottom:40px;
+line-height:1.6;
+}
+
+/* button */
+
+.book-btn{
+display:inline-block;
+background:black;
+color:#f3b500;
+padding:22px 120px;
+border-radius:40px;
+text-decoration:none;
+font-size:18px;
 }
 
 /* mobile */
 
-@media(max-width:600px){
-
-h1{
-font-size:32px;
-}
+@media(max-width:900px){
 
 .hero{
-padding:35px 25px;
+flex-direction:column;
+text-align:center;
+padding:40px;
+}
+
+.logo-circle{
+width:300px;
+height:300px;
 }
 
 }
@@ -111,37 +114,42 @@ padding:35px 25px;
 
 </head>
 
-
 <body>
 
-<div class="hero">
+<header>
 
-<img src="lotus.png" alt="Sweet Cola Spa Logo" class="logo">
+<div>Sweet Cola Massage In Riyadh</div>
 
-<h1>Sweet Cola</h1>
+<nav>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
 
-<h2>Wellness Massage Spa – Riyadh</h2>
+</header>
+
+
+<section class="hero">
+
+<div class="logo-circle">
+<img src="lotus.png">
+</div>
+
+<div class="hero-text">
+
+<h1>Empower Your<br>Health Journey</h1>
 
 <p>
-Relax and refresh your body with professional massage therapy.  
-Experience Thai, Swedish, Oil Massage and Moroccan Bath  
-in a peaceful luxury spa environment.
+Welcome to our health-focused platform, where expert knowledge meets practical application.
+Explore research-driven insights and solutions crafted to elevate your well-being.
 </p>
 
-<div class="buttons">
-
-<a class="btn book" href="https://wa.me/966560369386?text=Hello%20I%20want%20to%20book%20massage">
-Book Now
-</a>
-
-<a class="btn call" href="tel:+966560369386">
-Call Now
+<a class="book-btn" href="https://wa.me/966560369386">
+Book Now!
 </a>
 
 </div>
 
-</div>
+</section>
 
 </body>
-
 </html>
