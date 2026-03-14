@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sweet Cola Massage Riyadh</title>
+<title>Sweet Cola Massage In Riyadh</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -19,37 +19,42 @@ box-sizing:border-box;
 }
 
 body{
+background:#f2b600;
 font-family:Inter,sans-serif;
-background:#f3b500;
 }
 
-/* header */
+/* HEADER */
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:18px 60px;
+background:#d79c00;
+}
+
+header h2{
+font-weight:500;
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:black;
 font-size:18px;
 }
 
-header nav a{
-margin-left:25px;
-text-decoration:none;
-color:black;
-}
-
-/* hero layout */
+/* HERO SECTION */
 
 .hero{
 display:flex;
 align-items:center;
 justify-content:center;
-gap:80px;
-padding:80px;
+gap:120px;
+padding:100px 80px;
 }
 
-/* logo circle */
+/* ROUND LOGO */
 
 .logo-circle{
 width:420px;
@@ -64,48 +69,60 @@ height:100%;
 object-fit:cover;
 }
 
-/* right text */
+/* RIGHT TEXT */
 
-.hero-text{
-max-width:450px;
+.text-box{
+max-width:500px;
 }
 
-.hero-text h1{
-font-family:"Playfair Display",serif;
-font-size:42px;
-margin-bottom:20px;
+.text-box h1{
+font-family:Playfair Display,serif;
+font-size:50px;
+margin-bottom:30px;
 }
 
-.hero-text p{
-margin-bottom:40px;
-line-height:1.6;
+.text-box p{
+font-size:18px;
+line-height:1.7;
+margin-bottom:60px;
 }
 
-/* button */
+/* BOOK BUTTON */
 
 .book-btn{
-display:inline-block;
+
 background:black;
-color:#f3b500;
-padding:22px 120px;
-border-radius:40px;
+color:#f2b600;
+
+padding:25px 160px;
+
+border-radius:50px;
+
 text-decoration:none;
-font-size:18px;
+
+font-size:20px;
+
+display:inline-block;
+
 }
 
-/* mobile */
+/* MOBILE */
 
 @media(max-width:900px){
 
 .hero{
 flex-direction:column;
 text-align:center;
-padding:40px;
+padding:60px 30px;
 }
 
 .logo-circle{
 width:300px;
 height:300px;
+}
+
+.book-btn{
+padding:20px 120px;
 }
 
 }
@@ -118,7 +135,7 @@ height:300px;
 
 <header>
 
-<div>Sweet Cola Massage In Riyadh</div>
+<h2>Sweet Cola Massage In Riyadh</h2>
 
 <nav>
 <a href="#">Services</a>
@@ -131,10 +148,13 @@ height:300px;
 <section class="hero">
 
 <div class="logo-circle">
+
 <img src="lotus.png">
+
 </div>
 
-<div class="hero-text">
+
+<div class="text-box">
 
 <h1>Empower Your<br>Health Journey</h1>
 
