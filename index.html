@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta name="facebook-domain-verification" content="ozr2n45gqelsvferxzl8exfoy5s9ae" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Cola Massage In Riyadh</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f2b600; font-family: 'Inter', sans-serif; }
 
-        body {
-            background: #f2b600;
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* HEADER */
         header {
             display: flex;
             justify-content: space-between;
@@ -29,157 +21,126 @@
             background: #c69200;
         }
 
-        header h2 {
-            font-weight: 400;
-        }
+        nav a { margin-left: 30px; text-decoration: none; color: black; font-size: 18px; }
 
-        nav a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-        }
-
-        /* HERO SECTION */
         .hero {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 100px; /* Reduced gap for better fit */
+            gap: 100px;
             padding: 80px 100px;
         }
 
         .logo-circle {
-            width: 450px; /* Adjusted size */
+            width: 450px;
             height: 450px;
             border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-        .text-box {
-            max-width: 500px;
-        }
-
-        .text-box h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 60px;
-            line-height: 1.1;
-            margin-bottom: 30px;
-        }
-
-        .text-box p {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 60px;
-        }
+        .text-box { max-width: 500px; }
+        .text-box h1 { font-family: 'Playfair Display', serif; font-size: 60px; line-height: 1.1; margin-bottom: 30px; }
+        .text-box p { font-size: 18px; line-height: 1.7; margin-bottom: 60px; }
 
         .book-btn {
             background: black;
             color: #f2b600;
-            padding: 20px 80px; /* More standard padding */
+            padding: 25px 0;
+            width: 100%;
+            max-width: 400px;
             border-radius: 60px;
             text-decoration: none;
             font-size: 22px;
             display: inline-block;
             font-weight: 500;
+            text-align: center;
             transition: 0.3s;
         }
 
-        .book-btn:hover {
-            opacity: 0.8;
-        }
+        .book-btn:hover { transform: scale(1.05); }
 
         /* MAP SECTION */
+        .map-section { padding: 50px 20px; background: #f2b600; text-align: center; }
+        .map-section h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px; }
         .map-container {
-            padding: 60px 20px;
-            background: #e5ac00; /* Slightly darker shade to separate sections */
-            text-align: center;
-        }
-
-        .map-container h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
-
-        .map-wrapper {
             max-width: 1000px;
             margin: 0 auto;
-            border: 5px solid black;
+            border: 8px solid #c69200;
             border-radius: 20px;
             overflow: hidden;
-            line-height: 0; /* Removes extra space below iframe */
         }
 
-        /* MOBILE */
+        /* FLOATING WHATSAPP BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+            color: white;
+        }
+
         @media(max-width:900px) {
-            header { padding: 20px 30px; }
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-                padding: 60px 30px;
-            }
-            .logo-circle {
-                width: 280px;
-                height: 280px;
-            }
+            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .logo-circle { width: 300px; height: 300px; }
             .text-box h1 { font-size: 40px; }
-            .book-btn {
-                padding: 20px 60px;
-                font-size: 18px;
-                width: 100%;
-            }
+            header { padding: 20px; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 30px; }
         }
     </style>
 </head>
-
 <body>
 
     <header>
-        <h2>Sweet Cola Massage</h2>
+        <h2>Sweet Cola Massage In Riyadh</h2>
         <nav>
             <a href="#">Services</a>
             <a href="#">Contact</a>
         </nav>
     </header>
 
+    <a href="https://wa.me/96656095897" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <section class="hero">
         <div class="logo-circle">
             <img src="Copilot_20260330_215441.png" alt="Sweet Cola Logo">
         </div>
-
         <div class="text-box">
             <h1>Empower Your<br>Health Journey</h1>
-            <p>
-                Welcome to our health-focused platform, where expert knowledge meets practical application.
-                Explore research-driven insights and solutions crafted to elevate your well-being.
-            </p>
-            <a class="book-btn" href="https://wa.me/966560369386">
-                Book Now!
-            </a>
+            <p>Welcome to our health-focused platform, where expert knowledge meets practical application. Explore research-driven insights crafted to elevate your well-being.</p>
+            <a class="book-btn" href="https://wa.me/96656095897">Book Now!</a>
         </div>
     </section>
 
-    <section class="map-container">
-        <h2>Visit Us in Riyadh</h2>
-        <div class="map-wrapper">
-        <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9017576584583!2d46.78336257598802!3d24.79881734772018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2effd68e538899%3A0xa53e0f232c0028b0!2sSweet%20Cola%20Massage%20In%20Riyadh!5e0!3m2!1sen!2ssa!4v1776547495315!5m2!1sen!2ssa" 
-    width="100%" 
-    height="450" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+    <section class="map-section">
+        <h2>Our Location</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9017576584583!2d46.78336257598802!3d24.79881734772018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2effd68e538899%3A0xa53e0f232c0028b0!2sSweet%20Cola%20Massage%20In%20Riyadh!5e0!3m2!1sen!2ssa!4v1776547495315!5m2!1sen!2ssa" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
         </div>
     </section>
 
