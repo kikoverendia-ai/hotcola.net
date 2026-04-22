@@ -55,45 +55,32 @@
 
         /* SERVICES SECTION */
         .services-section { padding: 80px 5%; background: #fff; text-align: center; }
-        .services-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
-        .services-section .promo-text { color: #d4a017; font-weight: 700; font-size: 22px; margin-bottom: 50px; display: block; }
+        .services-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 5px; }
+        .services-section .promo-text { color: #d4a017; font-weight: 700; font-size: 18px; margin-bottom: 50px; display: block; }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
         
         .service-card { 
             background: #fdfdfd; 
             padding: 30px; 
             border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05); 
             text-decoration: none; 
             color: inherit; 
-            display: block; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             transition: 0.3s;
             border: 1px solid #eee;
         }
-        .service-card:hover { transform: translateY(-10px); border-color: #d4a017; box-shadow: 0 15px 40px rgba(212,160,23,0.2); }
+        .service-card:hover { transform: translateY(-10px); border-color: #d4a017; box-shadow: 0 12px 30px rgba(212,160,23,0.2); }
         
-        .service-card i { font-size: 45px; color: #d4a017; margin-bottom: 20px; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 5px; color: #000; }
-        .service-card .arabic-title { display: block; font-size: 24px; color: #d4a017; margin-bottom: 15px; font-weight: bold; }
-        .service-card p { font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 25px; }
-        
-        .price-badge { 
-            background: #000; 
-            color: #f2b600; 
-            padding: 12px 25px; 
-            border-radius: 50px; 
-            font-weight: 700; 
-            display: inline-block;
-            font-size: 18px;
-            position: relative;
-        }
-        /* Gold curve under price */
-        .price-badge::after { content: ''; position: absolute; bottom: 5px; left: 20%; width: 60%; height: 3px; background: #d4a017; border-radius: 50%; }
+        .service-card i { font-size: 35px; color: #d4a017; margin-bottom: 15px; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: #000; }
+        .service-card .arabic-title { font-size: 20px; color: #d4a017; font-weight: bold; margin-top: 5px; }
 
-        .premium-card { background: linear-gradient(145deg, #1a1a1a, #000); border: 2px solid #d4a017; }
-        .premium-card h3, .premium-card p { color: #fff; }
-        .premium-card .arabic-title { color: #f2b600; }
+        .premium-card { background: #000; border: 2px solid #d4a017; }
+        .premium-card h3 { color: #fff; }
 
         /* MAP */
         .map-section { padding: 60px 5%; background: #fafafa; text-align: center; }
@@ -133,58 +120,48 @@
         </div>
         <div class="text-box">
             <h1>Massage in Riyadh</h1>
-            <p>Experience the ultimate escape from stress with amzazing spa session.</p>
+            <p>Experience the ultimate escape from stress with amazing spa session.</p>
             <div class="btn-container">
-                <a href="https://wa.me/966560958973" class="book-btn">Book Your Session Now</a>
+                <a href="#services" class="book-btn">Book Your Session Now</a>
             </div>
         </div>
         <img src="image_16.png" class="babae-overlay" alt="Spa Therapist">
     </section>
 
     <section id="services" class="services-section">
-        <h2>Our Professional Services</h2>
-        <span class="promo-text">DISCOUNT JUST TODAY! السعر المخفض اليوم فقط</span>
+        <h2>Professional Services</h2>
+        <span class="promo-text">Please choice in our services | يرجى الاختيار من خدماتنا</span>
 
         <div class="services-grid">
             
-            <a href="https://wa.me/966560958973?text=Hi%20Sweet%20Cola!%20I%20want%20to%20book%20Thai%20Massage%20-%20150%20SR%20/%2040%20Mins" class="service-card">
+            <a href="details.html?service=thai" class="service-card">
                 <i class="fas fa-hands-holding"></i>
                 <h3>Thai Massage</h3>
                 <span class="arabic-title">مساج تايلاندي</span>
-                <p>Traditional deep stretch therapy to improve flexibility and blood flow.<br>العلاج التقليدي للتمدد العميق لتحسين المرونة وتدفق الدم.</p>
-                <div class="price-badge">150 SR / 40 MINS</div>
             </a>
 
-            <a href="https://wa.me/966560958973?text=Hi%20Sweet%20Cola!%20I%20want%20to%20book%20Swedish%20Massage%20-%20150%20SR%20/%2040%20Mins" class="service-card">
+            <a href="details.html?service=swedish" class="service-card">
                 <i class="fas fa-spa"></i>
                 <h3>Swedish Massage</h3>
                 <span class="arabic-title">مساج سويدي</span>
-                <p>Gentle strokes for stress relief and total body relaxation.<br>ضربات لطيفة لتخفيف التوتر والاسترخاء التام للجسم.</p>
-                <div class="price-badge">150 SR / 40 MINS</div>
             </a>
 
-            <a href="https://wa.me/966560958973?text=Hi%20Sweet%20Cola!%20I%20want%20to%20book%20Oil%20Massage%20-%20150%20SR%20/%2040%20Mins" class="service-card">
+            <a href="details.html?service=oil" class="service-card">
                 <i class="fas fa-droplet"></i>
                 <h3>Oil Massage</h3>
                 <span class="arabic-title">مساج بالزيت</span>
-                <p>Rhythmic full body massage using premium essential oils to calm the mind.<br>تدليك إيقاعي كامل للجسم باستخدام زيوت عطرية فاخرة لتهدئة العقل.</p>
-                <div class="price-badge">150 SR / 40 MINS</div>
             </a>
 
-            <a href="https://wa.me/966560958973?text=Hi%20Sweet%20Cola!%20I%20want%20to%20book%20Moroccan%20Bath%20-%20150%20SR%20/%2040%20Mins" class="service-card">
+            <a href="details.html?service=moroccan" class="service-card">
                 <i class="fas fa-bath"></i>
                 <h3>Moroccan Bath</h3>
                 <span class="arabic-title">حمام مغربي</span>
-                <p>Traditional skin cleansing to remove toxins and dead skin cells.<br>تنظيف البشرة التقليدي لإزالة السموم وخلايا الجلد الميتة.</p>
-                <div class="price-badge">150 SR / 40 MINS</div>
             </a>
 
-            <a href="https://wa.me/966560958973?text=Hi%20Sweet%20Cola!%20I%20want%20to%20book%20the%20PREMIUM%20PACKAGE%20-%20450%20SR" class="service-card premium-card">
+            <a href="details.html?service=premium" class="service-card premium-card">
                 <i class="fas fa-crown"></i>
                 <h3>PREMIUM PACKAGE</h3>
-                <span class="arabic-title">باقة بريميوم</span>
-                <p>2h 30m of Luxury: Moroccan Bath, Hot Stone, Mani & Pedi.<br>2 ساعة و30 دقيقة من الفخامة: حمام مغربي، حجر ساخن، منيكير وبديكير.</p>
-                <div class="price-badge" style="background:#d4a017; color:#000;">450 SR / FULL CARE</div>
+                <span class="arabic-title" style="color:#f2b600;">باقة بريميوم</span>
             </a>
 
         </div>
