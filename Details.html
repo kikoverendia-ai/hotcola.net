@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details | Sweet Cola Spa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f2b600; padding: 40px 20px; text-align: center; }
+        .booking-card { 
+            background: #fff; 
+            max-width: 550px; 
+            margin: 0 auto; 
+            padding: 40px; 
+            border-radius: 40px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            border: 4px solid #fff;
+        }
+        
+        .header-msg { font-family: 'Playfair Display', serif; font-size: 26px; color: #000; margin-bottom: 5px; }
+        .header-msg-ar { display: block; font-size: 18px; color: #d4a017; margin-bottom: 20px; font-weight: 600; }
+        
+        .divider { width: 50px; height: 3px; background: #d4a017; margin: 0 auto 30px; border-radius: 50%; }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 5px; }
+        .arabic-name { font-size: 28px; color: #d4a017; display: block; margin-bottom: 25px; }
+        
+        .desc-box { background: #fafafa; padding: 25px; border-radius: 20px; margin-bottom: 30px; text-align: left; }
+        .desc-box p { font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 15px; }
+        .desc-box .ar { text-align: right; direction: rtl; color: #666; }
+
+        .price-info { font-size: 32px; font-weight: 700; color: #000; margin-bottom: 10px; }
+        .terms { font-size: 11px; color: #999; margin-bottom: 30px; line-height: 1.4; }
+
+        .wa-btn { 
+            background: #000; 
+            color: #f2b600; 
+            padding: 20px 45px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 20px; 
+            display: inline-block;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        .back-btn { display: block; margin-top: 25px; color: #000; text-decoration: none; font-size: 14px; font-weight: 600; opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+    <div class="booking-card">
+        <div class="header-msg">You want to book Now?</div>
+        <span class="header-msg-ar">هل تريد الحجز الآن؟ يرجى تأكيد اختيارك</span>
+        
+        <div class="divider"></div>
+
+        <h1 id="en-title">Thai Massage</h1>
+        <span id="ar-title" class="arabic-name">مساج تايلاندي</span>
+        
+        <div class="desc-box">
+            <p id="en-desc"></p>
+            <p id="ar-desc" class="ar"></p>
+        </div>
+        
+        <div class="price-info" id="price">150 SR / 40 MINS</div>
+        
+        <div class="terms">
+            * Note: Discount may apply. Terms and conditions apply.<br>
+            * ملاحظة: قد يتم تطبيق الخصم. تطبق الشروط والأحكام.
+        </div>
+
+        <a href="#" id="wa-button" class="wa-btn">CONFIRM & BOOK VIA WHATSAPP</a>
+        
+        <a href="index.html" class="back-btn">← Back to Services Menu</a>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('service');
+        const waNumber = "966560958973";
+
+        const services = {
+            thai: {
+                en: "Thai Massage", ar: "مساج تايلاندي",
+                enD: "Traditional deep stretch therapy to improve flexibility, relieve muscle tension, and enhance blood flow.",
+                arD: "العلاج التقليدي للتمدد العميق لتحسين المرونة وتخفيف توتر العضلات وتعزيز تدفق الدم.",
+                price: "150 SR / 40 MINS",
+                msg: "Hi Sweet Cola Spa! I want to book Thai Massage - 150 SR"
+            },
+            swedish: {
+                en: "Swedish Massage", ar: "مساج سويدي",
+                enD: "Gentle long strokes and kneading techniques designed for stress relief and total body relaxation.",
+                arD: "ضربات طويلة لطيفة وتقنيات عجن مصممة لتخفيف التوتر والاسترخاء التام للجسم.",
+                price: "150 SR / 40 MINS",
+                msg: "Hi Sweet Cola Spa! I want to book Swedish Massage - 150 SR"
+            },
+            oil: {
+                en: "Oil Massage", ar: "مساج بالزيت",
+                enD: "A rhythmic full body massage using premium essential oils to calm the mind and nourish the skin.",
+                arD: "تدليك إيقاعي كامل للجسم باستخدام زيوت عطرية فاخرة لتهدئة العقل وتغذية البشرة.",
+                price: "150 SR / 40 MINS",
+                msg: "Hi Sweet Cola Spa! I want to book Oil Massage - 150 SR"
+            },
+            moroccan: {
+                en: "Moroccan Bath", ar: "حمام مغربي",
+                enD: "Traditional deep skin cleansing to remove toxins and dead skin cells, leaving your skin soft.",
+                arD: "تنظيف عميق تقليدي للبشرة لإزالة السموم وخلايا الجلد الميتة، مما يترك بشرتك ناعمة.",
+                price: "150 SR / 40 MINS",
+                msg: "Hi Sweet Cola Spa! I want to book Moroccan Bath - 150 SR"
+            }
+        };
+
+        if(services[type]) {
+            const s = services[type];
+            document.getElementById('en-title').innerText = s.en;
+            document.getElementById('ar-title').innerText = s.ar;
+            document.getElementById('en-desc').innerText = s.enD;
+            document.getElementById('ar-desc').innerText = s.arD;
+            document.getElementById('price').innerText = s.price;
+            document.getElementById('wa-button').href = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(s.msg);
+        }
+    </script>
+</body>
+</html>
