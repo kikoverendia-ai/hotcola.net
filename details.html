@@ -3,134 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Confirmation | Sweet Cola Spa</title>
+    <title>Booking Menu | Sweet Cola Spa</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #f2b600; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        body { font-family: 'Inter', sans-serif; background: #fff; padding: 40px 5%; text-align: center; }
 
-        .service-page {
-            background: #fff;
-            width: 100%;
-            max-width: 500px;
-            padding: 40px 30px;
-            border-radius: 40px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            border: 6px solid #fff;
-            position: relative;
+        .header-title { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 5px; color: #000; }
+        .promo-text { color: #d4a017; font-weight: 700; font-size: 18px; margin-bottom: 40px; display: block; }
+
+        .booking-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+        .service-card { 
+            background: #fdfdfd; 
+            padding: 30px; 
+            border-radius: 25px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            text-decoration: none; 
+            color: inherit; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); border-color: #d4a017; }
+
+        .service-card i { font-size: 30px; color: #d4a017; margin-bottom: 15px; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 5px; }
+        .service-card .arabic-title { font-size: 20px; color: #d4a017; font-weight: bold; margin-bottom: 15px; }
+        
+        .service-card p { font-size: 14px; color: #666; line-height: 1.5; margin-bottom: 20px; }
+        
+        /* Black Price Button - Gaya ng nasa picture mo */
+        .price-btn { 
+            background: #000; 
+            color: #f2b600; 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 16px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .icon-circle {
-            width: 80px; height: 80px; background: #f2b600; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px; font-size: 35px; color: #000;
-        }
+        .premium-card { background: #000; border: 2px solid #d4a017; }
+        .premium-card h3, .premium-card p { color: #fff; }
+        .premium-card .price-btn { background: #f2b600; color: #000; }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: #000; margin-bottom: 5px; }
-        .arabic-title { font-size: 28px; color: #d4a017; font-weight: 700; display: block; margin-bottom: 25px; }
-
-        .details-container { background: #fafafa; padding: 25px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #eee; }
-        .desc-en { font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 10px; }
-        .desc-ar { font-size: 18px; line-height: 1.6; color: #666; direction: rtl; }
-
-        .info-row { display: flex; justify-content: space-around; margin-bottom: 25px; background: #000; padding: 15px; border-radius: 15px; color: #f2b600; }
-        .info-item b { display: block; font-size: 20px; color: #fff; }
-        .info-item span { font-size: 14px; text-transform: uppercase; }
-
-        .terms { font-size: 12px; color: #999; margin-bottom: 30px; font-style: italic; line-height: 1.4; }
-
-        .book-now-btn {
-            background: #25d366; color: #fff; width: 100%; padding: 22px;
-            border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 20px;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .back-link { display: inline-block; margin-top: 25px; color: #000; text-decoration: none; font-size: 14px; font-weight: 600; opacity: 0.6; }
+        .note { font-size: 12px; color: #999; margin-top: 50px; font-style: italic; }
+        .back-link { display: inline-block; margin-top: 30px; color: #000; text-decoration: none; font-weight: 600; opacity: 0.7; }
     </style>
 </head>
 <body>
 
-    <div class="service-page">
-        <div class="icon-circle" id="service-icon"><i class="fas fa-spa"></i></div>
-        <h1 id="en-name">Loading...</h1>
-        <span class="arabic-title" id="ar-name">...</span>
+    <h1 class="header-title">YOU WANT TO BOOK NOW?</h1>
+    <span class="promo-text">DISCOUNT JUST TODAY! السعر المخفض اليوم فقط</span>
 
-        <div class="details-container">
-            <p class="desc-en" id="en-desc"></p>
-            <p class="desc-ar" id="ar-desc"></p>
-        </div>
+    <div class="booking-grid">
+        
+        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Thai%20Massage%20150%2040mins" class="service-card">
+            <i class="fas fa-hands-holding"></i>
+            <h3>Thai Massage</h3>
+            <span class="arabic-title">مساج تايلاندي</span>
+            <p>Traditional deep stretch therapy to improve flexibility and blood flow.<br>العلاج التقليدي للتمدد العميق لتحسين المرونة وتدفق الدم.</p>
+            <div class="price-btn">150 SR / 40 MINS</div>
+        </a>
 
-        <div class="info-row">
-            <div class="info-item"><span>Price / السعر</span><b id="price-val">150 SR</b></div>
-            <div class="info-item"><span>Time / الوقت</span><b id="time-val">40 MINS</b></div>
-        </div>
+        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Swedish%20Massage%20150%2040mins" class="service-card">
+            <i class="fas fa-spa"></i>
+            <h3>Swedish Massage</h3>
+            <span class="arabic-title">مساج سويدي</span>
+            <p>Gentle strokes for stress relief and total body relaxation.<br>ضربات لطيفة لتخفيف التوتر والاسترخاء التام للجسم.</p>
+            <div class="price-btn">150 SR / 40 MINS</div>
+        </a>
 
-        <p class="terms">
-            * Discount will apply. Terms and conditions apply.<br>
-            * سيتم تطبيق الخصم. تطبق الشروط والأحكام.
-        </p>
+        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Oil%20Massage%20150%2040mins" class="service-card">
+            <i class="fas fa-droplet"></i>
+            <h3>Oil Massage</h3>
+            <span class="arabic-title">مساج بالزيت</span>
+            <p>Rhythmic full body massage using premium essential oils to calm the mind.<br>تدليك إيقاعي كامل للجسم باستخدام زيوت عطرية فاخرة لتهدئة العقل.</p>
+            <div class="price-btn">150 SR / 40 MINS</div>
+        </a>
 
-        <a href="#" id="whatsapp-btn" class="book-now-btn"><i class="fab fa-whatsapp"></i> YOU WANT TO BOOK NOW?</a>
-        <a href="index.html" class="back-link">← Return to Menu</a>
+        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Moroccan%20Bath%20150%2040mins" class="service-card">
+            <i class="fas fa-bath"></i>
+            <h3>Moroccan Bath</h3>
+            <span class="arabic-title">حمام مغربي</span>
+            <p>Traditional skin cleansing to remove toxins and dead skin cells.<br>تنظيف البشرة التقليدي لإزالة السموم وخلايا الجلد الميتة.</p>
+            <div class="price-btn">150 SR / 40 MINS</div>
+        </a>
+
+        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20the%20PREMIUM%20PACKAGE%20450SR" class="service-card premium-card">
+            <i class="fas fa-crown"></i>
+            <h3>PREMIUM PACKAGE</h3>
+            <span class="arabic-title">باقة بريميوم</span>
+            <p>2h 30m of Luxury: Moroccan Bath, Hot Stone, Mani & Pedi.<br>2 ساعة و30 دقيقة من الفخامة: حمام مغربي، حجر ساخن، منيكير وبديكير.</p>
+            <div class="price-btn">450 SR / FULL CARE</div>
+        </a>
+
     </div>
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const serviceKey = params.get('service');
-        const phone = "966560958973";
+    <p class="note">* Discount will apply. Terms and conditions apply.</p>
+    <a href="index.html" class="back-link">← Back to Home</a>
 
-        const serviceData = {
-            thai: {
-                en: "Thai Massage", ar: "مساج تايلاندي",
-                enD: "Traditional deep stretch therapy to improve flexibility and blood flow.",
-                arD: "العلاج التقليدي للتمدد العميق لتحسين المرونة وتدفق الدم.",
-                price: "150 SR", time: "40 MINS", icon: "fa-hands-holding",
-                msg: "I want to book Thai Massage 150 40mins"
-            },
-            swedish: {
-                en: "Swedish Massage", ar: "مساج سويدي",
-                enD: "Gentle long strokes for stress relief and total body relaxation.",
-                arD: "ضربات طويلة لطيفة لتخفيف التوتر والاسترخاء التام للجسم.",
-                price: "150 SR", time: "40 MINS", icon: "fa-spa",
-                msg: "I want to book Swedish Massage 150 40mins"
-            },
-            oil: {
-                en: "Oil Massage", ar: "مساج بالزيت",
-                enD: "Full body massage using premium oils to nourish the skin.",
-                arD: "تدليك كامل للجسم باستخدام زيوت فاخرة لتغذية البشرة.",
-                price: "150 SR", time: "40 MINS", icon: "fa-droplet",
-                msg: "I want to book Oil Massage 150 40mins"
-            },
-            moroccan: {
-                en: "Moroccan Bath", ar: "حمام مغربي",
-                enD: "Deep skin cleansing to remove toxins and dead skin cells.",
-                arD: "تنظيف عميق للبشرة لإزالة السموم وخلايا الجلد الميتة.",
-                price: "150 SR", time: "40 MINS", icon: "fa-bath",
-                msg: "I want to book Moroccan Bath 150 40mins"
-            },
-            premium: {
-                en: "Premium Package", ar: "باقة بريميوم",
-                enD: "Luxury: Moroccan Bath, Hot Stone Massage, Mani & Pedi.",
-                arD: "فخامة: حمام مغربي، مساج بالأحجار الساخنة، منيكير وبديكير.",
-                price: "450 SR", time: "150 MINS", icon: "fa-crown",
-                msg: "I want to book Premium Package 450 SR"
-            }
-        };
-
-        if(serviceData[serviceKey]) {
-            const s = serviceData[serviceKey];
-            document.getElementById('en-name').innerText = s.en;
-            document.getElementById('ar-name').innerText = s.ar;
-            document.getElementById('en-desc').innerText = s.enD;
-            document.getElementById('ar-desc').innerText = s.arD;
-            document.getElementById('price-val').innerText = s.price;
-            document.getElementById('time-val').innerText = s.time;
-            document.getElementById('service-icon').innerHTML = `<i class="fas ${s.icon}"></i>`;
-            document.getElementById('whatsapp-btn').href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(s.msg);
-        }
-    </script>
 </body>
 </html>
