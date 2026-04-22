@@ -6,7 +6,7 @@
     <title>Sweet Cola Spa | Riyadh</title>
 
     <meta property="og:title" content="Sweet Cola Spa | Riyadh" />
-    <meta property="og:description" content="Premium Massage Services in Riyadh - Choice from our Professional Menu." />
+    <meta property="og:description" content="Premium Massage Services in Riyadh - 150 SR / 40 Mins" />
     <meta property="og:image" content="https://hotcola.net/image_16.png" />
     <meta property="og:url" content="https://hotcola.net" />
 
@@ -22,75 +22,76 @@
         header h2 { font-family: 'Playfair Display', serif; color: #000; }
         nav a { margin-left: 20px; text-decoration: none; color: #000; font-weight: 600; }
 
+        /* HERO & LOTUS ANIMATION */
         .hero { background: #f2b600; height: 85vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 0 5%; overflow: hidden; }
-        .logo-container { z-index: 5; flex: 1; display: flex; justify-content: center; position: relative; }
-        .logo-circle { width: 380px; height: 380px; border-radius: 50%; border: 10px solid #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; background: #000; position: relative; display: flex; align-items: center; justify-content: center; }
-        .logo-circle img { width: 100%; height: 100%; object-fit: cover; z-index: 1; animation: fadeInLogo 2s ease-in-out forwards; animation-delay: 1.5s; opacity: 0; }
-        
-        /* Lotus Animation Petals */
+        .logo-circle { width: 350px; height: 350px; border-radius: 50%; border: 10px solid #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; background: #000; position: relative; display: flex; align-items: center; justify-content: center; z-index: 5; }
+        .logo-circle img { width: 100%; height: 100%; object-fit: cover; animation: fadeInLogo 2s ease-in-out forwards; animation-delay: 1.5s; opacity: 0; }
         .lotus-cover { position: absolute; width: 120%; height: 120%; z-index: 10; display: flex; align-items: center; justify-content: center; pointer-events: none; }
-        .petal { position: absolute; width: 150px; height: 250px; background: linear-gradient(to top, #d4a017, #f2b600); border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%; box-shadow: inset 0 0 20px rgba(0,0,0,0.3); transform-origin: bottom center; animation: openLotus 2.5s cubic-bezier(0.45, 0, 0.55, 1) forwards; }
-        @keyframes openLotus { 0% { transform: rotate(var(--angle)) scale(1); opacity: 1; } 50% { opacity: 1; } 100% { transform: rotate(var(--angle)) scale(2) translateY(-300px); opacity: 0; } }
-        @keyframes fadeInLogo { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
-        .petal:nth-child(1) { --angle: 0deg; transform: rotate(0deg); }
-        .petal:nth-child(2) { --angle: 45deg; transform: rotate(45deg); }
-        .petal:nth-child(3) { --angle: 90deg; transform: rotate(90deg); }
-        .petal:nth-child(4) { --angle: 135deg; transform: rotate(135deg); }
-        .petal:nth-child(5) { --angle: 180deg; transform: rotate(180deg); }
-        .petal:nth-child(6) { --angle: 225deg; transform: rotate(225deg); }
-        .petal:nth-child(7) { --angle: 270deg; transform: rotate(270deg); }
-        .petal:nth-child(8) { --angle: 315deg; transform: rotate(315deg); }
+        .petal { position: absolute; width: 150px; height: 250px; background: linear-gradient(to top, #d4a017, #f2b600); border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%; transform-origin: bottom center; animation: openLotus 2.5s cubic-bezier(0.45, 0, 0.55, 1) forwards; }
+        @keyframes openLotus { 0% { transform: rotate(var(--angle)) scale(1); opacity: 1; } 100% { transform: rotate(var(--angle)) scale(2) translateY(-300px); opacity: 0; } }
+        @keyframes fadeInLogo { from { opacity: 0; } to { opacity: 1; } }
+        .petal:nth-child(1) { --angle: 0deg; } .petal:nth-child(2) { --angle: 45deg; } .petal:nth-child(3) { --angle: 90deg; } .petal:nth-child(4) { --angle: 135deg; } .petal:nth-child(5) { --angle: 180deg; } .petal:nth-child(6) { --angle: 225deg; } .petal:nth-child(7) { --angle: 270deg; } .petal:nth-child(8) { --angle: 315deg; }
 
         .babae-overlay { position: absolute; right: -20px; bottom: -50px; height: 110%; z-index: 3; filter: drop-shadow(0 0 15px rgba(212, 160, 23, 0.6)); }
         .text-box { flex: 1; z-index: 10; color: #000; padding-left: 20px; }
-        .text-box h1 { font-family: 'Playfair Display', serif; font-size: 55px; margin-bottom: 20px; }
-        .text-box p { font-size: 20px; margin-bottom: 40px; }
+        .text-box h1 { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 20px; }
+        .book-btn { background: #000; color: #f2b600; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        .btn-container { display: inline-block; position: relative; padding-bottom: 20px; }
-        .book-btn { background: #000; color: #f2b600; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 20px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .btn-container::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70%; height: 6px; background: #d4a017; border-radius: 50%; }
+        /* SERVICES SECTION */
+        .services-section { padding: 80px 5%; text-align: center; }
+        .services-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .service-card { background: #fff; padding: 30px 20px; border-radius: 20px; text-decoration: none; color: inherit; flex: 1; min-width: 250px; border-bottom: 3px solid #d4a017; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; }
+        .service-card::after { content: ''; position: absolute; bottom: -8px; left: 10%; width: 80%; height: 10px; border-bottom: 2px solid #d4a017; border-radius: 50%; }
+        .service-card i { font-size: 30px; color: #d4a017; margin-bottom: 10px; display: block; }
 
-        /* SERVICES MENU LIST */
-        .services-section { padding: 80px 5%; background: #fff; text-align: center; }
-        .services-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
-        .services-section .promo-text { color: #d4a017; font-weight: 700; font-size: 18px; margin-bottom: 50px; display: block; }
-
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        
-        .service-card { 
-            background: #fdfdfd; 
-            padding: 35px 20px; 
-            border-radius: 25px; 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05); 
-            text-decoration: none; 
-            color: inherit; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: 0.3s ease;
-            border: 1px solid #eee;
+        /* SPLIT SECTION: MAP & ICONS */
+        .split-container { 
+            display: flex; 
+            max-width: 1000px; 
+            margin: 50px auto; 
+            background: #fff; 
+            border-radius: 30px; 
+            overflow: hidden; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 4px solid #d4a017;
         }
-        .service-card:hover { transform: translateY(-10px); border-color: #d4a017; box-shadow: 0 12px 30px rgba(212,160,23,0.2); }
         
-        .service-card i { font-size: 35px; color: #d4a017; margin-bottom: 15px; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: #000; margin-bottom: 5px; }
-        .service-card .arabic-title { font-size: 20px; color: #d4a017; font-weight: bold; }
+        /* Map side */
+        .map-side { flex: 2; height: 450px; }
+        .map-side iframe { width: 100%; height: 100%; border: 0; }
 
-        .premium-card { background: #000; border: 2px solid #d4a017; }
-        .premium-card h3 { color: #fff; }
-        .premium-card .arabic-title { color: #f2b600; }
-
-        /* MAP */
-        .map-section { padding: 60px 5%; background: #fafafa; text-align: center; }
-        .map-container { max-width: 1000px; margin: 0 auto; border: 5px solid #d4a017; border-radius: 20px; overflow: hidden; }
+        /* Icons side (Patayo) */
+        .icon-side { 
+            flex: 0.8; 
+            background: #000; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 40px; 
+            padding: 20px;
+        }
+        .icon-side a { 
+            color: #f2b600; 
+            font-size: 35px; 
+            transition: 0.3s; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            text-decoration: none;
+        }
+        .icon-side a:hover { color: #fff; transform: scale(1.2); }
+        .icon-side span { font-size: 10px; margin-top: 5px; color: #fff; font-family: sans-serif; }
 
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; z-index: 2000; text-decoration: none; }
 
+        /* MOBILE VIEW ADJUSTMENT */
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; height: auto; padding: 50px 5%; }
-            .babae-overlay { position: relative; right: 0; bottom: 0; height: 350px; margin-top: 20px; }
-            .logo-circle { width: 280px; height: 280px; }
-            .text-box h1 { font-size: 35px; }
+            .babae-overlay { position: relative; right: 0; bottom: 0; height: 300px; }
+            .split-container { flex-direction: column; margin: 20px; }
+            .icon-side { flex-direction: row; gap: 20px; padding: 20px; }
+            .map-side { height: 350px; }
         }
     </style>
 </head>
@@ -98,10 +99,7 @@
 
     <header>
         <h2>Sweet Cola Spa</h2>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#location">Location</a>
-        </nav>
+        <nav><a href="#services">Services</a></nav>
     </header>
 
     <a href="https://wa.me/966560958973" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -109,7 +107,7 @@
     <section class="hero">
         <div class="logo-container">
             <div class="logo-circle">
-                <img src="Logo.png" alt="Sweet Cola Logo">
+                <img src="Logo.png">
                 <div class="lotus-cover">
                     <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
                     <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
@@ -118,62 +116,37 @@
         </div>
         <div class="text-box">
             <h1>Massage in Riyadh</h1>
-            <p>Experience the ultimate escape from stress with amazing spa session.</p>
-            <div class="btn-container">
-                <a href="#services" class="book-btn">Book Your Session Now</a>
-            </div>
+            <p>Your ultimate escape from stress.</p>
+            <a href="#services" class="book-btn">Book Now</a>
         </div>
-        <img src="image_16.png" class="babae-overlay" alt="Spa Therapist">
+        <img src="image_16.png" class="babae-overlay">
     </section>
 
     <section id="services" class="services-section">
-        <h2>Our Professional Services</h2>
-        <span class="promo-text">Please choice in our services | يرجى الاختيار من خدماتنا</span>
-
+        <h2>Professional Services</h2>
         <div class="services-grid">
-            
-            <a href="details.html" class="service-card">
-                <i class="fas fa-hands-holding"></i>
-                <h3>Thai Massage</h3>
-                <span class="arabic-title">مساج تايلاندي</span>
-            </a>
-
-            <a href="details.html" class="service-card">
-                <i class="fas fa-spa"></i>
-                <h3>Swedish Massage</h3>
-                <span class="arabic-title">مساج سويدي</span>
-            </a>
-
-            <a href="details.html" class="service-card">
-                <i class="fas fa-droplet"></i>
-                <h3>Oil Massage</h3>
-                <span class="arabic-title">مساج بالزيت</span>
-            </a>
-
-            <a href="details.html" class="service-card">
-                <i class="fas fa-bath"></i>
-                <h3>Moroccan Bath</h3>
-                <span class="arabic-title">حمام مغربي</span>
-            </a>
-
-            <a href="details.html" class="service-card premium-card">
-                <i class="fas fa-crown"></i>
-                <h3>PREMIUM PACKAGE</h3>
-                <span class="arabic-title">باقة بريميوم</span>
-            </a>
-
+            <a href="details.html" class="service-card"><i class="fas fa-hands-holding"></i><h3>Thai Massage</h3><span>مساج تايلاندي</span></a>
+            <a href="details.html" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><span>مساج سويدي</span></a>
+            <a href="details.html" class="service-card"><i class="fas fa-droplet"></i><h3>Oil Massage</h3><span>مساج بالزيت</span></a>
         </div>
     </section>
 
-    <section id="location" class="map-section">
-        <h2 style="font-family: 'Playfair Display'; margin-bottom: 20px;">Our Location</h2>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.635832720235!2d46.79373307536854!3d24.73945957755104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ0JzIyLjEiTiA0NsKwNDcnNDUuNyJF!5e0!3m2!1sen!2ssa!4v1713800000000!5m2!1sen!2ssa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h2 style="text-align:center; font-family:'Playfair Display'; margin-top:50px;">Visit & Contact Us</h2>
+    <div class="split-container">
+        <div class="map-side">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8507261352424!2d46.7866557!3d24.8005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2effd68e538899%3A0xa53e0f232c0028b0!2sSweet%20Cola%20Massage%20In%20Riyadh!5e0!3m2!1sen!2ssa!4v1776890858106!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
         </div>
-    </section>
+
+        <div class="icon-side">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i><span>FB</span></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i><span>IG</span></a>
+            <a href="tel:+966560958973"><i class="fas fa-phone"></i><span>CALL</span></a>
+            <a href="https://wa.me/966560958973" target="_blank"><i class="fab fa-whatsapp"></i><span>WA</span></a>
+        </div>
+    </div>
 
     <footer style="padding: 30px; text-align: center; background: #1a1a1a; color: #d4a017;">
-        <p>© 2026 Sweet Cola Spa Riyadh. All Rights Reserved.</p>
+        <p>© 2026 Sweet Cola Spa Riyadh.</p>
     </footer>
 
 </body>
