@@ -10,7 +10,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { background: #ffffff; font-family: 'Inter', sans-serif; color: #333; }
 
-        /* HEADER - GOLD WITH HOVER CURVE EFFECT */
         header {
             display: flex;
             justify-content: space-between;
@@ -20,128 +19,86 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         header h2 { font-family: 'Playfair Display', serif; color: #000; font-size: 22px; }
-        nav { display: flex; align-items: center; }
-        nav a { 
-            margin-left: 20px; 
-            text-decoration: none; 
-            color: #000; 
-            font-size: 16px; 
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 8px; /* Space para sa kurba */
+        nav a { margin-left: 20px; text-decoration: none; color: #000; font-size: 16px; font-weight: 600; position: relative; padding-bottom: 5px; }
+        
+        /* Menu Curve Line */
+        nav a:hover::after { content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 80%; height: 3px; background: #000; border-radius: 50%; }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding: 60px 5%;
+            background: #f2b600;
+            min-height: 80vh;
         }
 
-        /* ANG HOVER GOLD CURVE LINE SA MENU */
-        nav a::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%) scaleX(0); /* Simula sa tago */
-            width: 80%; /* Haba ng kurba */
-            height: 4px; /* Kapal */
-            background: #000; /* Itim muna para mag-pop sa gold header */
-            border-radius: 50%; /* Curve effect */
-            transition: 0.3s ease-in-out;
-            transform-origin: center;
+        .logo-circle {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid #fff;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            background: transparent; /* Tinanggal ang white background dito */
         }
-
-        nav a:hover::after {
-            transform: translateX(-50%) scaleX(1); /* Lalabas pag hover */
-        }
-
-        /* HERO SECTION */
-        .hero { display: flex; align-items: center; justify-content: center; gap: 50px; padding: 60px 5%; background: #f2b600; min-height: 80vh; }
-        .logo-circle { width: 350px; height: 350px; border-radius: 50%; overflow: hidden; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.2); background: #fff; display: flex; align-items: center; justify-content: center; }
         .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+
         .text-box { max-width: 500px; color: #000; }
         .text-box h1 { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 20px; line-height: 1.1; }
-        .text-box p { font-size: 18px; margin-bottom: 35px; line-height: 1.6; opacity: 0.9; }
-        .book-btn { background: #000; color: #f2b600; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-size: 20px; font-weight: 700; display: inline-block; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .book-btn:hover { transform: translateY(-3px); background: #222; }
+        .text-box p { font-size: 18px; margin-bottom: 45px; line-height: 1.6; }
 
-        /* SERVICES SECTION - CLEAN WHITE */
-        .services-section { padding: 80px 5%; background: #fff; text-align: center; }
-        .services-section h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 42px; 
-            margin-bottom: 50px; 
-            color: #1a1a1a;
-            position: relative;
+        /* BOOK NOW BUTTON WITH GOLD CURVE UNDERNEATH */
+        .btn-container { display: inline-block; position: relative; padding-bottom: 20px; text-align: center; }
+        
+        .book-btn {
+            background: #000;
+            color: #f2b600;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
             display: inline-block;
-            padding-bottom: 15px; /* Space para sa section curve */
+            transition: 0.3s;
         }
-
-        /* ANG GOLD CURVE LINE SA SECTION TITLES */
-        .services-section h2::after {
+        
+        /* Ang Gold Curve Line sa ilalim ng Button */
+        .btn-container::after {
             content: '';
             position: absolute;
             left: 50%;
             bottom: 0;
             transform: translateX(-50%);
-            width: 60%; /* Haba ng section curve */
-            height: 6px; /* Kapal */
-            background: #d4a017; /* Gold curve */
-            border-radius: 50%; /* Curve effect */
+            width: 70%;
+            height: 6px;
+            background: #d4a017; /* Gold Line */
+            border-radius: 50%;
         }
+
+        .services-section { padding: 80px 5%; background: #fff; text-align: center; }
+        .services-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 50px; position: relative; display: inline-block; padding-bottom: 15px; }
+        .services-section h2::after { content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 60%; height: 6px; background: #d4a017; border-radius: 50%; }
 
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: #fdfdfd; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; padding-bottom: 50px; }
+        .service-card::after { content: ''; position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); width: 70%; height: 5px; background: #d4a017; border-radius: 50%; }
 
-        /* SERVICE CARDS WITH GOLD CURVE BOTTOM */
-        .service-card { 
-            background: #fdfdfd; 
-            padding: 40px 30px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            transition: 0.3s; 
-            position: relative;
-            padding-bottom: 50px; /* Space para sa card curve */
-        }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .service-card i { font-size: 45px; color: #d4a017; margin-bottom: 20px; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 15px; }
-        .service-card p { font-size: 15px; color: #666; line-height: 1.5; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; z-index: 2000; text-decoration: none; }
 
-        /* ANG GOLD CURVE LINE SA BABA NG CARDS */
-        .service-card::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 20px; /* Position sa loob ng card */
-            transform: translateX(-50%);
-            width: 70%; /* Haba ng card curve */
-            height: 5px; /* Kapal */
-            background: #d4a017; /* Gold curve */
-            border-radius: 50%; /* Curve effect */
-        }
-
-        /* WHATSAPP FLOAT */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 2000; text-decoration: none; }
-
-        /* MAP SECTION */
-        .map-section { padding: 60px 5%; background: #fafafa; text-align: center; }
-        .map-section h2 { font-family: 'Playfair Display'; font-size: 35px; margin-bottom: 30px; }
-        .map-container { max-width: 1000px; margin: 0 auto; border: 5px solid #d4a017; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-        /* FOOTER */
-        footer { padding: 30px; text-align: center; background: #1a1a1a; color: #d4a017; font-size: 14px; }
-
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
             .logo-circle { width: 280px; height: 280px; }
-            .text-box h1 { font-size: 35px; }
-            header { padding: 15px 20px; flex-direction: column; gap: 10px; }
-            nav a { margin: 0 10px; font-size: 14px; }
-            .service-card::after { width: 85%; } /* Medyo habaan sa mobile */
+            header { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <h2>Sweet Cola Spa</h2>
         <nav>
@@ -157,12 +114,15 @@
 
     <section class="hero">
         <div class="logo-circle">
-            <img src="Logo.png" alt="Sweet Cola Massage Riyadh">
+            <img src="Logo.png" alt="Sweet Cola Logo">
         </div>
         <div class="text-box">
             <h1>Massage in Riyadh</h1>
             <p>Experience the ultimate escape from stress. Our expert therapists provide professional full-body treatments in a clean, quiet, and relaxing environment.</p>
-            <a href="https://wa.me/966560958973" class="book-btn">Book Your Session Now</a>
+            
+            <div class="btn-container">
+                <a href="https://wa.me/966560958973" class="book-btn">Book Your Session Now</a>
+            </div>
         </div>
     </section>
 
@@ -170,33 +130,26 @@
         <h2>Our Professional Services</h2>
         <div class="services-grid">
             <div class="service-card">
-                <i class="fas fa-spa"></i>
+                <i class="fas fa-spa" style="font-size:40px; color:#d4a017; margin-bottom:20px;"></i>
                 <h3>Full Body Massage</h3>
                 <p>Total relaxation to relieve muscle tension and stress.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-hands"></i>
+                <i class="fas fa-hands" style="font-size:40px; color:#d4a017; margin-bottom:20px;"></i>
                 <h3>Thai Massage</h3>
                 <p>Traditional stretching techniques to improve flexibility.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf" style="font-size:40px; color:#d4a017; margin-bottom:20px;"></i>
                 <h3>Swedish Massage</h3>
                 <p>Gentle strokes for a peaceful and calming experience.</p>
             </div>
         </div>
     </section>
 
-    <section id="location" class="map-section">
-        <h2>Our Location</h2>
-        <p style="margin-bottom: 20px;">3100 Al Misroh, Ishbiliyah, Riyadh</p>
-        <div class="map-container">
-            <iframe src="https://maps.google.com/?cid=11906971108550650032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-
-    <footer>
+    <footer style="padding: 30px; text-align: center; background: #1a1a1a; color: #d4a017;">
         <p>© 2026 Sweet Cola Spa Riyadh. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
