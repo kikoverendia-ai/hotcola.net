@@ -22,68 +22,31 @@
             position: relative;
         }
 
-        /* Icon Circle */
         .icon-circle {
-            width: 80px;
-            height: 80px;
-            background: #f2b600;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 35px;
-            color: #000;
-            box-shadow: 0 10px 20px rgba(242, 182, 0, 0.3);
+            width: 80px; height: 80px; background: #f2b600; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; font-size: 35px; color: #000;
         }
 
         h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: #000; margin-bottom: 5px; }
         .arabic-title { font-size: 28px; color: #d4a017; font-weight: 700; display: block; margin-bottom: 25px; }
 
-        /* Description Styling */
-        .details-container {
-            background: #fafafa;
-            padding: 25px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            border: 1px solid #eee;
-        }
-        .desc-en { font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 15px; }
+        .details-container { background: #fafafa; padding: 25px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #eee; }
+        .desc-en { font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 10px; }
         .desc-ar { font-size: 18px; line-height: 1.6; color: #666; direction: rtl; }
 
-        /* Price and Time Section */
-        .info-row {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 25px;
-            background: #000;
-            padding: 15px;
-            border-radius: 15px;
-            color: #f2b600;
-        }
+        .info-row { display: flex; justify-content: space-around; margin-bottom: 25px; background: #000; padding: 15px; border-radius: 15px; color: #f2b600; }
         .info-item b { display: block; font-size: 20px; color: #fff; }
-        .info-item span { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .info-item span { font-size: 14px; text-transform: uppercase; }
 
         .terms { font-size: 12px; color: #999; margin-bottom: 30px; font-style: italic; line-height: 1.4; }
 
-        /* WhatsApp Button */
         .book-now-btn {
-            background: #25d366;
-            color: #fff;
-            width: 100%;
-            padding: 22px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            background: #25d366; color: #fff; width: 100%; padding: 22px;
+            border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 20px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            transition: 0.3s;
         }
-        .book-now-btn:hover { transform: scale(1.02); background: #20ba5a; }
 
         .back-link { display: inline-block; margin-top: 25px; color: #000; text-decoration: none; font-size: 14px; font-weight: 600; opacity: 0.6; }
     </style>
@@ -91,12 +54,9 @@
 <body>
 
     <div class="service-page">
-        <div class="icon-circle" id="service-icon">
-            <i class="fas fa-spa"></i>
-        </div>
-
-        <h1 id="en-name">Service Name</h1>
-        <span class="arabic-title" id="ar-name">اسم الخدمة</span>
+        <div class="icon-circle" id="service-icon"><i class="fas fa-spa"></i></div>
+        <h1 id="en-name">Loading...</h1>
+        <span class="arabic-title" id="ar-name">...</span>
 
         <div class="details-container">
             <p class="desc-en" id="en-desc"></p>
@@ -104,14 +64,8 @@
         </div>
 
         <div class="info-row">
-            <div class="info-item">
-                <span id="price-label">Price / السعر</span>
-                <b id="price-val">150 SR</b>
-            </div>
-            <div class="info-item">
-                <span id="time-label">Time / الوقت</span>
-                <b id="time-val">40 MINS</b>
-            </div>
+            <div class="info-item"><span>Price / السعر</span><b id="price-val">150 SR</b></div>
+            <div class="info-item"><span>Time / الوقت</span><b id="time-val">40 MINS</b></div>
         </div>
 
         <p class="terms">
@@ -119,10 +73,7 @@
             * سيتم تطبيق الخصم. تطبق الشروط والأحكام.
         </p>
 
-        <a href="#" id="whatsapp-btn" class="book-now-btn">
-            <i class="fab fa-whatsapp"></i> YOU WANT TO BOOK NOW?
-        </a>
-
+        <a href="#" id="whatsapp-btn" class="book-now-btn"><i class="fab fa-whatsapp"></i> YOU WANT TO BOOK NOW?</a>
         <a href="index.html" class="back-link">← Return to Menu</a>
     </div>
 
@@ -134,36 +85,36 @@
         const serviceData = {
             thai: {
                 en: "Thai Massage", ar: "مساج تايلاندي",
-                enD: "Deep stretching therapy to improve flexibility, relieve tension, and enhance blood flow.",
-                arD: "علاج التمدد العميق لتحسين المرونة وتخفيف التوتر وتعزيز تدفق الدم.",
+                enD: "Traditional deep stretch therapy to improve flexibility and blood flow.",
+                arD: "العلاج التقليدي للتمدد العميق لتحسين المرونة وتدفق الدم.",
                 price: "150 SR", time: "40 MINS", icon: "fa-hands-holding",
                 msg: "I want to book Thai Massage 150 40mins"
             },
             swedish: {
                 en: "Swedish Massage", ar: "مساج سويدي",
-                enD: "Gentle long strokes and kneading techniques designed for stress relief and total body relaxation.",
-                arD: "ضربات طويلة لطيفة وتقنيات عجن مصممة لتخفيف التوتر والاسترخاء التام للجسم.",
+                enD: "Gentle long strokes for stress relief and total body relaxation.",
+                arD: "ضربات طويلة لطيفة لتخفيف التوتر والاسترخاء التام للجسم.",
                 price: "150 SR", time: "40 MINS", icon: "fa-spa",
                 msg: "I want to book Swedish Massage 150 40mins"
             },
             oil: {
                 en: "Oil Massage", ar: "مساج بالزيت",
-                enD: "Rhythmic full body massage using premium essential oils to calm the mind and nourish the skin.",
-                arD: "تدليك إيقاعي كامل للجسم باستخدام زيوت عطرية فاخرة لتهدئة العقل وتغذية البشرة.",
+                enD: "Full body massage using premium oils to nourish the skin.",
+                arD: "تدليك كامل للجسم باستخدام زيوت فاخرة لتغذية البشرة.",
                 price: "150 SR", time: "40 MINS", icon: "fa-droplet",
                 msg: "I want to book Oil Massage 150 40mins"
             },
             moroccan: {
                 en: "Moroccan Bath", ar: "حمام مغربي",
-                enD: "Traditional deep skin cleansing to remove toxins and dead skin cells, leaving your skin soft.",
-                arD: "تنظيف عميق تقليدي للبشرة لإزالة السموم وخلايا الجلد الميتة، مما يترك بشرتك ناعمة.",
+                enD: "Deep skin cleansing to remove toxins and dead skin cells.",
+                arD: "تنظيف عميق للبشرة لإزالة السموم وخلايا الجلد الميتة.",
                 price: "150 SR", time: "40 MINS", icon: "fa-bath",
                 msg: "I want to book Moroccan Bath 150 40mins"
             },
             premium: {
                 en: "Premium Package", ar: "باقة بريميوم",
-                enD: "Luxury experience: Moroccan Bath, Hot Stone Massage, Mani & Pedi.",
-                arD: "تجربة فخمة: حمام مغربي، مساج بالأحجار الساخنة، منيكير وبديكير.",
+                enD: "Luxury: Moroccan Bath, Hot Stone Massage, Mani & Pedi.",
+                arD: "فخامة: حمام مغربي، مساج بالأحجار الساخنة، منيكير وبديكير.",
                 price: "450 SR", time: "150 MINS", icon: "fa-crown",
                 msg: "I want to book Premium Package 450 SR"
             }
