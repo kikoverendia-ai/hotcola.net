@@ -3,168 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Cola Spa | Professional Massage Riyadh</title>
+    <title>Sweet Cola Spa | Riyadh</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: #ffffff; overflow-x: hidden; color: #333; }
+        body { font-family: 'Inter', sans-serif; background: #fff; overflow-x: hidden; }
 
-        /* GOLDEN HEADER */
-        header {
-            background: #d4a017;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        header h2 { font-family: 'Playfair Display', serif; color: #000; font-size: 22px; }
-        nav a { margin-left: 20px; text-decoration: none; color: #000; font-weight: 600; font-size: 15px; }
+        header { background: #d4a017; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        header h2 { font-family: 'Playfair Display', serif; color: #000; }
+        nav a { margin-left: 20px; text-decoration: none; color: #000; font-weight: 600; position: relative; padding-bottom: 8px; }
+        nav a:hover::after { content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 80%; height: 4px; background: #000; border-radius: 50%; }
 
-        /* HERO SECTION - DILAW BACKGROUND */
-        .hero {
-            background: #f2b600;
-            min-height: 85vh;
+        .hero { background: #f2b600; height: 85vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 0 5%; overflow: hidden; }
+
+        /* --- ANIMATED LOGO SECTION --- */
+        .logo-container { z-index: 5; flex: 1; display: flex; justify-content: center; position: relative; }
+        
+        .logo-circle { 
+            width: 380px; 
+            height: 380px; 
+            border-radius: 50%; 
+            border: 10px solid #fff; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2); 
+            overflow: hidden; 
+            background: #000; 
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            padding: 60px 5%;
-            overflow: hidden;
         }
 
-        .logo-container { z-index: 5; flex: 1; display: flex; justify-content: center; }
-        .logo-circle {
-            width: 380px;
-            height: 380px;
-            border-radius: 50%;
-            border: 10px solid #fff;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
-            background: transparent;
+        .logo-circle img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            z-index: 1;
+            animation: fadeInLogo 2s ease-in-out forwards;
+            animation-delay: 1.5s; /* Lalabas ang logo pagbukas ng lotus */
+            opacity: 0;
         }
-        .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* ANG BABAE - PASTE SA GILID NG DILAW */
-        .babae-overlay {
+        /* Golden Lotus Surprise Layer */
+        .lotus-cover {
             position: absolute;
-            right: -30px;
-            bottom: -40px;
-            height: 110%;
-            z-index: 3;
-            filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
+            width: 120%;
+            height: 120%;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
         }
 
-        .text-box { flex: 1; z-index: 10; color: #000; }
-        .text-box h1 { font-family: 'Playfair Display', serif; font-size: 55px; margin-bottom: 20px; line-height: 1.1; }
-        .text-box p { font-size: 20px; margin-bottom: 35px; max-width: 450px; }
-
-        /* BOOK BUTTON WITH GOLD CURVE */
-        .btn-container { display: inline-block; position: relative; padding-bottom: 15px; }
-        .book-btn {
-            background: #000;
-            color: #f2b600;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 20px;
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .btn-container::after {
-            content: '';
+        .petal {
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70%;
-            height: 5px;
-            background: #d4a017;
-            border-radius: 50%;
+            width: 150px;
+            height: 250px;
+            background: linear-gradient(to top, #d4a017, #f2b600); /* Gold color like your lines */
+            border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+            transform-origin: bottom center;
+            animation: openLotus 2.5s cubic-bezier(0.45, 0, 0.55, 1) forwards;
         }
 
-        /* SERVICES SECTION - WHITE BACKGROUND */
-        .services-section { padding: 80px 5%; text-align: center; background: #fff; }
-        .services-section h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 40px; 
-            margin-bottom: 50px; 
-            position: relative; 
-            display: inline-block; 
-            padding-bottom: 15px; 
-        }
-        .services-section h2::after {
-            content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
-            width: 60%; height: 6px; background: #d4a017; border-radius: 50%;
+        /* Layout ng mga petals para magmukhang bulaklak */
+        .petal:nth-child(1) { transform: rotate(0deg); }
+        .petal:nth-child(2) { transform: rotate(45deg); }
+        .petal:nth-child(3) { transform: rotate(90deg); }
+        .petal:nth-child(4) { transform: rotate(135deg); }
+        .petal:nth-child(5) { transform: rotate(180deg); }
+        .petal:nth-child(6) { transform: rotate(225deg); }
+        .petal:nth-child(7) { transform: rotate(270deg); }
+        .petal:nth-child(8) { transform: rotate(315deg); }
+
+        /* Animations */
+        @keyframes openLotus {
+            0% { transform: rotate(var(--angle)) scale(1); opacity: 1; }
+            50% { opacity: 1; }
+            100% { transform: rotate(var(--angle)) scale(2) translateY(-300px); opacity: 0; }
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+        @keyframes fadeInLogo {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        .service-card {
-            background: #fdfdfd;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            position: relative;
-            padding-bottom: 50px;
-        }
-        .service-card::after {
-            content: ''; position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%);
-            width: 70%; height: 5px; background: #d4a017; border-radius: 50%;
-        }
-        .service-card i { font-size: 40px; color: #d4a017; margin-bottom: 20px; display: block; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 10px; }
+        /* Set angle for each petal via CSS variable */
+        .petal:nth-child(1) { --angle: 0deg; }
+        .petal:nth-child(2) { --angle: 45deg; }
+        .petal:nth-child(3) { --angle: 90deg; }
+        .petal:nth-child(4) { --angle: 135deg; }
+        .petal:nth-child(5) { --angle: 180deg; }
+        .petal:nth-child(6) { --angle: 225deg; }
+        .petal:nth-child(7) { --angle: 270deg; }
+        .petal:nth-child(8) { --angle: 315deg; }
 
-        /* MAP SECTION */
+        /* --- END ANIMATION --- */
+
+        .babae-overlay { position: absolute; right: -20px; bottom: -50px; height: 110%; z-index: 3; filter: drop-shadow(0 0 15px rgba(212, 160, 23, 0.6)); }
+        .text-box { flex: 1; z-index: 10; color: #000; padding-left: 20px; }
+        .text-box h1 { font-family: 'Playfair Display', serif; font-size: 55px; margin-bottom: 20px; }
+        .text-box p { font-size: 20px; margin-bottom: 40px; max-width: 450px; }
+
+        .btn-container { display: inline-block; position: relative; padding-bottom: 20px; }
+        .book-btn { background: #000; color: #f2b600; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 20px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn-container::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70%; height: 6px; background: #d4a017; border-radius: 50%; }
+
+        .services-section { padding: 80px 5%; background: #fff; text-align: center; }
+        .services-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 50px; position: relative; display: inline-block; padding-bottom: 15px; }
+        .services-section h2::after { content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 60%; height: 6px; background: #d4a017; border-radius: 50%; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: #fdfdfd; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; padding-bottom: 50px; }
+        .service-card::after { content: ''; position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); width: 70%; height: 5px; background: #d4a017; border-radius: 50%; }
+
         .map-section { padding: 60px 5%; background: #fafafa; text-align: center; }
-        .map-container {
-            max-width: 1000px;
-            margin: 30px auto;
-            border: 5px solid #d4a017;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        /* WHATSAPP FLOAT */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 35px;
-            z-index: 2000;
-            text-decoration: none;
-        }
+        .map-container { max-width: 1000px; margin: 0 auto; border: 5px solid #d4a017; border-radius: 20px; overflow: hidden; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; z-index: 2000; text-decoration: none; }
 
         @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; height: auto; }
+            .hero { flex-direction: column; text-align: center; height: auto; padding: 50px 5%; }
             .babae-overlay { position: relative; right: 0; bottom: 0; height: 350px; margin-top: 20px; }
             .logo-circle { width: 280px; height: 280px; }
             .text-box h1 { font-size: 35px; }
-            header { flex-direction: column; gap: 10px; }
+            .petal { width: 80px; height: 150px; }
         }
     </style>
 </head>
 <body>
-
     <header>
         <h2>Sweet Cola Spa</h2>
         <nav>
@@ -173,17 +140,25 @@
         </nav>
     </header>
 
-    <a href="https://wa.me/966560958973" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/966560958973" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <section class="hero">
         <div class="logo-container">
             <div class="logo-circle">
                 <img src="Logo.png" alt="Sweet Cola Logo">
+                
+                <div class="lotus-cover">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                </div>
             </div>
         </div>
-
         <div class="text-box">
             <h1>Massage in Riyadh</h1>
             <p>Experience the ultimate escape from stress with our professional full-body treatments.</p>
@@ -191,41 +166,27 @@
                 <a href="https://wa.me/966560958973" class="book-btn">Book Your Session Now</a>
             </div>
         </div>
-
         <img src="image_16.png" class="babae-overlay" alt="Spa Therapist">
     </section>
 
     <section id="services" class="services-section">
         <h2>Our Professional Services</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-spa"></i>
-                <h3>Full Body Massage</h3>
-                <p>Total relaxation to relieve muscle tension and stress.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-hands"></i>
-                <h3>Thai Massage</h3>
-                <p>Traditional stretching techniques to improve flexibility.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-leaf"></i>
-                <h3>Swedish Massage</h3>
-                <p>Gentle strokes for a peaceful and calming experience.</p>
-            </div>
+            <div class="service-card"><i class="fas fa-spa" style="font-size:40px; color:#d4a017; margin-bottom:20px;"></i><h3>Full Body</h3><p>Total relaxation to relieve muscle tension.</p></div>
+            <div class="service-card"><i class="fas fa-hands" style="font-size:40px; color:#d4a017; margin-bottom:20px;"></i><h3>Thai Massage</h3><p>Traditional techniques to improve flexibility.</p></div>
+            <div class="service-card"><i class="fas fa-leaf" style="font-size:40px; color:#d4a017; margin-bottom:20px;"></i><h3>Swedish</h3><p>Gentle strokes for a peaceful experience.</p></div>
         </div>
     </section>
 
     <section id="location" class="map-section">
-        <h2 style="font-family: 'Playfair Display'; font-size: 30px;">Our Location</h2>
+        <h2 style="font-family: 'Playfair Display'; margin-bottom: 20px;">Our Location</h2>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.5134762039!2d46.804825!3d24.8120614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f010000000001%3A0x0!2zMjTCsDQ4JzQzLjQiTiA0NsKwNDgnMTcuNCJF!5e0!3m2!1sen!2ssa!4v1713816000000!5m2!1sen!2ssa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.593740268481!2d46.7933!3d24.8115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ4JzQxLjQiTiA0NsKwNDcnMzUuOSJF!5e0!3m2!1sen!2ssa!4v1650000000000!5m2!1sen!2ssa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <footer style="padding: 30px; text-align: center; background: #1a1a1a; color: #d4a017;">
         <p>© 2026 Sweet Cola Spa Riyadh. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
