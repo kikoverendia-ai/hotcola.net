@@ -37,58 +37,38 @@
         .text-box { flex: 1; z-index: 10; color: #000; padding-left: 20px; }
         .text-box h1 { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 20px; }
 
-        /* SERVICES SECTION - FIXED ALIGNMENT */
+        /* SERVICES SECTION */
         .services-section { padding: 80px 5%; background: #fff; text-align: center; }
         .services-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 50px; }
         
-        .services-grid { 
-            display: flex; 
-            justify-content: center; 
-            flex-wrap: wrap; 
-            gap: 15px; /* Pinaliit ang gap para magkasya silang apat */
-            max-width: 1300px; 
-            margin: 0 auto; 
-        }
+        .services-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 1300px; margin: 0 auto; }
         
         .service-card { 
-            background: #fff; 
-            padding: 30px 15px; 
-            border-radius: 20px; 
-            text-decoration: none; 
-            color: inherit; 
-            flex: 1; 
-            min-width: 250px; /* Sukat para mag-pantay sa desktop */
-            max-width: 300px;
-            transition: 0.3s ease; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            position: relative; 
-            border-bottom: 3px solid #d4a017;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            background: #fff; padding: 40px 15px; border-radius: 20px; text-decoration: none; color: inherit; 
+            flex: 1; min-width: 250px; max-width: 300px; transition: 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            position: relative; border-bottom: 3px solid #d4a017; display: flex; flex-direction: column;
         }
-        .service-card::after {
-            content: ''; position: absolute; bottom: -8px; left: 10%; width: 80%; height: 10px; border-bottom: 2px solid #d4a017; border-radius: 50%;
-        }
+        .service-card::after { content: ''; position: absolute; bottom: -8px; left: 10%; width: 80%; height: 10px; border-bottom: 2px solid #d4a017; border-radius: 50%; }
         .service-card i { font-size: 30px; color: #d4a017; margin-bottom: 15px; display: block; }
         .service-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 5px; }
         .service-card .arabic-title { font-size: 19px; color: #d4a017; font-weight: bold; display: block; margin-bottom: 10px; }
-        .service-card p { font-size: 13px; color: #666; line-height: 1.4; margin-bottom: 15px; }
+        .service-card p { font-size: 13px; color: #666; line-height: 1.4; }
         .service-card:hover { transform: translateY(-10px); }
 
-        /* Badge for Price inside card */
-        .black-badge { background: #000; color: #f2b600; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 13px; align-self: center; margin-top: auto; }
-
-        /* PREMIUM OFFER SECTION */
-        .offers-section { padding: 60px 5%; text-align: center; background: #fff; }
-        .offers-grid { display: flex; justify-content: center; max-width: 1100px; margin: 0 auto; }
+        /* PREMIUM OFFER SECTION - FULL WIDTH STYLE */
+        .offers-section { padding: 40px 5% 80px; text-align: center; background: #fff; }
+        .premium-container { max-width: 1100px; margin: 0 auto; }
         .premium-box { 
-            flex: 1; background: #111; color: #fff; padding: 50px 30px; 
-            border-radius: 25px; border: 1px solid #d4a017; box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            background: #111; color: #fff; padding: 60px 40px; border-radius: 30px; 
+            border: 2px solid #d4a017; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            text-decoration: none; display: block; transition: 0.4s;
         }
-        .premium-box h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: #f2b600; margin-bottom: 15px; }
-        .premium-box p { color: #aaa; margin-bottom: 30px; font-size: 15px; }
-        .gold-badge { background: #d4a017; color: #000; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-block; }
+        .premium-box:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(212, 160, 23, 0.2); }
+        .premium-box h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: #f2b600; margin-bottom: 10px; }
+        .premium-box .arabic-title { font-size: 26px; color: #d4a017; font-weight: bold; display: block; margin-bottom: 25px; }
+        .premium-box p { color: #ccc; margin-bottom: 20px; font-size: 16px; line-height: 1.6; max-width: 850px; margin-left: auto; margin-right: auto; }
+        .premium-box p.arabic-desc { direction: rtl; color: #aaa; margin-bottom: 35px; }
+        .gold-badge { background: linear-gradient(45deg, #d4a017, #f2b600); color: #000; padding: 18px 50px; border-radius: 50px; font-weight: 800; font-size: 18px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
         /* MAP & ICONS */
         .map-social-wrapper { display: flex; max-width: 950px; margin: 50px auto; background: #000; border-radius: 30px; overflow: hidden; border: 2px solid #d4a017; }
@@ -96,18 +76,17 @@
         .map-area iframe { width: 100%; height: 100%; border: none; }
         .icon-strip { flex: 0.6; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; padding: 10px; }
         .icon-strip a { text-decoration: none; color: #f2b600; font-size: 22px; display: flex; flex-direction: column; align-items: center; }
+        .icon-strip a:hover { color: #fff; }
         .icon-strip span { font-size: 8px; color: #fff; margin-top: 5px; font-weight: 700; }
 
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; z-index: 2000; text-decoration: none; }
 
-        @media (max-width: 1024px) {
-            .service-card { min-width: 45%; } /* Magiging 2x2 pag medyo maliit ang screen */
-        }
-
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; height: auto; padding: 50px 5%; }
             .babae-overlay { position: relative; right: 0; bottom: 0; height: 280px; }
-            .service-card { min-width: 100%; } /* Isang column lang pag mobile */
+            .service-card { min-width: 100%; }
+            .premium-box { padding: 40px 20px; }
+            .premium-box h3 { font-size: 26px; }
             .map-social-wrapper { flex-direction: column; }
             .icon-strip { flex-direction: row; gap: 25px; padding: 20px; }
             .map-area { height: 350px; }
@@ -139,29 +118,30 @@
     </section>
 
     <section id="services" class="services-section">
-        <h2>Our Professional Services</h2>
         <div class="services-grid">
-            <a href="details.html" class="service-card"><i class="fas fa-hands-holding"></i><h3>Thai Massage</h3><span class="arabic-title">مساج تايلاندي</span><p>Deep stretching to improve flexibility.</p><div class="black-badge">150 SR</div></a>
-            
-            <a href="details.html" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><span class="arabic-title">مساج سويدي</span><p>Gentle strokes for relaxation.</p><div class="black-badge">150 SR</div></a>
-            
-            <a href="details.html" class="service-card"><i class="fas fa-droplet"></i><h3>Oil Massage</h3><span class="arabic-title">مساج بالزيت</span><p>Rhythmic massage with premium oils.</p><div class="black-badge">150 SR</div></a>
-            
-            <a href="details.html" class="service-card"><i class="fas fa-bath"></i><h3>Moroccan Bath</h3><span class="arabic-title">حمام مغربي</span><p>Deep cleansing for a fresh skin.</p><div class="black-badge">150 SR</div></a>
+            <a href="details.html" class="service-card"><i class="fas fa-hands-holding"></i><h3>Thai Massage</h3><span class="arabic-title">مساج تايلاندي</span><p>Deep stretching to improve flexibility.</p></a>
+            <a href="details.html" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><span class="arabic-title">مساج سويدي</span><p>Gentle strokes for relaxation.</p></a>
+            <a href="details.html" class="service-card"><i class="fas fa-droplet"></i><h3>Oil Massage</h3><span class="arabic-title">مساج بالزيت</span><p>Rhythmic massage with premium oils.</p></a>
+            <a href="details.html" class="service-card"><i class="fas fa-bath"></i><h3>Moroccan Bath</h3><span class="arabic-title">حمام مغربي</span><p>Deep cleansing for fresh skin.</p></a>
         </div>
     </section>
 
     <section class="offers-section">
-        <div class="offers-grid">
-            <div class="premium-box">
-                <h3>PREMIUM PACKAGE</h3>
-                <p>2h 30m of Pure Luxury: Moroccan Bath, Hot Stone Massage, Mani & Pedi.</p>
-                <a href="details.html" class="gold-badge">450 SR / Full Care</a>
-            </div>
+        <div class="premium-container">
+            <a href="details.html" class="premium-box">
+                <h3>The Premium Package: The Complete 4-in-1 Luxury Ritual</h3>
+                <span class="arabic-title">الباقة المميزة: طقوس الفخامة المتكاملة (4 في 1)</span>
+                
+                <p>You don’t have to choose—everything is included. This is our most comprehensive offer, combining four high-end services into one seamless 2 hour and 30 minute session of pure indulgence.</p>
+                
+                <p class="arabic-desc">ليس عليك الاختيار—كل شيء مشمول. هذا هو عرضنا الأكثر شمولاً، حيث يجمع بين أربع خدمات فاخرة في جلسة واحدة مدتها ساعتان ونصف من الدلال المطلق.</p>
+                
+                <div class="gold-badge">450 SR / FULL CARE</div>
+            </a>
         </div>
     </section>
 
-    <h2 style="text-align:center; font-family:'Playfair Display'; margin-top:50px; font-size:30px;">Our Location</h2>
+    <h2 style="text-align:center; font-family:'Playfair Display'; margin-top:20px; font-size:30px;">Our Location</h2>
     <div class="map-social-wrapper">
         <div class="map-area">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8507261352424!2d46.7866557!3d24.8005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2effd68e538899%3A0xa53e0f232c0028b0!2sSweet%20Cola%20Massage%20In%20Riyadh!5e0!3m2!1sen!2ssa!4v1776890858106!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
