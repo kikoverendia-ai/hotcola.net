@@ -1,115 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="facebook-domain-verification" content="ozr2n45gqelsvferxzl8exfoy5s9ae" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Cola Spa | Professional Massage Riyadh</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { background: #ffffff; font-family: 'Inter', sans-serif; color: #333; }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            background: #d4a017;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #d4a017; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         header h2 { font-family: 'Playfair Display', serif; color: #000; font-size: 22px; }
         nav a { margin-left: 20px; text-decoration: none; color: #000; font-size: 16px; font-weight: 600; }
-
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-            padding: 60px 5%;
-            background: #f2b600;
-            min-height: 80vh;
-        }
-
-        .logo-circle {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 8px solid #fff;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
+        .hero { display: flex; align-items: center; justify-content: center; gap: 50px; padding: 60px 5%; background: #f2b600; min-height: 80vh; }
+        .logo-circle { width: 350px; height: 350px; border-radius: 50%; overflow: hidden; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.2); background: #f2b600; }
         .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
-
         .text-box { max-width: 500px; color: #000; }
         .text-box h1 { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 20px; line-height: 1.1; }
         .text-box p { font-size: 18px; margin-bottom: 35px; line-height: 1.6; opacity: 0.9; }
-
-        .book-btn {
-            background: #000;
-            color: #f2b600;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: 700;
-            display: inline-block;
-            transition: 0.3s;
-        }
+        .book-btn { background: #000; color: #f2b600; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-size: 20px; font-weight: 700; display: inline-block; transition: 0.3s; }
         .book-btn:hover { transform: scale(1.05); background: #222; }
-
         .services-section { padding: 80px 5%; background: #fff; text-align: center; }
         .services-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 50px; color: #1a1a1a; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: #fdfdfd;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-bottom: 6px solid #d4a017;
-            transition: 0.3s;
-        }
-        .service-card:hover { transform: translateY(-10px); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: #fdfdfd; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 6px solid #d4a017; transition: 0.3s; }
         .service-card i { font-size: 45px; color: #d4a017; margin-bottom: 20px; }
         .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 15px; }
         .service-card p { font-size: 15px; color: #666; line-height: 1.5; }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 35px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            z-index: 2000;
-            text-decoration: none;
-        }
-
-        /* MAP SECTION RESPONSIVE */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 2000; text-decoration: none; }
         .map-section { padding: 60px 5%; background: #fafafa; text-align: center; }
-        .map-container {
-            max-width: 1000px;
-            margin: 30px auto;
-            border: 5px solid #d4a017;
-            border-radius:
+        .map-container { max-width: 1000px; margin: 30px auto; border: 5px solid #d4a017; border-radius: 20px; overflow: hidden; }
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
+            .logo-circle { width: 280px; height: 280px; }
+            .text-box h1 { font-size: 35px; }
+            header { padding: 15px 20px; flex-direction: column; gap: 10px; }
+            nav a { margin: 0 10px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Sweet Cola Spa</h2>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#location">Location</a>
+            <a href="https://wa.me/966560958973">Book Now</a>
+        </nav>
+    </header>
+
+    <a href="https://wa.me/966560958973" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <section class="hero">
+        <div class="logo-circle">
+            <img src="logo.png" alt="Sweet Cola Logo">
+        </div>
+        <div class="text-box">
+            <h1>Massage in Riyadh</h1>
+            <p>Experience the ultimate escape from stress. Our expert therapists provide professional full-body treatments in a clean, quiet, and relaxing environment.</p>
+            <a href="https://wa.me/966560958973" class="book-btn">Book Your Session Now</a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>Our Professional Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-spa"></i>
+                <h3>Full Body Massage</h3>
+                <p>Total relaxation to relieve muscle tension and stress.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-hands"></i>
+                <h3>Thai Massage</h3>
+                <p>Traditional stretching techniques to improve flexibility.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Swedish Massage</h3>
+                <p>Gentle strokes for a peaceful and calming experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="map-section">
+        <h2>Our Location</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.5857218335553!2d46.7972!3d24.8115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ4JzQxLjQiTiA0Niw0Nyc1MC4wIkU!5e0!3m2!1sen!2ssa!4v1620000000000!5m2!1sen!2ssa" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer style="padding: 30px; text-align: center; background: #1a1a1a; color: #d4a017;">
+        <p>© 2026 Sweet Cola Spa Riyadh. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
