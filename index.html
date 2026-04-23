@@ -1,160 +1,200 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="facebook-domain-verification" content="ozr2n45gqelsvferxzl8exfoy5s9ae" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Cola Massage In Riyadh | Riyadh</title>
-
-    <meta property="og:title" content="Sweet Cola Spa | Riyadh" />
-    <meta property="og:description" content="Sweet Cola Massage: Your Unmatched Escape in Riyadh" />
-    <meta property="og:image" content="https://hotcola.net/image_16.png" />
-    <meta property="og:url" content="https://hotcola.net" />
-
-    <link rel="icon" type="image/png" href="Logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Sweet Cola Massage In Riyadh | Premium Relaxation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: #fff; overflow-x: hidden; }
+        body { background: #f2b600; font-family: 'Inter', sans-serif; color: #1a1a1a; }
 
-        /* HEADER & BANNER: Sticky at Fixed sa Taas */
-        .main-header {
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 70px;
+            background: #c69200;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        /* Banner Container Style (Mula sa Massage Republic) */
-        .top-banner-wrapper { 
-            width: 100%; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            padding: 5px 0; 
-            background-color: #000; 
+        header h2 { font-family: 'Playfair Display', serif; font-size: 24px; }
+        nav a { margin-left: 30px; text-decoration: none; color: black; font-size: 18px; font-weight: 600; }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            padding: 80px 100px;
         }
 
-        /* Navbar design */
-        .navbar { 
-            background: #d4a017; 
-            padding: 15px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+        .logo-circle {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 10px solid #c69200;
         }
-        .navbar h2 { font-family: 'Playfair Display', serif; color: #000; font-size: 22px; }
 
-        /* HERO SECTION */
-        .hero { background: #f2b600; min-height: 100vh; display: flex; align-items: center; justify-content: flex-start; position: relative; padding: 80px 5%; overflow: hidden; }
-        .logo-container { flex: 0.5; display: flex; justify-content: center; z-index: 5; }
-        .logo-circle { width: 300px; height: 300px; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; background: #000; position: relative; display: flex; align-items: center; justify-content: center; }
         .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .text-box { flex: 1; z-index: 10; color: #000; padding-left: 20px; }
-        .text-box h1 { font-family: 'Playfair Display', serif; font-size: 45px; margin-bottom: 20px; line-height: 1.1; }
-        .arabic-h1 { font-size: 26px; color: #333; margin-bottom: 20px; direction: rtl; }
-        .msg-line { margin-bottom: 12px; }
-        .msg-line p.en { font-size: 16px; font-weight: 600; }
-        .msg-line p.ar { font-size: 17px; direction: rtl; }
 
-        .book-btn { background: #000; color: #f2b600; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; display: inline-block; margin-top: 20px; transition: 0.3s; }
-        .babae-overlay { position: absolute; right: 0; bottom: 0; height: 90%; z-index: 3; filter: drop-shadow(-10px 0 15px rgba(0,0,0,0.2)); pointer-events: none; }
+        .text-box { max-width: 550px; }
+        .text-box h1 { font-family: 'Playfair Display', serif; font-size: 55px; line-height: 1.1; margin-bottom: 20px; }
+        .text-box p { font-size: 19px; line-height: 1.6; margin-bottom: 40px; color: #333; }
 
-        /* SERVICES GRID */
-        .services-section { padding: 80px 5%; background: #fff; text-align: center; }
-        .services-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 1300px; margin: 0 auto; }
-        .service-card { background: #fff; padding: 30px 15px; border-radius: 20px; text-decoration: none; color: inherit; flex: 1; min-width: 250px; max-width: 300px; border-bottom: 3px solid #d4a017; box-shadow: 0 10px 20px rgba(0,0,0,0.05); position: relative; }
-        .service-card i { font-size: 30px; color: #d4a017; margin-bottom: 15px; display: block; }
-        .black-badge { background: #000; color: #f2b600; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 12px; margin-top: 10px; display: inline-block; }
+        .book-btn {
+            background: black;
+            color: #f2b600;
+            padding: 20px 40px;
+            width: 100%;
+            max-width: 350px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 22px;
+            display: inline-block;
+            font-weight: 600;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
 
-        /* PREMIUM OFFER */
-        .offers-section { padding: 40px 5% 80px; text-align: center; background: #fff; }
-        .premium-box { background: #111; color: #fff; padding: 60px 40px; border-radius: 30px; border: 2px solid #d4a017; text-decoration: none; display: block; transition: 0.4s; }
-        .gold-badge { background: linear-gradient(45deg, #d4a017, #f2b600); color: #000; padding: 15px 40px; border-radius: 50px; font-weight: 800; display: inline-block; }
+        .book-btn:hover { transform: translateY(-5px); background: #333; }
 
-        /* MAP & ICONS */
-        .map-social-wrapper { display: flex; max-width: 950px; margin: 50px auto; background: #000; border-radius: 30px; overflow: hidden; border: 2px solid #d4a017; }
-        .map-area { flex: 3; height: 420px; }
-        .map-area iframe { width: 100%; height: 100%; border: none; }
-        .icon-strip { flex: 0.6; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; padding: 10px; }
-        .icon-strip a { text-decoration: none; color: #f2b600; font-size: 22px; }
+        /* SERVICES SECTION */
+        .services-section { padding: 80px 20px; background: #fff; text-align: center; }
+        .services-section h2 { font-family: 'Playfair Display', serif; font-size: 40px; margin-bottom: 40px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .service-card {
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 20px;
+            border-bottom: 5px solid #c69200;
+            transition: 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card i { font-size: 40px; color: #c69200; margin-bottom: 20px; }
+        .service-card h3 { margin-bottom: 15px; font-size: 22px; }
 
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; z-index: 2000; }
+        /* MAP SECTION */
+        .map-section { padding: 80px 20px; background: #f2b600; text-align: center; }
+        .map-section h2 { font-family: 'Playfair Display', serif; font-size: 35px; margin-bottom: 30px; }
+        .map-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 8px solid #c69200;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; height: auto; }
-            .babae-overlay { opacity: 0.3; height: 60%; }
-            .map-social-wrapper { flex-direction: column; }
-            .icon-strip { flex-direction: row; }
+        /* FLOATING WHATSAPP BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 40px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+
+        @media(max-width:900px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 20px; gap: 40px; }
+            .logo-circle { width: 300px; height: 300px; }
+            .text-box h1 { font-size: 38px; }
+            header { padding: 20px; flex-direction: column; gap: 15px; }
+            nav a { margin: 0 15px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-header">
-        <div class="top-banner-wrapper">
-            <div style="padding:0;margin:0;overflow:hidden;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:bold;text-shadow:0 1px 1px rgba(255,255,255,0.6);width:468px;height:60px;display:block;position:relative;color:black!important;border:1px solid #333!important;background-color:black!important">
-                <a target="_blank" href="https://massagerepublic.com/shemale-escorts-in-riyadh/sweet_cola32" title="Sweet Cola32 - Shemale Escort in Riyadh">
-                    <img src="//static.massagerepublic.com/b/mr-wide.jpg" alt="Shemale Escorts in Riyadh - Massage Republic" style="padding:0;margin:0;overflow:hidden;display:block;position:relative;background-color:black!important">
-                    <span style="padding:0;margin:0;overflow:hidden;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:bold;text-shadow:0 1px 1px rgba(255,255,255,0.6);display:block;position:absolute;right:10px;top:2px;text-align:right;width:260px;height:36px;color:black!important;font-size:26px!important">Sweet Cola32</span>
-                    <span style="padding:0;margin:0;overflow:hidden;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:bold;text-shadow:0 1px 1px rgba(255,255,255,0.6);display:block;position:absolute;right:10px;top:34px;width:240px;height:20px;text-align:right;color:black!important;font-size:14px!important">Shemale Escort in Riyadh</span>
-                </a>
-            </div>
-        </div>
-        <div class="navbar">
-            <h2>Sweet Cola Spa</h2>
-            <nav><a href="#services" style="text-decoration:none; color:#000; font-weight:600;">Services</a></nav>
-        </div>
-    </div>
+    <header>
+        <h2>Sweet Cola Spa</h2>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Location</a>
+            <a href="https://wa.me/966560958973">Book Now</a>
+        </nav>
+    </header>
 
-    <a href="https://wa.me/966560958973" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/96656095897" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <section class="hero">
-        <div class="logo-container">
-            <div class="logo-circle">
-                <img src="Logo.png">
-            </div>
+        <div class="logo-circle">
+            <img src="Copilot_20260330_215441.png" alt="Sweet Cola Massage Riyadh">
         </div>
-
         <div class="text-box">
-            <h1>Sweet Cola Massage: Your Unmatched Escape in Riyadh</h1>
-            <h2 class="arabic-h1">سويت كولا مساج: ملاذك الفريد في الرياض</h2>
-            
-            <div class="msg-line">
-                <p class="en">Forget the stress of the city for a moment. Step into our world.</p>
-                <p class="ar">انسَ ضغوط المدينة للحظة. ادخل إلى عالمنا.</p>
-            </div>
-            
-            <a href="https://wa.me/966560958973" class="book-btn">Book Your Session / احجز الآن</a>
+            <h1>Premium Relaxing Massage in Riyadh</h1>
+            <p>Experience the ultimate escape from stress. Our expert therapists provide professional full-body treatments in a clean, quiet, and relaxing environment designed for your well-being.</p>
+            <a class="book-btn" href="https://wa.me/96656095897">Book Your Session Now</a>
         </div>
-
-        <img src="image_16.png" class="babae-overlay" alt="Therapist">
     </section>
 
     <section id="services" class="services-section">
         <h2>Our Professional Services</h2>
         <div class="services-grid">
-            <a href="details.html?service=thai" class="service-card"><i class="fas fa-hands-holding"></i><h3>Thai Massage</h3><span class="arabic-title">مساج تايلاندي</span><p>Deep stretching to improve flexibility.</p><div class="black-badge">150 SR</div></a>
-            <a href="details.html?service=swedish" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><span class="arabic-title">مساج سويدي</span><p>Gentle strokes for relaxation.</p><div class="black-badge">150 SR</div></a>
-            <a href="details.html?service=moroccan" class="service-card"><i class="fas fa-bath"></i><h3>Moroccan Bath</h3><span class="arabic-title">حمام مغربي</span><p>Deep cleansing for fresh skin.</p><div class="black-badge">150 SR</div></a>
+            <div class="service-card">
+                <i class="fas fa-spa"></i>
+                <h3>Full Body Massage</h3>
+                <p>Total relaxation to relieve muscle tension and stress.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-hands"></i>
+                <h3>Thai Massage</h3>
+                <p>Traditional stretching techniques to improve flexibility.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Swedish Massage</h3>
+                <p>Gentle strokes for a peaceful and calming experience.</p>
+            </div>
         </div>
     </section>
 
-    <div class="map-social-wrapper">
-        <div class="map-area">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8507261352424!2d46.7866557!3d24.8005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2effd68e538899%3A0xa53e0f232c0028b0!2sSweet%20Cola%20Massage%20In%20Riyadh!5e0!3m2!1sen!2ssa!4v1776890858106!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
+    <section id="contact" class="map-section">
+        <h2>Visit Us in Riyadh</h2>
+        <p style="margin-bottom: 20px; font-weight: bold;">Ishbiliyah District, Riyadh, Saudi Arabia</p>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115911.68222627932!2d46.60251717650393!3d24.713551699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d48939b%3A0x886716d21d11c4!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1711800000000!5m2!1sen!2s" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
         </div>
-        <div class="icon-strip">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="tel:+966560958973"><i class="fas fa-phone-alt"></i></a>
-        </div>
-    </div>
+    </section>
 
-    <footer style="padding: 20px; text-align: center; background: #111; color: #d4a017;">
-        <p>© 2026 Sweet Cola Spa Riyadh.</p>
+    <footer style="text-align: center; padding: 20px; background: #c69200; font-size: 14px;">
+        &copy; 2026 Sweet Cola Massage In Riyadh. All Rights Reserved.
     </footer>
 
 </body>
