@@ -29,11 +29,11 @@
         .logo-circle { width: 280px; height: 280px; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; background: #000; position: relative; display: flex; align-items: center; justify-content: center; }
         .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* MIDNIGHT GOLD WELCOME CARD - LIITAN PARA LILITAW ANG MUKHA */
+        /* MIDNIGHT GOLD WELCOME CARD */
         .text-box { 
-            flex: 0.8; /* Binabaan para mas compact */
+            flex: 0.8; 
             min-width: 320px; 
-            max-width: 450px; /* Nilimitahan ang lapad para hindi matakpan ang mukha */
+            max-width: 450px; 
             z-index: 10; 
             background: #1a1a1a; 
             padding: 35px; 
@@ -45,7 +45,6 @@
             margin-left: 20px;
         }
 
-        /* ANG GOLD GLOW LINE SA ILALIM */
         .text-box::after {
             content: '';
             position: absolute;
@@ -69,14 +68,42 @@
         .book-btn { background: #f2b600; color: #000; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; display: inline-block; margin-top: 10px; transition: 0.3s; }
         .book-btn:hover { transform: scale(1.05); background: #fff; }
 
-        /* OVERLAY IMAGE - MAS LILITAW NA ITO */
         .babae-overlay { position: absolute; right: -20px; bottom: -50px; height: 110%; z-index: 3; filter: drop-shadow(0 0 15px rgba(212, 160, 23, 0.6)); }
 
+        /* SERVICES SECTION WITH ANIMATED GOLD LINE */
         .services-section { padding: 80px 5%; background: #fff; text-align: center; }
         .services-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 1300px; margin: 0 auto; }
-        .service-card { background: #fff; padding: 30px 15px; border-radius: 20px; text-decoration: none; color: inherit; flex: 1; min-width: 250px; max-width: 300px; border-bottom: 3px solid #d4a017; box-shadow: 0 10px 20px rgba(0,0,0,0.05); position: relative; }
+        .service-card { 
+            background: #fff; padding: 30px 15px; border-radius: 20px; text-decoration: none; color: inherit; 
+            flex: 1; min-width: 250px; max-width: 300px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+            position: relative; overflow: hidden; border-bottom: none;
+        }
+
+        /* ANIMATED GOLD LINE PARA SA SERVICE CARDS */
+        .service-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, #d4a017, #f2b600, #d4a017);
+            background-size: 200% auto; animation: goldShine 4s linear infinite;
+        }
+
         .service-card i { font-size: 30px; color: #d4a017; margin-bottom: 15px; display: block; }
         .black-badge { background: #000; color: #f2b600; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 12px; margin-top: 10px; display: inline-block; }
+
+        /* PREMIUM PACKAGE SECTION (NABALIK NA!) */
+        .offers-section { padding: 40px 5% 80px; text-align: center; background: #fff; }
+        .premium-container { max-width: 1100px; margin: 0 auto; }
+        .premium-box { 
+            background: #111; color: #fff; padding: 60px 40px; border-radius: 30px; 
+            border: 2px solid #d4a017; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            text-decoration: none; display: block; transition: 0.4s; position: relative; overflow: hidden;
+        }
+        .premium-box::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 8px;
+            background: linear-gradient(90deg, #b8860b, #f2b600, #b8860b);
+            background-size: 200% auto; animation: goldShine 3s linear infinite;
+        }
+        .premium-box h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: #f2b600; margin-bottom: 10px; }
+        .gold-badge { background: linear-gradient(45deg, #d4a017, #f2b600); color: #000; padding: 15px 40px; border-radius: 50px; font-weight: 800; display: inline-block; margin-top: 20px; }
 
         .map-social-wrapper { display: flex; max-width: 950px; margin: 50px auto; background: #000; border-radius: 30px; overflow: hidden; border: 2px solid #d4a017; }
         .map-area { flex: 3; height: 420px; }
@@ -88,7 +115,7 @@
 
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; height: auto; }
-            .text-box { margin-left: 0; padding: 30px 20px; max-width: 90%; }
+            .text-box { margin-left: 0; padding: 30px 20px; max-width: 95%; }
             .babae-overlay { opacity: 0.3; height: 60%; }
             .map-social-wrapper { flex-direction: column; }
             .icon-strip { flex-direction: row; }
@@ -115,31 +142,17 @@
 
     <section class="hero">
         <div class="logo-container">
-            <div class="logo-circle">
-                <img src="Logo.png">
-            </div>
+            <div class="logo-circle"><img src="Logo.png"></div>
         </div>
-
         <div class="text-box">
             <h1>Sweet Cola Massage</h1>
-            <h2 class="arabic-h1">سويت كولا مساج: ملاذك الفريد</h2>
-            
+            <h2 class="arabic-h1">سويت كولا مساج</h2>
             <div class="msg-line">
                 <p class="en">Forget the stress of the city for a moment. Step into our world.</p>
                 <p class="ar" style="direction:rtl;">انسَ ضغوط المدينة للحظة. ادخل إلى عالمنا.</p>
             </div>
-
-            <div class="msg-line">
-                <p class="en">Experience a unique relaxation journey that you won't find anywhere else.</p>
-                <p class="ar" style="direction:rtl;">اختبر رحلة استرخاء فريدة لن تجدها في أي مكان آخر.</p>
-            </div>
-
-            <p class="en">Our Massage is not just a treatment; it is a full sensory escape.</p>
-            <p class="ar" style="direction:rtl; margin-bottom: 20px;">سويت كولا مساج ليس مجرد جلسة علاجية، بل هو هروب حسي متكامل.</p>
-            
             <a href="https://wa.me/966560958973?text=Hi! I want to book my session now." class="book-btn">👉 Book Now / احجز الآن</a>
         </div>
-
         <img src="image_16.png" class="babae-overlay" alt="Therapist">
     </section>
 
@@ -150,6 +163,16 @@
             <a href="details.html" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><p>Gentle strokes for relaxation.</p><div class="black-badge">150 SR</div></a>
             <a href="details.html" class="service-card"><i class="fas fa-droplet"></i><h3>Oil Massage</h3><p>Rhythmic massage with premium oils.</p><div class="black-badge">150 SR</div></a>
             <a href="details.html" class="service-card"><i class="fas fa-bath"></i><h3>Moroccan Bath</h3><p>Deep cleansing for a fresh skin.</p><div class="black-badge">150 SR</div></a>
+        </div>
+    </section>
+
+    <section class="offers-section">
+        <div class="premium-container">
+            <a href="details.html" class="premium-box">
+                <h3>The Premium Package: 4-in-1 Luxury Ritual</h3>
+                <p>The Complete Luxury Ritual of pure indulgence. Four high-end services in one session.</p>
+                <div class="gold-badge">450 SR / FULL CARE</div>
+            </a>
         </div>
     </section>
 
