@@ -70,4 +70,103 @@
         .book-btn:hover { transform: scale(1.05); background: #fff; }
 
         /* OVERLAY IMAGE - MAS LILITAW NA ITO */
-        .baba
+        .babae-overlay { position: absolute; right: -20px; bottom: -50px; height: 110%; z-index: 3; filter: drop-shadow(0 0 15px rgba(212, 160, 23, 0.6)); }
+
+        .services-section { padding: 80px 5%; background: #fff; text-align: center; }
+        .services-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 1300px; margin: 0 auto; }
+        .service-card { background: #fff; padding: 30px 15px; border-radius: 20px; text-decoration: none; color: inherit; flex: 1; min-width: 250px; max-width: 300px; border-bottom: 3px solid #d4a017; box-shadow: 0 10px 20px rgba(0,0,0,0.05); position: relative; }
+        .service-card i { font-size: 30px; color: #d4a017; margin-bottom: 15px; display: block; }
+        .black-badge { background: #000; color: #f2b600; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 12px; margin-top: 10px; display: inline-block; }
+
+        .map-social-wrapper { display: flex; max-width: 950px; margin: 50px auto; background: #000; border-radius: 30px; overflow: hidden; border: 2px solid #d4a017; }
+        .map-area { flex: 3; height: 420px; }
+        .map-area iframe { width: 100%; height: 100%; border: none; }
+        .icon-strip { flex: 0.6; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; padding: 10px; }
+        .icon-strip a { text-decoration: none; color: #f2b600; font-size: 22px; }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; z-index: 2000; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; height: auto; }
+            .text-box { margin-left: 0; padding: 30px 20px; max-width: 90%; }
+            .babae-overlay { opacity: 0.3; height: 60%; }
+            .map-social-wrapper { flex-direction: column; }
+            .icon-strip { flex-direction: row; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-banner-wrapper">
+            <div style="width:468px;height:60px;position:relative;background:#000;border:1px solid #333;">
+                <a target="_blank" href="https://massagerepublic.com/shemale-escorts-in-riyadh/sweet_cola32">
+                    <img src="//static.massagerepublic.com/b/mr-wide.jpg" style="width:100%;height:100%;object-fit:cover;">
+                    <span style="position:absolute;right:10px;top:5px;color:#000;font-size:22px;font-weight:bold;">Sweet Cola32</span>
+                </a>
+            </div>
+        </div>
+        <div class="navbar">
+            <h2>Sweet Cola Spa</h2>
+        </div>
+    </header>
+
+    <a href="https://wa.me/966560958973" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <section class="hero">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <img src="Logo.png">
+            </div>
+        </div>
+
+        <div class="text-box">
+            <h1>Sweet Cola Massage</h1>
+            <h2 class="arabic-h1">سويت كولا مساج: ملاذك الفريد</h2>
+            
+            <div class="msg-line">
+                <p class="en">Forget the stress of the city for a moment. Step into our world.</p>
+                <p class="ar" style="direction:rtl;">انسَ ضغوط المدينة للحظة. ادخل إلى عالمنا.</p>
+            </div>
+
+            <div class="msg-line">
+                <p class="en">Experience a unique relaxation journey that you won't find anywhere else.</p>
+                <p class="ar" style="direction:rtl;">اختبر رحلة استرخاء فريدة لن تجدها في أي مكان آخر.</p>
+            </div>
+
+            <p class="en">Our Massage is not just a treatment; it is a full sensory escape.</p>
+            <p class="ar" style="direction:rtl; margin-bottom: 20px;">سويت كولا مساج ليس مجرد جلسة علاجية، بل هو هروب حسي متكامل.</p>
+            
+            <a href="https://wa.me/966560958973?text=Hi! I want to book my session now." class="book-btn">👉 Book Now / احجز الآن</a>
+        </div>
+
+        <img src="image_16.png" class="babae-overlay" alt="Therapist">
+    </section>
+
+    <section id="services" class="services-section">
+        <h2 style="margin-bottom:30px; font-family:'Playfair Display';">Our Professional Services</h2>
+        <div class="services-grid">
+            <a href="details.html" class="service-card"><i class="fas fa-hands-holding"></i><h3>Thai Massage</h3><p>Deep stretching to improve flexibility.</p><div class="black-badge">150 SR</div></a>
+            <a href="details.html" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><p>Gentle strokes for relaxation.</p><div class="black-badge">150 SR</div></a>
+            <a href="details.html" class="service-card"><i class="fas fa-droplet"></i><h3>Oil Massage</h3><p>Rhythmic massage with premium oils.</p><div class="black-badge">150 SR</div></a>
+            <a href="details.html" class="service-card"><i class="fas fa-bath"></i><h3>Moroccan Bath</h3><p>Deep cleansing for a fresh skin.</p><div class="black-badge">150 SR</div></a>
+        </div>
+    </section>
+
+    <div class="map-social-wrapper">
+        <div class="map-area">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8507261352424!2d46.7866557!3d24.8005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2effd68e538899%3A0xa53e0f232c0028b0!2sSweet%20Cola%20Massage%20In%20Riyadh!5e0!3m2!1sen!2ssa!4v1776890858106!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="icon-strip">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="tel:+966560958973"><i class="fas fa-phone-alt"></i></a>
+        </div>
+    </div>
+
+    <footer style="padding: 20px; text-align: center; background: #111; color: #d4a017;">
+        <p>© 2026 Sweet Cola Spa Riyadh.</p>
+    </footer>
+
+</body>
+</html>
