@@ -35,8 +35,40 @@
         @keyframes fadeInLogo { from { opacity: 0; } to { opacity: 1; } }
         .petal:nth-child(1) { --angle: 0deg; } .petal:nth-child(2) { --angle: 45deg; } .petal:nth-child(3) { --angle: 90deg; } .petal:nth-child(4) { --angle: 135deg; } .petal:nth-child(5) { --angle: 180deg; } .petal:nth-child(6) { --angle: 225deg; } .petal:nth-child(7) { --angle: 270deg; } .petal:nth-child(8) { --angle: 315deg; }
 
-        /* PROFESSIONAL WELCOME CARD */
-        .welcome-card { flex: 1.2; min-width: 320px; max-width: 600px; background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-bottom: 6px solid #d4a017; z-index: 10; }
+        /* PROFESSIONAL WELCOME CARD WITH GOLD GLOW LINE */
+        .welcome-card { 
+            flex: 1.2; 
+            min-width: 320px; 
+            max-width: 600px; 
+            background: #fff; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
+            z-index: 10; 
+            position: relative;
+            overflow: hidden; /* Para sa gold shine animation */
+        }
+
+        /* ANG GOLD LINE NA MAY WOW FACTOR */
+        .welcome-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            /* Gold Gradient Shine */
+            background: linear-gradient(90deg, #b8860b, #f2b600, #fff3b0, #f2b600, #b8860b);
+            background-size: 200% auto;
+            animation: goldShine 4s linear infinite;
+            /* Neon Gold Glow */
+            box-shadow: 0 -3px 15px rgba(212, 160, 23, 0.6);
+        }
+
+        @keyframes goldShine {
+            to { background-position: 200% center; }
+        }
+
         .welcome-card h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: #000; margin-bottom: 5px; }
         .welcome-card .arabic-title { display: block; font-size: 24px; color: #d4a017; font-weight: 700; margin-bottom: 25px; }
         .welcome-card p { font-size: 17px; line-height: 1.6; color: #333; margin-bottom: 15px; }
@@ -49,106 +81,3 @@
 
         /* SERVICES GRID */
         .services-section { padding: 80px 5%; background: #fff; text-align: center; }
-        .services-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 1300px; margin: 0 auto; }
-        .service-card { background: #fff; padding: 30px 15px; border-radius: 20px; text-decoration: none; color: inherit; flex: 1; min-width: 250px; max-width: 300px; border-bottom: 3px solid #d4a017; box-shadow: 0 10px 20px rgba(0,0,0,0.05); position: relative; }
-        .service-card::after { content: ''; position: absolute; bottom: -8px; left: 10%; width: 80%; height: 10px; border-bottom: 2px solid #d4a017; border-radius: 50%; }
-        .service-card i { font-size: 30px; color: #d4a017; margin-bottom: 15px; display: block; }
-        .black-badge { background: #000; color: #f2b600; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 13px; margin-top: 10px; display: inline-block; }
-
-        /* OFFERS & MAP */
-        .offers-section { padding: 60px 5%; text-align: center; background: #fff; }
-        .premium-box { background: #111; color: #fff; padding: 50px 30px; border-radius: 30px; border: 2px solid #d4a017; text-decoration: none; display: block; max-width: 1100px; margin: 0 auto; transition: 0.4s; }
-        .premium-box:hover { transform: translateY(-10px); }
-        .premium-box h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: #f2b600; margin-bottom: 10px; }
-        .gold-badge { background: linear-gradient(45deg, #d4a017, #f2b600); color: #000; padding: 15px 40px; border-radius: 50px; font-weight: 800; font-size: 18px; display: inline-block; margin-top: 20px; }
-
-        .map-social-wrapper { display: flex; max-width: 950px; margin: 50px auto; background: #000; border-radius: 30px; overflow: hidden; border: 2px solid #d4a017; }
-        .map-area { flex: 3; height: 420px; }
-        .map-area iframe { width: 100%; height: 100%; border: none; }
-        .icon-strip { flex: 0.6; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; padding: 20px; }
-        .icon-strip a { text-decoration: none; color: #f2b600; font-size: 22px; }
-
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 35px; z-index: 2000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding: 40px 5%; }
-            .babae-overlay { opacity: 0.3; height: 60%; }
-            .map-social-wrapper { flex-direction: column; }
-            .icon-strip { flex-direction: row; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h2>Sweet Cola Spa</h2>
-    </header>
-
-    <a href="https://wa.me/966560958973?text=Hi! I want to book a session." class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-    <section class="hero">
-        <div class="logo-container">
-            <div class="logo-circle">
-                <img src="Logo.png">
-                <div class="lotus-cover">
-                    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
-                    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="welcome-card">
-            <h1>Sweet Cola Massage</h1>
-            <span class="arabic-title">سويت كولا مساج</span>
-            
-            <p><strong>Your Unmatched Escape in Riyadh.</strong> Forget the stress of the city for a moment. Step into our world.</p>
-            <p>Experience a unique relaxation journey that you won't find anywhere else. Our Massage is not just a treatment; it is a full sensory escape.</p>
-            
-            <span class="arabic-text">
-                انسَ ضغوط المدينة للحظة. ادخل إلى عالمنا واختبر رحلة استرخاء فريدة لن تجدها في أي مكان آخر. سويت كولا مساج ليس مجرد جلسة علاجية، بل هو هروب حسي متكامل.
-            </span>
-
-            <a href="https://wa.me/966560958973" class="book-btn">👉 Book Session / احجز الآن</a>
-        </div>
-
-        <img src="image_16.png" class="babae-overlay" alt="Therapist">
-    </section>
-
-    <section id="services" class="services-section">
-        <h2>Our Professional Services</h2>
-        <div class="services-grid">
-            <a href="details.html" class="service-card"><i class="fas fa-hands-holding"></i><h3>Thai Massage</h3><span style="color:#d4a017; font-weight:bold;">مساج تايلاندي</span><p>Deep stretching to improve flexibility.</p><div class="black-badge">150 SR</div></a>
-            <a href="details.html" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><span style="color:#d4a017; font-weight:bold;">مساج سويدي</span><p>Gentle strokes for relaxation.</p><div class="black-badge">150 SR</div></a>
-            <a href="details.html" class="service-card"><i class="fas fa-droplet"></i><h3>Oil Massage</h3><span style="color:#d4a017; font-weight:bold;">مساج بالزيت</span><p>Rhythmic massage with premium oils.</p><div class="black-badge">150 SR</div></a>
-            <a href="details.html" class="service-card"><i class="fas fa-bath"></i><h3>Moroccan Bath</h3><span style="color:#d4a017; font-weight:bold;">حمام مغربي</span><p>Deep cleansing for a fresh skin.</p><div class="black-badge">150 SR</div></a>
-        </div>
-    </section>
-
-    <section class="offers-section">
-        <div class="premium-container">
-            <a href="details.html" class="premium-box">
-                <h3>The Premium Package: 4-in-1 Luxury Ritual</h3>
-                <span style="color:#d4a017; font-size:24px; font-weight:bold;">الباقة المميزة: طقوس الفخامة (4 في 1)</span>
-                <p style="margin-top:20px;">Combining four high-end services into one seamless 2 hour and 30 minute session of pure indulgence.</p>
-                <div class="gold-badge">450 SR / FULL CARE</div>
-            </a>
-        </div>
-    </section>
-
-    <div class="map-social-wrapper">
-        <div class="map-area">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8507261352424!2d46.7866557!3d24.8005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2effd68e538899%3A0xa53e0f232c0028b0!2sSweet%20Cola%20Massage%20In%20Riyadh!5e0!3m2!1sen!2ssa!4v1776890858106!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="icon-strip">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="tel:+966560958973"><i class="fas fa-phone-alt"></i></a>
-        </div>
-    </div>
-
-    <footer style="padding: 30px; text-align: center; background: #111; color: #d4a017;">
-        <p>© 2026 Sweet Cola Spa Riyadh.</p>
-    </footer>
-
-</body>
-</html>
