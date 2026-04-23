@@ -4,265 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Confirmation | Sweet Cola Spa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f2b600; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 20px;
-            /* Luxury Gradient Background */
-            background: linear-gradient(135deg, #f2b600 0%, #d4a017 100%);
-            background-attachment: fixed;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Abstract Background Decor */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-            z-index: 0;
-        }
-
-        .booking-wrapper {
-            z-index: 1;
+        .service-page {
+            background: #fff;
             width: 100%;
-            max-width: 550px;
-            /* Glassmorphism Effect */
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 50px 40px;
+            max-width: 500px;
+            padding: 40px 30px;
             border-radius: 40px;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            border: 6px solid #fff;
+            position: relative;
         }
 
-        .header-section { margin-bottom: 30px; }
-        
-        .header-section h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 28px; 
-            color: #000;
-            margin-bottom: 5px;
+        .icon-circle {
+            width: 80px; height: 80px; background: #f2b600; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; font-size: 35px; color: #000;
         }
 
-        .header-section p { 
-            font-size: 18px; 
-            color: #d4a017; 
-            font-weight: 600;
-            direction: rtl; 
-        }
+        h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: #000; margin-bottom: 5px; }
+        .arabic-title { font-size: 28px; color: #d4a017; font-weight: 700; display: block; margin-bottom: 25px; }
 
-        .divider { 
-            width: 60px; 
-            height: 4px; 
-            background: #d4a017; 
-            margin: 20px auto; 
-            border-radius: 10px; 
-        }
+        .details-container { background: #fafafa; padding: 25px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #eee; }
+        .desc-en { font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 10px; }
+        .desc-ar { font-size: 18px; line-height: 1.6; color: #666; direction: rtl; }
 
-        .service-title-box { margin-bottom: 25px; }
-        
-        #en-name { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 38px; 
-            color: #000; 
-            letter-spacing: -1px;
-        }
+        .info-row { display: flex; justify-content: space-around; margin-bottom: 25px; background: #000; padding: 15px; border-radius: 15px; color: #f2b600; }
+        .info-item b { display: block; font-size: 20px; color: #fff; }
+        .info-item span { font-size: 14px; text-transform: uppercase; }
 
-        #ar-name { 
-            font-size: 32px; 
-            color: #d4a017; 
-            font-weight: 700; 
-            display: block; 
-            margin-top: 5px;
-        }
-
-        .details-box {
-            background: #fdfaf0;
-            padding: 30px;
-            border-radius: 25px;
-            margin-bottom: 30px;
-            border: 1px dashed #d4a017;
-            text-align: left;
-        }
-
-        .desc-text { 
-            font-size: 16px; 
-            line-height: 1.6; 
-            color: #444; 
-            margin-bottom: 15px; 
-        }
-
-        .desc-text.ar { 
-            text-align: right; 
-            direction: rtl; 
-            color: #666; 
-            border-top: 1px solid rgba(212, 160, 23, 0.2);
-            padding-top: 15px;
-        }
-
-        .price-tag {
-            font-size: 32px;
-            font-weight: 800;
-            color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .price-tag i { color: #d4a017; font-size: 24px; }
+        .terms { font-size: 12px; color: #999; margin-bottom: 30px; font-style: italic; line-height: 1.4; }
 
         .book-now-btn {
-            background: #25d366; /* WhatsApp Green */
-            color: #fff;
-            width: 100%;
-            padding: 22px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            background: #25d366; color: #fff; width: 100%; padding: 22px;
+            border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 20px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
         }
 
-        .book-now-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 25px;
-            color: #888;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .back-link:hover { color: #000; }
-
-        /* Animation */
-        .booking-wrapper {
-            animation: slideUp 0.6s ease-out;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 480px) {
-            .booking-wrapper { padding: 35px 25px; }
-            #en-name { font-size: 30px; }
-            .price-tag { font-size: 26px; }
-        }
+        .back-link { display: inline-block; margin-top: 25px; color: #000; text-decoration: none; font-size: 14px; font-weight: 600; opacity: 0.6; }
     </style>
 </head>
 <body>
 
-    <div class="booking-wrapper">
-        <div class="header-section">
-            <h2>You want to book Now?</h2>
-            <p>هل تريد الحجز الآن؟ يرجى تأكيد اختيارك</p>
-            <div class="divider"></div>
+    <div class="service-page">
+        <div class="icon-circle" id="service-icon"><i class="fas fa-spa"></i></div>
+        <h1 id="en-name">Loading...</h1>
+        <span class="arabic-title" id="ar-name">...</span>
+
+        <div class="details-container">
+            <p class="desc-en" id="en-desc"></p>
+            <p class="desc-ar" id="ar-desc"></p>
         </div>
 
-        <div class="service-title-box">
-            <h1 id="en-name">Loading...</h1>
-            <span id="ar-name">...</span>
+        <div class="info-row">
+            <div class="info-item"><span>Price / السعر</span><b id="price-val">150 SR</b></div>
+            <div class="info-item"><span>Time / الوقت</span><b id="time-val">40 MINS</b></div>
         </div>
 
-        <div class="details-box">
-            <p class="desc-text" id="en-desc"></p>
-            <p class="desc-text ar" id="ar-desc"></p>
-        </div>
+        <p class="terms">
+            * Discount will apply. Terms and conditions apply.<br>
+            * سيتم تطبيق الخصم. تطبق الشروط والأحكام.
+        </p>
 
-        <div class="price-tag">
-            <i class="fas fa-tag"></i>
-            <span id="price-display">...</span>
-        </div>
-
-        <a href="#" id="wa-confirm" class="book-now-btn">
-            <i class="fab fa-whatsapp"></i> CONFIRM VIA WHATSAPP
-        </a>
-
-        <a href="index.html" class="back-link">← Change Selection / العودة</a>
+        <a href="#" id="whatsapp-btn" class="book-now-btn"><i class="fab fa-whatsapp"></i> YOU WANT TO BOOK NOW?</a>
+        <a href="index.html" class="back-link">← Return to Menu</a>
     </div>
 
     <script>
         const params = new URLSearchParams(window.location.search);
-        const service = params.get('service') || 'thai'; // Default to Thai if empty
+        const serviceKey = params.get('service');
         const phone = "966560958973";
 
-        const data = {
+        const serviceData = {
             thai: {
                 en: "Thai Massage", ar: "مساج تايلاندي",
-                enD: "Traditional deep stretch therapy to improve flexibility, relieve muscle tension, and enhance blood flow.",
-                arD: "العلاج التقليدي للتمدد العميق لتحسين المرونة وتخفيف توتر العضلات وتعزيز تدفق الدم.",
-                price: "150 SR / 40 MINS",
-                msg: "Hi Sweet Cola Spa! I want to book Thai Massage (150 SR)"
+                enD: "Traditional deep stretch therapy to improve flexibility and blood flow.",
+                arD: "العلاج التقليدي للتمدد العميق لتحسين المرونة وتدفق الدم.",
+                price: "150 SR", time: "40 MINS", icon: "fa-hands-holding",
+                msg: "I want to book Thai Massage 150 40mins"
             },
             swedish: {
                 en: "Swedish Massage", ar: "مساج سويدي",
-                enD: "Gentle long strokes and kneading techniques designed for stress relief and total body relaxation.",
-                arD: "ضربات طويلة لطيفة وتقنيات عجن مصممة لتخفيف التوتر والاسترخاء التام للجسم.",
-                price: "150 SR / 40 MINS",
-                msg: "Hi Sweet Cola Spa! I want to book Swedish Massage (150 SR)"
+                enD: "Gentle long strokes for stress relief and total body relaxation.",
+                arD: "ضربات طويلة لطيفة لتخفيف التوتر والاسترخاء التام للجسم.",
+                price: "150 SR", time: "40 MINS", icon: "fa-spa",
+                msg: "I want to book Swedish Massage 150 40mins"
             },
             oil: {
                 en: "Oil Massage", ar: "مساج بالزيت",
-                enD: "A rhythmic full body massage using premium essential oils to calm the mind and nourish the skin.",
-                arD: "تدليك إيقاعي كامل للجسم باستخدام زيوت عطرية فاخرة لتهدئة العقل وتغذية البشرة.",
-                price: "150 SR / 40 MINS",
-                msg: "Hi Sweet Cola Spa! I want to book Oil Massage (150 SR)"
+                enD: "Full body massage using premium oils to nourish the skin.",
+                arD: "تدليك كامل للجسم باستخدام زيوت فاخرة لتغذية البشرة.",
+                price: "150 SR", time: "40 MINS", icon: "fa-droplet",
+                msg: "I want to book Oil Massage 150 40mins"
             },
             moroccan: {
                 en: "Moroccan Bath", ar: "حمام مغربي",
-                enD: "Traditional deep skin cleansing to remove toxins and dead skin cells, leaving your skin soft and renewed.",
-                arD: "تنظيف عميق تقليدي للبشرة لإزالة السموم وخلايا الجلد الميتة، مما يترك بشرتك ناعمة ومتجددة.",
-                price: "150 SR / 40 MINS",
-                msg: "Hi Sweet Cola Spa! I want to book Moroccan Bath (150 SR)"
+                enD: "Deep skin cleansing to remove toxins and dead skin cells.",
+                arD: "تنظيف عميق للبشرة لإزالة السموم وخلايا الجلد الميتة.",
+                price: "150 SR", time: "40 MINS", icon: "fa-bath",
+                msg: "I want to book Moroccan Bath 150 40mins"
             },
             premium: {
-                en: "Premium Package", ar: "الباقة المميزة",
-                enD: "The Complete 4-in-1 Luxury Ritual: Moroccan Bath, Hot Stone Massage, Mani & Pedi. 2.5 hours of pure indulgence.",
-                arD: "طقوس الفخامة المتكاملة (4 في 1): حمام مغربي، مسaj بالأحجار الساخنة، منيكير وبديكير. ساعتان ونصف من الدلال المطلق.",
-                price: "450 SR / 150 MINS",
-                msg: "Hi Sweet Cola Spa! I want to book the PREMIUM PACKAGE (450 SR)"
+                en: "Premium Package", ar: "باقة بريميوم",
+                enD: "Luxury: Moroccan Bath, Hot Stone Massage, Mani & Pedi.",
+                arD: "فخامة: حمام مغربي، مساج بالأحجار الساخنة، منيكير وبديكير.",
+                price: "450 SR", time: "150 MINS", icon: "fa-crown",
+                msg: "I want to book Premium Package 450 SR"
             }
         };
 
-        const selected = data[service];
-        if(selected) {
-            document.getElementById('en-name').innerText = selected.en;
-            document.getElementById('ar-name').innerText = selected.ar;
-            document.getElementById('en-desc').innerText = selected.enD;
-            document.getElementById('ar-desc').innerText = selected.arD;
-            document.getElementById('price-display').innerText = selected.price;
-            document.getElementById('wa-confirm').href = `https://wa.me/${phone}?text=${encodeURIComponent(selected.msg)}`;
+        if(serviceData[serviceKey]) {
+            const s = serviceData[serviceKey];
+            document.getElementById('en-name').innerText = s.en;
+            document.getElementById('ar-name').innerText = s.ar;
+            document.getElementById('en-desc').innerText = s.enD;
+            document.getElementById('ar-desc').innerText = s.arD;
+            document.getElementById('price-val').innerText = s.price;
+            document.getElementById('time-val').innerText = s.time;
+            document.getElementById('service-icon').innerHTML = `<i class="fas ${s.icon}"></i>`;
+            document.getElementById('whatsapp-btn').href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(s.msg);
         }
     </script>
 </body>
