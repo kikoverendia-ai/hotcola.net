@@ -101,6 +101,9 @@
         /* * SMOOTH SINGLE-COLOR LIGHT ANIMATION 
          * Ginawa nating transparent at isang solidong ginto lang ang iikot
          */
+        /* * DALAWANG GOLD NA NAGHAHABULAN
+         * Hahatiin natin ang bilog sa dalawa para may dalawang buntot ng ilaw
+         */
         .service-card::before {
             content: '';
             position: absolute;
@@ -108,8 +111,15 @@
             left: -100%;
             width: 300%; /* Super laki para hindi kapusin sa kanto */
             height: 300%;
-            /* Isang solidong ginto lang na buntot, walang black */
-            background: conic-gradient(transparent, transparent, transparent, var(--gold));
+            /* Dito nangyayari ang magic: Dalawang transparent-to-gold na magkatapat */
+            background: conic-gradient(
+                transparent 0deg, 
+                transparent 90deg, 
+                var(--gold) 180deg, 
+                transparent 180deg, 
+                transparent 270deg, 
+                var(--gold) 360deg
+            );
             z-index: 0;
             animation: spin 3s linear infinite;
             transform-origin: center;
