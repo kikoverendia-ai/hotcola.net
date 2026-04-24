@@ -222,10 +222,12 @@
         }
         .premium-card:hover .price-btn { background: #222 !important; }
 
-/* * 8. MODEL BACKDROP EFFECT (PINNED) 
-         * Ginawang subtle backdrop: Bluer, blurred, at parang shadown para mas subtle */
+        /* 8. MODEL BACKDROP EFFECT (PINNED) */
+        .babae-overlay {
+            position: fixed; 
+            right: -5%;
             bottom: 0;
-            height: 95vh; /* Ibabalik sa saktong tangkad lang niya */
+            height: 95vh;
             z-index: 1; 
             object-fit: contain;
             pointer-events: none;
@@ -234,8 +236,6 @@
             filter: sepia(1) hue-rotate(200deg) saturate(2) brightness(0.4) blur(12px);
             opacity: 0.6;
         }
-
-        /* MOBILE ADJUSTMENT */
         @media (max-width: 1024px) {
             body { padding: 180px 20px 50px 20px; }
             .header-banner { padding: 15px 5%; }
