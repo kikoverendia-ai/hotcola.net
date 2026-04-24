@@ -222,15 +222,35 @@
         }
         .premium-card:hover .price-btn { background: #222 !important; }
 
-        /* 8. MODEL RIGHT (PINNED / FIXED) */
-        .babae-overlay {
-            position: fixed; 
-            right: 0; 
-            bottom: 0;
-            height: 95vh; 
-            z-index: 99; /* Pinilit na nasa ibabaw ng content pero nasa ilalim ng header */
-            object-fit: contain;
-            pointer-events: none;
+/* * 8. MODEL BACKDROP EFFECT (PINNED) 
+         * Ginawang subtle backdrop: Bluer, blurred, at parang shadow
+         */
+        .woman-backdrop {
+            position: fixed; /* Hindi pa rin gagalaw pag nag-scroll */
+            top: 0;
+            right: 0;
+            /* Isasagad natin para maging "cover" sa buong screen */
+            width: 100vw; 
+            height: 100vh; 
+            z-index: 1; /* Under all content */
+            pointer-events: none; /* Non-interactable */
+            
+            /* Dito ilalagay ang image */
+            background-image: url('image_16.png');
+            background-size: cover; /* "cover" property applied */
+            background-position: center bottom; /* Adjust position */
+            background-repeat: no-repeat;
+            
+            /* DITO NANGYAYARI ANG MAGIC FUSION NG FILTERS: */
+            filter: 
+                sepia(1) /* Create base for hue change */
+                hue-rotate(200deg) /* Shift hues to deep blue */
+                saturate(2.5) /* Intense blue saturation */
+                brightness(0.3) /* Darken for shadow effect */
+                blur(18px); /* Heavily blur the shadow */
+                
+            opacity: 0.6; /* Subtler transparency */
+        }
         }
 
         /* MOBILE ADJUSTMENT */
