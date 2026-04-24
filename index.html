@@ -12,7 +12,7 @@
         :root {
             --gold-text: #cca243;
             --yellow-btn: #e6b012;
-            --dark-card: #1c1c1c;
+            --dark-card: #151515;
             --border-color: #2a2a2a;
         }
 
@@ -35,90 +35,97 @@
             position: relative;
             height: 100vh;
             display: flex;
-            align-items: center; /* Vertical center */
-            justify-content: flex-start; /* Logo sa kaliwa */
-            padding-left: 5%; /* May space sa edge */
-            gap: 80px; /* Space sa pagitan ng logo at box */
+            align-items: center; 
+            justify-content: flex-start; 
+            padding-left: 5%; 
+            gap: 60px; 
         }
 
         /* LOGO LEFT */
-        .logo-container {
-            z-index: 3;
-            flex-shrink: 0;
-        }
-
+        .logo-container { z-index: 3; flex-shrink: 0; }
         .logo-ring {
-            width: 380px; 
-            height: 380px;
+            width: 350px; height: 350px;
             border-radius: 50%;
             background: rgba(0,0,0,0.6);
             box-shadow: 0 0 70px 20px rgba(230, 176, 18, 0.2);
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             padding: 5px;
         }
-
         .logo-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
 
-        /* CONTENT CENTER - Shoulder level position */
-        .content-wrapper {
-            z-index: 3;
-            max-width: 450px;
-            margin-top: 50px; /* Ibaba ng konti para magpantay sa balikat */
-        }
+        /* CONTENT CENTER */
+        .content-wrapper { z-index: 3; max-width: 480px; }
 
         .premium-card {
-            background: var(--dark-card);
+            background: rgba(0,0,0,0.8);
             padding: 25px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
             margin-bottom: 25px;
         }
 
-        .premium-card h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--gold-text);
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        .arabic-text { font-family: 'Playfair Display', serif; color: var(--gold-text); display: block; margin-bottom: 15px; }
-
-        .premium-card p { color: #a0a0a0; font-size: 13px; line-height: 1.5; margin-bottom: 20px; }
+        .premium-card h2 { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 24px; margin-bottom: 10px; }
+        .arabic-text { font-family: 'Playfair Display', serif; color: var(--gold-text); display: block; font-size: 14px; margin-bottom: 10px; line-height: 1.4;}
+        .premium-card p { color: #a0a0a0; font-size: 12px; line-height: 1.4; margin-bottom: 15px; }
 
         .btn-book {
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 25px; background: var(--yellow-btn); color: #000;
+            padding: 10px 20px; background: var(--yellow-btn); color: #000;
             text-decoration: none; font-weight: 700; border-radius: 30px;
             transition: 0.3s;
         }
 
-        /* SERVICES */
+        /* ANIMATED SERVICES SECTION */
         .services-header { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 18px; margin-bottom: 15px; }
-
         .services-grid { display: flex; gap: 15px; }
 
         .service-card {
-            background: #151515; padding: 15px; border-radius: 8px;
-            border: 1px solid var(--border-color); flex: 1; text-align: center;
+            position: relative;
+            background: var(--dark-card); 
+            padding: 15px; 
+            border-radius: 12px; 
+            flex: 1; 
+            text-align: center;
+            overflow: hidden;
+            text-decoration: none;
+            color: #fff;
         }
 
-        .service-card i { color: var(--yellow-btn); font-size: 16px; margin-bottom: 8px; display: block; }
+        /* ANIMATION EFFECT */
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: conic-gradient(from 0deg, var(--gold-text), #000, var(--gold-text));
+            border-radius: 12px;
+            z-index: 0;
+            animation: spin 3s linear infinite;
+        }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: var(--dark-card);
+            border-radius: 10px;
+            z-index: 1;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .card-inner { position: relative; z-index: 2; }
+        .service-card i { color: var(--yellow-btn); font-size: 20px; margin-bottom: 8px; display: block; }
         .service-card h3 { font-size: 11px; color: #e0e0e0; }
 
         /* MODEL RIGHT */
         .babae-overlay {
             position: absolute;
-            right: 0;
-            bottom: 0;
-            height: 90vh; /* Para hindi matakpan ang mukha */
+            right: 0; bottom: 0;
+            height: 90vh; 
             z-index: 1;
             object-fit: contain;
             pointer-events: none;
         }
 
-        /* MOBILE ADJUSTMENT */
+        /* MOBILE */
         @media (max-width: 1024px) {
             .hero { flex-direction: column; justify-content: center; text-align: center; padding: 20px; }
             .content-wrapper { margin-top: 0; }
@@ -138,8 +145,8 @@
         <div class="content-wrapper">
             <div class="premium-card">
                 <h2>Sweet Cola Massage In Riyadh<br>Your Professional Massuer</h2>
-                <span class="arabic-text">اكتشف "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية في حي إشبيلية الحيوي. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية تأخذكم بعيداً عن ضغوط الحياة اليومية. يوفر فريقنا الماهر مجموعة واسعة من الخدمات العلاجية المصممة لتجديد العقل والجسد والروح. ادخلوا عالم الطمأنينة واختبروا فن الاسترخاء بلمسة شخصية فريدة. نحن في "سويت كولا مساج" مكرسون لضمان خروجكم من كل زيارة بشعور من الانتعاش والحيوية.</span>
-                <p>Discover Sweet Cola Massage in Riyadh, a new sanctuary for wellness in the vibrant Ishbiliyah district. Opening in 2026, this spa offers an exquisite retreat from the everyday. Our skilled team provides a range of therapeutic services designed to rejuvenate your mind, body, and spirit. Step into a world of tranquility and experience the art of relaxation with a personalized touch. Sweet Cola Massage is dedicated to ensuring every visit leaves you feeling refreshed and restored.</p>
+                <span class="arabic-text">اكتشف "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية.</span>
+                <p>Discover Sweet Cola Massage in Riyadh, a new sanctuary for wellness. Opening in 2026, this spa offers an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
 
                 <a href="https://wa.me/966560958973" class="btn-book" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-hand-pointer"></i> Book Now / احجز الآن
@@ -148,9 +155,28 @@
 
             <h3 class="services-header">Our Professional Services</h3>
             <div class="services-grid">
-                <div class="service-card"><i class="fab fa-pagelines"></i><h3>Sweet Cola</h3></div>
-                <div class="service-card"><i class="fas fa-hands"></i><h3>Hessy Therapy</h3></div>
-                <div class="service-card"><i class="fas fa-leaf"></i><h3>Ellnit Services</h3></div>
+                
+                <div class="service-card">
+                    <div class="card-inner">
+                        <i class="fab fa-pagelines"></i>
+                        <h3>Sweet Cola</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-inner">
+                        <i class="fas fa-hands"></i>
+                        <h3>Hessy Therapy</h3>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-inner">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Ellnit Services</h3>
+                    </div>
+                </div>
+
             </div>
         </div>
 
