@@ -6,54 +6,139 @@
     <title>Booking Menu | Sweet Cola Spa</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
+        :root {
+            --gold: #d4a017;
+            --gold-bright: #f2b600;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #fff; padding: 40px 5%; text-align: center; }
+        
+        /* 1. BACKGROUND NA PAREHO SA PAGE 1 */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-image: url('Background_01.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            background-color: #000; 
+            color: #fff;
+            padding: 40px 5%; 
+            text-align: center; 
+            min-height: 100vh;
+        }
 
-        .header-title { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 5px; color: #000; }
-        .promo-text { color: #d4a017; font-weight: 700; font-size: 18px; margin-bottom: 40px; display: block; }
+        /* 2. HEADER TEXTS (Ginawang pambagay sa dark background) */
+        .header-title { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 5px; color: #fff; }
+        .promo-text { color: var(--gold); font-weight: 700; font-size: 18px; margin-bottom: 40px; display: block; }
 
+        /* 3. GRID */
         .booking-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
 
+        /* 4. BLACK CARDS WITH ANIMATED GOLD BORDER */
         .service-card { 
-            background: #fdfdfd; 
+            position: relative;
             padding: 30px; 
             border-radius: 25px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
             text-decoration: none; 
-            color: inherit; 
+            color: #fff; 
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 1px solid #eee;
+            overflow: hidden; /* Tinatago ang sobra ng ilaw */
             transition: 0.3s;
         }
-        .service-card:hover { transform: translateY(-5px); border-color: #d4a017; }
 
-        .service-card i { font-size: 30px; color: #d4a017; margin-bottom: 15px; }
+        .service-card:hover { transform: translateY(-5px); }
+
+        /* THE 2 CHASING GOLD LIGHTS */
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -100%; left: -100%;
+            width: 300%; height: 300%;
+            background: conic-gradient(
+                transparent 0deg, 
+                transparent 90deg, 
+                var(--gold-bright) 180deg, 
+                transparent 180deg, 
+                transparent 270deg, 
+                var(--gold-bright) 360deg
+            );
+            z-index: 0;
+            animation: spin 3s linear infinite;
+        }
+
+        /* ANG BLACK BACKGROUND SA LOOB NG CARD */
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 3px; /* Kapal ng animated border */
+            background: #0a0a0a; /* Black background */
+            border-radius: 22px;
+            z-index: 1;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* BRING ALL TEXT/CONTENT TO FRONT (OVER THE BACKGROUND) */
+        .service-card > * { position: relative; z-index: 2; }
+
+        /* CARD TEXT STYLING */
+        .service-card i { font-size: 30px; color: var(--gold); margin-bottom: 15px; }
         .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 5px; }
-        .service-card .arabic-title { font-size: 20px; color: #d4a017; font-weight: bold; margin-bottom: 15px; }
+        .service-card .arabic-title { font-size: 20px; color: var(--gold); font-weight: bold; margin-bottom: 15px; }
+        .service-card p { font-size: 14px; color: #ccc; line-height: 1.5; margin-bottom: 20px; }
         
-        .service-card p { font-size: 14px; color: #666; line-height: 1.5; margin-bottom: 20px; }
-        
-        /* Black Price Button - Gaya ng nasa picture mo */
+        /* BLACK PRICE BUTTON */
         .price-btn { 
             background: #000; 
-            color: #f2b600; 
+            color: var(--gold-bright); 
             padding: 12px 30px; 
             border-radius: 50px; 
             font-weight: 700; 
             font-size: 16px;
             display: inline-block;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border: 1px solid #333;
         }
 
-        .premium-card { background: #000; border: 2px solid #d4a017; }
-        .premium-card h3, .premium-card p { color: #fff; }
-        .premium-card .price-btn { background: #f2b600; color: #000; }
+        /* 5. PREMIUM CARD OVERRIDES (GOLD BACKGROUND) */
+        .premium-card::after {
+            background: linear-gradient(135deg, var(--gold), var(--gold-bright)); /* Gold na loob! */
+        }
+        
+        /* Premium Card Light Animation (Ginawa kong White at Black para lilitaw sa Gold) */
+        .premium-card::before {
+            background: conic-gradient(
+                transparent 0deg, 
+                transparent 90deg, 
+                #000 180deg, 
+                transparent 180deg, 
+                transparent 270deg, 
+                #fff 360deg
+            );
+        }
 
+        /* Black text sa loob ng Premium Gold Card */
+        .premium-card > * { color: #000 !important; }
+        .premium-card i { color: #000 !important; }
+        .premium-card .arabic-title { color: #000 !important; }
+        .premium-card p { color: #222 !important; font-weight: 600; }
+        
+        /* Premium Price Button (Binaligtad) */
+        .premium-card .price-btn { 
+            background: #000 !important; 
+            color: var(--gold-bright) !important; 
+            border: none;
+        }
+
+        /* 6. BOTTOM NOTES */
         .note { font-size: 12px; color: #999; margin-top: 50px; font-style: italic; }
-        .back-link { display: inline-block; margin-top: 30px; color: #000; text-decoration: none; font-weight: 600; opacity: 0.7; }
+        .back-link { display: inline-block; margin-top: 30px; color: var(--gold); text-decoration: none; font-weight: 600; }
+        .back-link:hover { color: #fff; }
     </style>
 </head>
 <body>
