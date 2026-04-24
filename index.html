@@ -138,23 +138,16 @@
         }
         .service-card:hover { transform: translateY(-5px); }
 
-        /* Dalawang Naghahabulang Gold Lights */
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: -100%; left: -100%;
-            width: 300%; height: 300%;
-            background: conic-gradient(
-                transparent 0deg, transparent 90deg, 
-                var(--gold) 180deg, 
-                transparent 180deg, transparent 270deg, 
-                var(--gold) 360deg
-            );
-            z-index: 0;
-            animation: spin 3s linear infinite;
-            transform-origin: center;
+       /* 8. MODEL RIGHT (PINNED / FIXED) */
+        .babae-overlay {
+            position: fixed; 
+            right: 0; 
+            bottom: 0;
+            height: 95vh; 
+            z-index: 1; /* DITO ANG MAGIC: Binaba natin sa 1 para nasa likod siya ng cards */
+            object-fit: contain;
+            pointer-events: none;
         }
-
         .service-card::after {
             content: '';
             position: absolute;
