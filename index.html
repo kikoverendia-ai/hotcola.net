@@ -19,7 +19,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* 1. BACKGROUND (FIXED HABANG NAG-ISCROLL) */
+        /* 1. BACKGROUND (FIXED) */
         body {
             font-family: 'Inter', sans-serif;
             background-image: url('Background_01.jpg');
@@ -30,29 +30,49 @@
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
+            padding: 40px 5% 100px 5%; /* Padding sa buong page */
         }
 
-        /* 2. LAYOUT - ALLOW SCROLLING */
-        .hero { 
+        /* 2. HEADER BANNER (Pahiga sa pinakataas) */
+        .header-banner {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto 40px auto; /* Centered, may space sa ilalim */
+            background: rgba(0,0,0,0.8);
+            padding: 25px 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             position: relative;
-            min-height: 100vh;
+            z-index: 3;
+        }
+
+        .header-banner h2 { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 30px; margin-bottom: 10px; letter-spacing: 1px; }
+        .arabic-text { font-family: 'Playfair Display', serif; color: var(--gold-text); display: block; font-size: 16px; margin-bottom: 12px; line-height: 1.6; }
+        .header-banner p { color: #ccc; font-size: 14px; line-height: 1.5; margin-bottom: 0; }
+
+        /* 3. MAIN CONTENT (Logo sa kaliwa, Services sa kanan) */
+        .main-content {
             display: flex;
             align-items: flex-start;
-            justify-content: flex-start; 
-            padding: 50px 5% 100px 5%;
-            gap: 40px; 
+            justify-content: flex-start;
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 50px;
+            position: relative;
+            z-index: 3;
         }
 
-        /* 3. LOGO (Naka-sticky para hindi mawala pag nag-scroll) */
+        /* 4. LOGO (Naka-sticky para steady pag nag-scroll) */
         .logo-container { 
-            z-index: 3; 
             flex-shrink: 0; 
             position: sticky;
-            top: 50px; 
+            top: 30px; 
         }
         
         .logo-ring {
-            width: 380px; height: 380px;
+            width: 320px; height: 320px;
             border-radius: 50%;
             background: rgba(0,0,0,0.4);
             box-shadow: 0 0 70px 20px rgba(230, 176, 18, 0.15);
@@ -61,36 +81,26 @@
         }
         .logo-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
 
-        /* 4. CONTENT WRAPPER */
-        .content-wrapper { z-index: 3; max-width: 500px; width: 100%; }
-
-        .intro-card {
-            background: rgba(0,0,0,0.7);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #333;
-            margin-bottom: 40px;
+        /* 5. SERVICES SECTION */
+        .services-section {
+            flex: 1;
+            max-width: 650px;
         }
 
-        .intro-card h2 { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 26px; margin-bottom: 10px; }
-        .arabic-text { font-family: 'Playfair Display', serif; color: var(--gold-text); display: block; font-size: 14px; margin-bottom: 10px; line-height: 1.6; }
-        .intro-card p { color: #ccc; font-size: 13px; line-height: 1.5; margin-bottom: 0; }
-
-        /* 5. BOOKING GRID (Isang Column Pababa) */
         .services-header { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 24px; margin-bottom: 20px; text-align: center; }
         
         .booking-grid { 
             display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 25px; 
+            grid-template-columns: repeat(2, 1fr); /* 2 Columns Layout */
+            gap: 20px; 
         }
 
-        /* 6. DETAILED SERVICE CARDS (BLACK) */
+        /* 6. DETAILED SERVICE CARDS */
         .service-card {
             position: relative;
             background: var(--dark-card); 
-            padding: 25px 20px; 
-            border-radius: 20px; 
+            padding: 20px 15px; 
+            border-radius: 18px; 
             text-decoration: none; 
             color: #fff;
             display: flex;
@@ -99,7 +109,7 @@
             overflow: hidden; 
             transition: 0.3s;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
         .service-card:hover { transform: translateY(-5px); }
 
@@ -110,11 +120,9 @@
             top: -100%; left: -100%;
             width: 300%; height: 300%;
             background: conic-gradient(
-                transparent 0deg, 
-                transparent 90deg, 
+                transparent 0deg, transparent 90deg, 
                 var(--gold) 180deg, 
-                transparent 180deg, 
-                transparent 270deg, 
+                transparent 180deg, transparent 270deg, 
                 var(--gold) 360deg
             );
             z-index: 0;
@@ -127,36 +135,42 @@
             position: absolute;
             inset: 3px;
             background: var(--dark-card);
-            border-radius: 17px;
+            border-radius: 15px;
             z-index: 1;
         }
 
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
-        .card-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+        .card-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%; }
         
-        .service-card i { font-size: 28px; color: var(--gold); margin-bottom: 10px; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 5px; }
-        .service-card .arabic-title { font-size: 16px; color: var(--gold); font-weight: bold; margin-bottom: 10px; }
-        .service-card p { font-size: 12px; color: #ccc; line-height: 1.5; margin-bottom: 20px; }
+        .service-card i { font-size: 24px; color: var(--gold); margin-bottom: 8px; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 3px; }
+        .service-card .arabic-title { font-size: 15px; color: var(--gold); font-weight: bold; margin-bottom: 8px; }
+        .service-card p { font-size: 11px; color: #ccc; line-height: 1.4; margin-bottom: 15px; }
 
         /* Price Button */
         .price-btn { 
             background: #000; 
             color: var(--gold-bright); 
-            padding: 10px 25px; 
+            padding: 8px 18px; 
             border-radius: 50px; 
             font-weight: 700; 
-            font-size: 14px;
+            font-size: 12px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             border: 1px solid #333;
             transition: 0.3s;
+            margin-top: auto;
         }
         .service-card:hover .price-btn { background: #111; border-color: var(--gold); }
 
-        /* 7. PREMIUM CARD (GOLD) */
+        /* 7. PREMIUM CARD (Sakop ang 2 columns) */
+        .premium-card {
+            grid-column: span 2; 
+            padding: 25px 20px;
+        }
+
         .premium-card::after {
             background: linear-gradient(135deg, var(--gold), var(--gold-bright));
         }
@@ -171,18 +185,24 @@
         }
 
         .premium-card .card-content * { color: #000 !important; }
-        .premium-card p { font-weight: 600; color: #222 !important; }
+        .premium-card p { font-weight: 600; color: #222 !important; font-size: 13px; }
+        .premium-card i { font-size: 30px !important; margin-bottom: 10px; }
+        .premium-card h3 { font-size: 22px !important; }
         .premium-card .price-btn { 
             background: #000 !important; 
             color: var(--gold-bright) !important; 
             border: none;
+            font-size: 14px;
+            padding: 10px 25px;
         }
         .premium-card:hover .price-btn { background: #222 !important; }
 
-        /* 8. MODEL RIGHT (FIXED) */
+        /* 8. MODEL RIGHT (PINNED / FIXED) 
+           Kahit mag-scroll ang page, nakapako lang siya dito */
         .babae-overlay {
             position: fixed; 
-            right: 0; bottom: 0;
+            right: 0; 
+            bottom: 0;
             height: 95vh; 
             z-index: 1; 
             object-fit: contain;
@@ -191,18 +211,27 @@
 
         /* MOBILE ADJUSTMENT */
         @media (max-width: 1024px) {
-            .hero { flex-direction: column; align-items: center; text-align: center; padding: 20px; gap: 20px; }
-            .logo-container { position: static; margin-bottom: 20px; }
-            .logo-ring { width: 250px; height: 250px; }
-            .babae-overlay { opacity: 0.15; position: fixed; }
-            .content-wrapper { max-width: 100%; z-index: 3; }
+            body { padding: 20px; }
+            .header-banner { padding: 20px; }
+            .main-content { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
+            .logo-container { position: static; }
+            .babae-overlay { opacity: 0.15; }
+            .services-section { max-width: 100%; }
+            .booking-grid { grid-template-columns: 1fr; }
+            .premium-card { grid-column: span 1; }
             .arabic-text { direction: rtl; }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
+    <div class="header-banner">
+        <h2>Sweet Cola Massage In Riyadh</h2>
+        <span class="arabic-text"> "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية في حي إشبيلية الحيوي. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية تأخذكم بعيداً عن ضغوط الحياة اليومية. يوفر فريقنا الماهر مجموعة واسعة من الخدمات العلاجية المصممة لتجديد العقل والجسد والروح. ادخلوا عالم الطمأنينة واختبروا فن الاسترخاء بلمسة شخصية فريدة. نحن في "سويت كولا مساج" مكرسون لضمان خروجكم من كل زيارة بشعور من الانتعاش والحيوية.</span>
+        <p>Opening in 2026, this spa offers an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
+    </div>
+
+    <div class="main-content">
         
         <div class="logo-container">
             <div class="logo-ring">
@@ -210,14 +239,7 @@
             </div>
         </div>
 
-        <div class="content-wrapper">
-            
-            <div class="intro-card">
-                <h2>Sweet Cola Massage In Riyadh</h2>
-                <span class="arabic-text"> "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية في حي إشبيلية الحيوي. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية تأخذكم بعيداً عن ضغوط الحياة اليومية. يوفر فريقنا الماهر مجموعة واسعة من الخدمات العلاجية المصممة لتجديد العقل والجسد والروح. ادخلوا عالم الطمأنينة واختبروا فن الاسترخاء بلمسة شخصية فريدة. نحن في "سويت كولا مساج" مكرسون لضمان خروجكم من كل زيارة بشعور من الانتعاش والحيوية.</span>
-                <p>Opening in 2026, this spa offers an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
-            </div>
-
+        <div class="services-section">
             <h3 class="services-header">YOU WANT TO BOOK NOW?</h3>
             
             <div class="booking-grid">
@@ -227,7 +249,7 @@
                         <i class="fas fa-hands-holding"></i>
                         <h3>Thai Massage</h3>
                         <span class="arabic-title">مساج تايلاندي</span>
-                        <p>Traditional deep stretch therapy to improve flexibility and blood flow.<br>العلاج التقليدي للتمدد العميق لتحسين المرونة وتدفق الدم.</p>
+                        <p>Traditional deep stretch therapy to improve flexibility.<br>العلاج التقليدي للتمدد العميق لتحسين المرونة.</p>
                         <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
                     </div>
                 </a>
@@ -237,7 +259,7 @@
                         <i class="fas fa-spa"></i>
                         <h3>Swedish Massage</h3>
                         <span class="arabic-title">مساج سويدي</span>
-                        <p>Gentle strokes for stress relief and total body relaxation.<br>ضربات لطيفة لتخفيف التوتر والاسترخاء التام للجسم.</p>
+                        <p>Gentle strokes for stress relief and relaxation.<br>ضربات لطيفة لتخفيف التوتر والاسترخاء.</p>
                         <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
                     </div>
                 </a>
@@ -247,7 +269,7 @@
                         <i class="fas fa-droplet"></i>
                         <h3>Oil Massage</h3>
                         <span class="arabic-title">مساج بالزيت</span>
-                        <p>Rhythmic full body massage using premium essential oils to calm the mind.<br>تدليك إيقاعي كامل للجسم باستخدام زيوت عطرية فاخرة لتهدئة العقل.</p>
+                        <p>Full body massage using premium essential oils.<br>تدليك كامل للجسم باستخدام زيوت عطرية فاخرة.</p>
                         <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
                     </div>
                 </a>
@@ -257,7 +279,7 @@
                         <i class="fas fa-bath"></i>
                         <h3>Moroccan Bath</h3>
                         <span class="arabic-title">حمام مغربي</span>
-                        <p>Traditional skin cleansing to remove toxins and dead skin cells.<br>تنظيف البشرة التقليدي لإزالة السموم وخلايا الجلد الميتة.</p>
+                        <p>Traditional skin cleansing to remove toxins.<br>تنظيف البشرة التقليدي لإزالة السموم.</p>
                         <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
                     </div>
                 </a>
@@ -274,10 +296,9 @@
 
             </div>
         </div>
+    </div>
 
-        <img src="image_16.png" alt="Model Overlay" class="babae-overlay">
+    <img src="image_16.png" alt="Model Overlay" class="babae-overlay">
         
-    </section>
-
 </body>
 </html>
