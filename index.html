@@ -118,31 +118,43 @@
             position: relative; 
             z-index: 2; /* Para laging nasa ibabaw ng ilaw yung picture ng logo mo */
         }/* * LOGO RING ANIMATED EDGE LIGHTS (3 SEGMENTS)
-         * Color: BLACK, Animation: Spinning, Thickness: Medyo Makapal (6px inset)
-         */
-        
-        /* THE ANIMATED BLACK SEGMENTS (::before) */
+         
+        /* 24K PURE GOLD ANIMATED LIGHTS */
         .logo-ring::before {
             content: '';
             position: absolute;
             top: -100%;
             left: -100%;
-            width: 300%; /* Super laki para hindi kapusin sa kanto */
+            width: 300%; 
             height: 300%;
             
-            /* DITO ANG MAGIC: Hahatiin natin sa tatlong segment ang transparent-to-black */
+            /* GINAMIT NATIN ANG #FFD700 PARA SA 24K PURE GOLD COLOR */
             background: conic-gradient(
-                transparent 0deg, 
-                #000 120deg, 
-                transparent 120deg, 
-                #000 240deg, 
-                transparent 240deg, 
-                #000 360deg
+                transparent 0deg, transparent 60deg, 
+                #FFD700 60deg, #FFD700 120deg, 
+                transparent 120deg, transparent 180deg, 
+                #FFD700 180deg, #FFD700 240deg, 
+                transparent 240deg, transparent 300deg, 
+                #FFD700 300deg, #FFD700 360deg
             );
             
             z-index: 0;
-            animation: spin 3s linear infinite; /* Spinning animation applied */
+            animation: spin 3s linear infinite;
             transform-origin: center;
+            /* DAGDAG NA GLOW EFFECT PARA MUKHANG TOTOO */
+            filter: blur(1px) drop-shadow(0 0 10px #FFD700);
+        }
+
+        /* ANG COVER SA LOOB */
+        .logo-ring::after {
+            content: '';
+            position: absolute;
+            inset: 6px; 
+            background: rgba(0,0,0,0.5); 
+            border-radius: 50%;
+            z-index: 1;
+            /* BOX SHADOW PARA MUKHANG NAKA-EMBOSS YUNG GINTO */
+            box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
         /* ANG COVER SA LOOB (PARA LUMITAW ANG BORDER WIDTH) (::after) */
