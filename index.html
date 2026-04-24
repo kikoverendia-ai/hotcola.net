@@ -12,8 +12,10 @@
         :root {
             --gold-text: #cca243;
             --yellow-btn: #e6b012;
-            --dark-card: #151515;
+            --dark-card: #0a0a0a;
             --border-color: #2a2a2a;
+            --gold: #d4a017;
+            --gold-bright: #f2b600;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,24 +29,24 @@
             background-repeat: no-repeat;
             background-color: #000; 
             color: #fff;
-            overflow: hidden;
             height: 100vh;
+            overflow-y: auto; /* Para scrollable pag mahaba ang content */
         }
 
         .hero { 
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center; 
             justify-content: flex-start; 
-            padding-left: 5%; 
+            padding: 50px 5%; 
             gap: 60px; 
         }
 
         /* LOGO LEFT */
         .logo-container { z-index: 3; flex-shrink: 0; }
         .logo-ring {
-            width: 350px; height: 350px;
+            width: 300px; height: 300px;
             border-radius: 50%;
             background: rgba(0,0,0,0.6);
             box-shadow: 0 0 70px 20px rgba(230, 176, 18, 0.2);
@@ -53,42 +55,48 @@
         }
         .logo-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
 
-        /* CONTENT CENTER */
-        .content-wrapper { z-index: 3; max-width: 480px; }
+        /* CONTENT MIDDLE */
+        .content-wrapper { z-index: 3; max-width: 600px; width: 100%; }
 
         .premium-card {
             background: rgba(0,0,0,0.8);
             padding: 25px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        .premium-card h2 { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 24px; margin-bottom: 10px; }
+        .premium-card h2 { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 28px; margin-bottom: 10px; }
         .arabic-text { font-family: 'Playfair Display', serif; color: var(--gold-text); display: block; font-size: 14px; margin-bottom: 10px; line-height: 1.4;}
-        .premium-card p { color: #a0a0a0; font-size: 12px; line-height: 1.4; margin-bottom: 15px; }
+        .premium-card p { color: #a0a0a0; font-size: 13px; line-height: 1.5; margin-bottom: 20px; }
 
         .btn-book {
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 20px; background: var(--yellow-btn); color: #000;
+            padding: 12px 25px; background: var(--yellow-btn); color: #000;
             text-decoration: none; font-weight: 700; border-radius: 30px;
             transition: 0.3s;
         }
 
-        /* ANIMATED SERVICES SECTION */
-        .services-header { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 18px; margin-bottom: 15px; }
-        .services-grid { display: flex; gap: 15px; }
+        /* ANIMATED SERVICES GRID */
+        .services-header { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 20px; margin-bottom: 20px; }
+        .booking-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+        }
 
         .service-card {
             position: relative;
             background: var(--dark-card); 
-            padding: 15px; 
-            border-radius: 12px; 
-            flex: 1; 
-            text-align: center;
-            overflow: hidden;
-            text-decoration: none;
+            padding: 20px; 
+            border-radius: 15px; 
+            text-decoration: none; 
             color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            transition: 0.3s;
         }
 
         /* ANIMATION EFFECT */
@@ -96,8 +104,8 @@
             content: '';
             position: absolute;
             top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: conic-gradient(from 0deg, var(--gold-text), #000, var(--gold-text));
-            border-radius: 12px;
+            background: conic-gradient(from 0deg, var(--gold), #000, var(--gold), #000, var(--gold));
+            border-radius: 15px;
             z-index: 0;
             animation: spin 3s linear infinite;
         }
@@ -106,30 +114,36 @@
             position: absolute;
             inset: 2px;
             background: var(--dark-card);
-            border-radius: 10px;
+            border-radius: 13px;
             z-index: 1;
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
-        .card-inner { position: relative; z-index: 2; }
-        .service-card i { color: var(--yellow-btn); font-size: 20px; margin-bottom: 8px; display: block; }
-        .service-card h3 { font-size: 11px; color: #e0e0e0; }
+        .card-content { position: relative; z-index: 2; text-align: center; }
+        .service-card i { font-size: 24px; color: var(--gold); margin-bottom: 10px; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 5px; }
+        .service-card p { font-size: 11px; color: #888; margin-top: 5px; }
+
+        /* Premium Override */
+        .premium-card-glow::before { background: conic-gradient(from 0deg, var(--gold-bright), #fff, var(--gold-bright), #fff, var(--gold-bright)); }
 
         /* MODEL RIGHT */
         .babae-overlay {
-            position: absolute;
+            position: fixed;
             right: 0; bottom: 0;
             height: 90vh; 
             z-index: 1;
             object-fit: contain;
             pointer-events: none;
+            opacity: 0.8;
         }
 
-        /* MOBILE */
+        /* MOBILE ADJUSTMENT */
         @media (max-width: 1024px) {
-            .hero { flex-direction: column; justify-content: center; text-align: center; padding: 20px; }
-            .content-wrapper { margin-top: 0; }
+            .hero { flex-direction: column; justify-content: center; text-align: center; padding: 40px 20px; }
+            .logo-ring { width: 200px; height: 200px; margin-bottom: 20px; }
             .babae-overlay { opacity: 0.15; }
+            .booking-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -144,38 +158,57 @@
 
         <div class="content-wrapper">
             <div class="premium-card">
-                <h2>Sweet Cola Massage In Riyadh<br>Your Professional Massuer</h2>
-                <span class="arabic-text">اكتشف "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية.</span>
-                <p>Discover Sweet Cola Massage in Riyadh, a new sanctuary for wellness. Opening in 2026, this spa offers an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
+                <h2>Sweet Cola Massage In Riyadh</h2>
+                <span class="arabic-text">اكتشف "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية.</span>
+                <p>Opening in 2026, this spa offers an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
 
                 <a href="https://wa.me/966560958973" class="btn-book" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-hand-pointer"></i> Book Now / احجز الآن
                 </a>
             </div>
 
-            <h3 class="services-header">Our Professional Services</h3>
-            <div class="services-grid">
+            <h3 class="services-header">Our Services</h3>
+            <div class="booking-grid">
                 
-                <div class="service-card">
-                    <div class="card-inner">
-                        <i class="fab fa-pagelines"></i>
-                        <h3>Sweet Cola</h3>
+                <a href="#" class="service-card">
+                    <div class="card-content">
+                        <i class="fas fa-hands-holding"></i>
+                        <h3>Thai</h3>
+                        <p>Deep Stretch</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="service-card">
-                    <div class="card-inner">
-                        <i class="fas fa-hands"></i>
-                        <h3>Hessy Therapy</h3>
+                <a href="#" class="service-card">
+                    <div class="card-content">
+                        <i class="fas fa-spa"></i>
+                        <h3>Swedish</h3>
+                        <p>Relaxation</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="service-card">
-                    <div class="card-inner">
-                        <i class="fas fa-leaf"></i>
-                        <h3>Ellnit Services</h3>
+                <a href="#" class="service-card">
+                    <div class="card-content">
+                        <i class="fas fa-droplet"></i>
+                        <h3>Oil</h3>
+                        <p>Essential</p>
                     </div>
-                </div>
+                </a>
+
+                <a href="#" class="service-card">
+                    <div class="card-content">
+                        <i class="fas fa-bath"></i>
+                        <h3>Moroccan</h3>
+                        <p>Cleansing</p>
+                    </div>
+                </a>
+
+                <a href="#" class="service-card premium-card-glow">
+                    <div class="card-content">
+                        <i class="fas fa-crown" style="color:var(--gold-bright)"></i>
+                        <h3>PREMIUM</h3>
+                        <p>Full Care</p>
+                    </div>
+                </a>
 
             </div>
         </div>
