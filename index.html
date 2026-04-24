@@ -37,12 +37,23 @@
             overflow: hidden; 
         }
         
-        .logo-container { 
-            position: absolute; 
-            left: 5%; 
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 5; 
+        .logo-circle { 
+            width: 500px; 
+            height: 500px; 
+      /* Idagdag ang mga ito para maging responsive: */
+            max-width: 90vw; /* Hindi lalampas sa 90% ng screen width */
+            max-height: 90vw; /* Para manatiling bilog */
+    
+            border-radius: 50%; 
+            border: 10px solid #fff; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3); 
+            overflow: hidden; 
+            background: #000; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+    
         }
         /* Mas pinalaki ang logo: 500px */
         .logo-circle { width: 500px; height: 500px; border-radius: 50%; border: 10px solid #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.3); overflow: hidden; background: #000; position: relative; display: flex; align-items: center; justify-content: center; }
