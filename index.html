@@ -223,34 +223,16 @@
         .premium-card:hover .price-btn { background: #222 !important; }
 
 /* * 8. MODEL BACKDROP EFFECT (PINNED) 
-         * Ginawang subtle backdrop: Bluer, blurred, at parang shadow
-         */
-        .woman-backdrop {
-            position: fixed; /* Hindi pa rin gagalaw pag nag-scroll */
-            top: 0;
-            right: 0;
-            /* Isasagad natin para maging "cover" sa buong screen */
-            width: 100vw; 
-            height: 100vh; 
-            z-index: 1; /* Under all content */
-            pointer-events: none; /* Non-interactable */
+         * Ginawang subtle backdrop: Bluer, blurred, at parang shadown para mas subtle */
+            bottom: 0;
+            height: 95vh; /* Ibabalik sa saktong tangkad lang niya */
+            z-index: 1; 
+            object-fit: contain;
+            pointer-events: none;
             
-            /* Dito ilalagay ang image */
-            background-image: url('image_16.png');
-            background-size: cover; /* "cover" property applied */
-            background-position: center bottom; /* Adjust position */
-            background-repeat: no-repeat;
-            
-            /* DITO NANGYAYARI ANG MAGIC FUSION NG FILTERS: */
-            filter: 
-                sepia(1) /* Create base for hue change */
-                hue-rotate(200deg) /* Shift hues to deep blue */
-                saturate(2.5) /* Intense blue saturation */
-                brightness(0.3) /* Darken for shadow effect */
-                blur(18px); /* Heavily blur the shadow */
-                
-            opacity: 0.6; /* Subtler transparency */
-        }
+            /* DITO YUNG MAGIC BLUR AT BLUE SHADOW EFFECT */
+            filter: sepia(1) hue-rotate(200deg) saturate(2) brightness(0.4) blur(12px);
+            opacity: 0.6;
         }
 
         /* MOBILE ADJUSTMENT */
@@ -344,7 +326,7 @@
         </div>
     </div>
 
-    <img src="image_16.png" alt="Model Overlay" class="babae-overlay">
+ <img src="image_16.png" alt="Model Overlay" class="babae-overlay">
         
 </body>
 </html>
