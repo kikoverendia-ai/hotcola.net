@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* 1. VARIABLES & RESET */
         :root {
             --gold-text: #cca243;
             --yellow-btn: #e6b012;
@@ -17,11 +16,7 @@
             --border-color: #2a2a2a;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -32,63 +27,50 @@
             background-repeat: no-repeat;
             background-color: #000; 
             color: #fff;
-            overflow: hidden; /* Pinilit sa isang page, bawal mag-scroll */
+            overflow: hidden;
             height: 100vh;
         }
 
-        /* 2. MAIN LAYOUT */
         .hero { 
             position: relative;
             height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0 5%;
-            gap: 60px; /* Pinalaki ang space para hindi dikit-dikit */
+            align-items: center; /* Vertical center */
+            justify-content: flex-start; /* Logo sa kaliwa */
+            padding-left: 5%; /* May space sa edge */
+            gap: 80px; /* Space sa pagitan ng logo at box */
         }
 
-        /* 3. LOGO CONTAINER (LEFT) - PINALAKI */
+        /* LOGO LEFT */
         .logo-container {
-            flex: 0.8;
             z-index: 3;
-            display: flex;
-            justify-content: flex-end; /* Iniurong pakaliwa para may space ang box */
+            flex-shrink: 0;
         }
 
         .logo-ring {
-            width: 420px; /* PINALAKI MULA 320px */
-            height: 420px; /* PINALAKI MULA 320px */
+            width: 380px; 
+            height: 380px;
             border-radius: 50%;
-            background: #000;
-            box-shadow: 0 0 70px 20px rgba(230, 176, 18, 0.25);
+            background: rgba(0,0,0,0.6);
+            box-shadow: 0 0 70px 20px rgba(230, 176, 18, 0.2);
             display: flex; 
             align-items: center; 
             justify-content: center;
             padding: 5px;
         }
 
-        .logo-ring img {
-            width: 100%; 
-            height: 100%; 
-            border-radius: 50%; 
-            object-fit: contain;
-        }
+        .logo-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
 
-        /* 4. CONTENT WRAPPER (CENTER) - PINALIIT PARA HINDI TUMAKIP SA MUKHA */
+        /* CONTENT CENTER - Shoulder level position */
         .content-wrapper {
-            flex: 1;
             z-index: 3;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-width: 480px; /* PINALIIT MULA 600px */
-            margin-right: auto; /* Tinulak palayo sa mukha mo sa kanan */
+            max-width: 450px;
+            margin-top: 50px; /* Ibaba ng konti para magpantay sa balikat */
         }
 
-        /* 5. PREMIUM CARD (DARK SOLID) */
         .premium-card {
             background: var(--dark-card);
-            padding: 25px 30px; /* Pinaliit ang padding para bumagay sa maliit na box */
+            padding: 25px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
             margin-bottom: 25px;
@@ -97,127 +79,50 @@
         .premium-card h2 {
             font-family: 'Playfair Display', serif;
             color: var(--gold-text);
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 8px;
-        }
-
-        .arabic-text {
-            font-family: 'Playfair Display', serif;
-            color: var(--gold-text);
-            font-size: 18px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .premium-card p {
-            color: #a0a0a0;
-            font-size: 12px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .btn-book {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 20px;
-            background: var(--yellow-btn);
-            color: #000;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
-
-        .btn-book:hover {
-            transform: scale(1.05);
-            background: #ffc414;
-        }
-
-        /* 6. SERVICES SECTION */
-        .services-header {
-            font-family: 'Playfair Display', serif;
-            color: var(--gold-text);
-            font-size: 20px;
-            margin-bottom: 15px;
-            padding-left: 5px;
-        }
-
-        .services-grid {
-            display: flex;
-            gap: 12px;
-        }
-
-        .service-card {
-            background: #151515;
-            padding: 15px 10px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            flex: 1;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            border-color: var(--gold-text);
-        }
-
-        .service-card i {
-            color: var(--yellow-btn);
-            font-size: 18px;
+            font-size: 26px;
             margin-bottom: 10px;
         }
 
-        .service-card h3 {
-            font-size: 11px;
-            font-weight: 600;
-            color: #e0e0e0;
+        .arabic-text { font-family: 'Playfair Display', serif; color: var(--gold-text); display: block; margin-bottom: 15px; }
+
+        .premium-card p { color: #a0a0a0; font-size: 13px; line-height: 1.5; margin-bottom: 20px; }
+
+        .btn-book {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 25px; background: var(--yellow-btn); color: #000;
+            text-decoration: none; font-weight: 700; border-radius: 30px;
+            transition: 0.3s;
         }
 
-        /* 7. MODEL OVERLAY (RIGHT) */
+        /* SERVICES */
+        .services-header { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 18px; margin-bottom: 15px; }
+
+        .services-grid { display: flex; gap: 15px; }
+
+        .service-card {
+            background: #151515; padding: 15px; border-radius: 8px;
+            border: 1px solid var(--border-color); flex: 1; text-align: center;
+        }
+
+        .service-card i { color: var(--yellow-btn); font-size: 16px; margin-bottom: 8px; display: block; }
+        .service-card h3 { font-size: 11px; color: #e0e0e0; }
+
+        /* MODEL RIGHT */
         .babae-overlay {
             position: absolute;
             right: 0;
             bottom: 0;
-            height: 95vh; /* Siguradong pasok sa screen ang height */
+            height: 90vh; /* Para hindi matakpan ang mukha */
             z-index: 1;
             object-fit: contain;
             pointer-events: none;
         }
 
-        /* 8. RESPONSIVE PARA SA MOBILE */
+        /* MOBILE ADJUSTMENT */
         @media (max-width: 1024px) {
-            body {
-                overflow-y: auto; /* Ibabalik ang scroll sa cellphone para magkasya lahat */
-            }
-            .hero {
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                height: auto;
-                padding: 50px 5%;
-                gap: 30px;
-            }
-            .logo-ring {
-                width: 280px;
-                height: 280px;
-            }
-            .content-wrapper {
-                align-items: center;
-                max-width: 100%;
-                margin: 0;
-            }
-            .premium-card p {
-                margin: 0 auto 20px auto;
-            }
-            .babae-overlay {
-                opacity: 0.2;
-                right: -10%;
-                height: 80vh;
-            }
+            .hero { flex-direction: column; justify-content: center; text-align: center; padding: 20px; }
+            .content-wrapper { margin-top: 0; }
+            .babae-overlay { opacity: 0.15; }
         }
     </style>
 </head>
@@ -231,12 +136,10 @@
         </div>
 
         <div class="content-wrapper">
-            
             <div class="premium-card">
                 <h2>The Premium Package:<br>4-in-1 Luxury Ritual</h2>
                 <span class="arabic-text">سويت كولا مساج</span>
                 <p>Forget the stress of the city for a moment. Four high-end services seamless session of pure indulgence and aura.</p>
-                
                 <a href="https://wa.me/966560958973" class="btn-book" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-hand-pointer"></i> Book Now / احجز الآن
                 </a>
@@ -244,20 +147,10 @@
 
             <h3 class="services-header">Our Professional Services</h3>
             <div class="services-grid">
-                <div class="service-card">
-                    <i class="fab fa-pagelines"></i>
-                    <h3>Sweet Cola</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-hands"></i>
-                    <h3>Hessy Therapy</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Ellnit Services</h3>
-                </div>
+                <div class="service-card"><i class="fab fa-pagelines"></i><h3>Sweet Cola</h3></div>
+                <div class="service-card"><i class="fas fa-hands"></i><h3>Hessy Therapy</h3></div>
+                <div class="service-card"><i class="fas fa-leaf"></i><h3>Ellnit Services</h3></div>
             </div>
-
         </div>
 
         <img src="image_16.png" alt="Model Overlay" class="babae-overlay">
