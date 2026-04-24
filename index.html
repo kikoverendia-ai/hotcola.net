@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Cola Massage | Premium Luxury</title>
+    <title>Sweet Cola Massage In Riyadh</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         /* 1. VARIABLES & RESET */
         :root {
-            --gold: #d4a017;
-            --gold-light: #f2b600;
-            --gold-dark: #b8860b;
-            --dark-bg: #0a0a0a;
-            --card-bg: rgba(30, 30, 30, 0.85);
+            --gold-text: #cca243;
+            --yellow-btn: #e6b012;
+            --dark-card: #1c1c1c;
+            --border-color: #2a2a2a;
         }
 
         * {
@@ -26,213 +25,183 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
+            /* Match the dark, slightly warm background */
+            background: radial-gradient(circle at 20% 50%, #201a05 0%, #050505 60%, #000000 100%);
             color: #fff;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* 2. HERO SECTION & BACKGROUND */
+        /* 2. MAIN LAYOUT */
         .hero { 
             position: relative;
             min-height: 100vh;
-            /* Creates the dark marble/gold gradient background effect */
-            background: radial-gradient(circle at 30% 40%, #3a2c00 0%, #050505 60%, #000000 100%); 
             display: flex;
             align-items: center;
-            padding: 0 5%;
-            overflow: hidden;
+            justify-content: flex-start;
+            padding: 0 8%;
+            gap: 40px;
         }
 
-        /* Adds a subtle gold texture line in the background */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: linear-gradient(45deg, transparent 45%, rgba(212, 160, 23, 0.05) 50%, transparent 55%);
-            background-size: 200% 200%;
-            z-index: 0;
-        }
-
-        /* 3. LOGO CONTAINER (LEFT) */
+        /* 3. LOGO CONTAINER (LEFT) WITH SOFT GLOW */
         .logo-container {
-            flex: 0.8;
+            flex: 0.7;
             z-index: 3;
             display: flex;
             justify-content: center;
         }
 
         .logo-ring {
-            width: 350px; 
-            height: 350px;
+            width: 320px; 
+            height: 320px;
             border-radius: 50%;
             background: #000;
-            /* Creates the metallic gold border and glow */
-            border: 12px solid var(--gold);
-            box-shadow: 0 0 50px rgba(212, 160, 23, 0.5), inset 0 0 20px rgba(212, 160, 23, 0.3);
+            /* Soft yellow glow based on your original picture */
+            box-shadow: 0 0 60px 15px rgba(230, 176, 18, 0.25);
             display: flex; 
             align-items: center; 
             justify-content: center;
-            position: relative;
+            padding: 5px;
         }
 
         .logo-ring img {
-            width: 90%; 
-            height: 90%; 
+            width: 100%; 
+            height: 100%; 
             border-radius: 50%; 
             object-fit: contain;
         }
 
-        /* 4. PREMIUM CONTENT CARD (CENTER) */
+        /* 4. CONTENT WRAPPER (CENTER) */
         .content-wrapper {
-            flex: 1.2;
+            flex: 1.3;
             z-index: 3;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-left: 20px;
+            max-width: 600px;
         }
 
+        /* 5. PREMIUM CARD (DARK SOLID) */
         .premium-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 160, 23, 0.3);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-            max-width: 550px;
-            margin-bottom: 40px;
+            background: var(--dark-card);
+            padding: 35px 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
         }
 
         .premium-card h2 {
             font-family: 'Playfair Display', serif;
-            color: var(--gold);
-            font-size: 28px;
+            color: var(--gold-text);
+            font-size: 26px;
             font-weight: 700;
-            margin-bottom: 5px;
+            line-height: 1.3;
+            margin-bottom: 10px;
         }
 
         .arabic-text {
             font-family: 'Playfair Display', serif;
-            color: var(--gold-light);
-            font-size: 22px;
+            color: var(--gold-text);
+            font-size: 20px;
             margin-bottom: 15px;
             display: block;
         }
 
         .premium-card p {
-            color: #d1d1d1;
-            font-size: 14px;
-            line-height: 1.6;
+            color: #a0a0a0;
+            font-size: 13px;
+            line-height: 1.5;
             margin-bottom: 25px;
-            font-weight: 300;
+            max-width: 90%;
         }
 
         .btn-book {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 30px;
-            background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+            gap: 8px;
+            padding: 10px 25px;
+            background: var(--yellow-btn);
             color: #000;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            border-radius: 50px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 30px;
+            transition: 0.3s;
         }
 
         .btn-book:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 160, 23, 0.4);
+            transform: scale(1.05);
+            background: #ffc414;
         }
 
-        /* 5. SERVICES SECTION (BOTTOM RIGHT INSIDE HERO) */
+        /* 6. SERVICES SECTION */
         .services-header {
             font-family: 'Playfair Display', serif;
-            color: var(--gold);
-            font-size: 24px;
+            color: var(--gold-text);
+            font-size: 22px;
             margin-bottom: 15px;
-            padding-left: 10px;
+            padding-left: 5px;
         }
 
         .services-grid {
             display: flex;
             gap: 15px;
-            max-width: 550px;
         }
 
         .service-card {
-            background: rgba(20, 20, 20, 0.6);
-            backdrop-filter: blur(5px);
+            background: #151515;
             padding: 20px 10px;
-            border-radius: 12px;
-            border: 1px solid rgba(212, 160, 23, 0.2);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
             flex: 1;
             text-align: center;
             transition: 0.3s;
         }
 
         .service-card:hover {
-            border-color: var(--gold);
-            background: rgba(40, 40, 40, 0.8);
+            border-color: var(--gold-text);
         }
 
         .service-card i {
-            color: var(--gold);
-            font-size: 24px;
-            margin-bottom: 10px;
+            color: var(--yellow-btn);
+            font-size: 20px;
+            margin-bottom: 12px;
         }
 
         .service-card h3 {
-            font-size: 13px;
-            font-weight: 400;
-            color: #fff;
-            letter-spacing: 0.5px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #e0e0e0;
         }
 
-        /* 6. MODEL IMAGE OVERLAY (RIGHT) */
+        /* 7. MODEL OVERLAY (RIGHT) */
         .babae-overlay {
             position: absolute;
-            right: -5%;
+            right: 0;
             bottom: 0;
             height: 95%;
             z-index: 1;
             object-fit: cover;
-            /* Fades the left edge of the image into the background */
-            mask-image: linear-gradient(to right, transparent 0%, black 30%);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
-            opacity: 0.85;
             pointer-events: none;
         }
 
-        /* 7. RESPONSIVE DESIGN FOR MOBILE */
-        @media (max-width: 992px) {
+        /* 8. RESPONSIVE */
+        @media (max-width: 1024px) {
             .hero {
                 flex-direction: column;
                 justify-content: center;
-                padding: 100px 5% 50px;
-            }
-            .babae-overlay {
-                opacity: 0.3; /* Make model faint on small screens */
-                right: 0;
-            }
-            .logo-ring {
-                width: 250px; height: 250px;
-                margin-bottom: 40px;
+                text-align: center;
+                padding: 50px 5%;
             }
             .content-wrapper {
-                padding-left: 0;
                 align-items: center;
-                text-align: center;
             }
-            .premium-card {
-                padding: 30px;
+            .premium-card p {
+                margin: 0 auto 25px auto;
             }
-        }
-        
-        @media (max-width: 600px) {
-            .services-grid {
-                flex-direction: column;
+            .babae-overlay {
+                opacity: 0.2;
+                right: -10%;
             }
         }
     </style>
@@ -261,7 +230,7 @@
             <h3 class="services-header">Our Professional Services</h3>
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-spa"></i>
+                    <i class="fab fa-pagelines"></i>
                     <h3>Sweet Cola</h3>
                 </div>
                 <div class="service-card">
@@ -276,7 +245,7 @@
 
         </div>
 
-        <img src="image_16.png" alt="Luxury Spa Model" class="babae-overlay">
+        <img src="image_16.png" alt="Model Overlay" class="babae-overlay">
     </section>
 
 </body>
