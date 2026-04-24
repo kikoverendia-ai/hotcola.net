@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Cola Massage In Riyadh | Riyadh</title>
+    <title>Sweet Cola Massage In Riyadh | Luxury Experience</title>
 
     <meta property="og:title" content="Sweet Cola Spa | Riyadh" />
     <meta property="og:description" content="Sweet Cola Massage: Your Unmatched Escape in Riyadh" />
@@ -16,369 +16,119 @@
 
     <style>
         /* 1. BASIC RESET & FONTS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
+
+        /* ANIMATION: GOLD SHINE */
+        @keyframes goldShine {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #fff;
-            overflow-x: hidden;
-        }
-
-        /* 2. HEADER & BANNER */
-        .main-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .top-banner-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px 0;
-            background-color: #000;
-        }
-
-        .navbar {
-            background: #d4a017;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar h2 {
-            font-family: 'Playfair Display', serif;
-            color: #d4a017; /* GOLDEN TEXT */
-            font-size: 22px;
-        }
+        /* 2. HEADER */
+        .main-header { position: sticky; top: 0; z-index: 1000; background: #000; border-bottom: 2px solid #d4a017; }
+        .navbar { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .navbar h2 { font-family: 'Playfair Display', serif; color: #d4a017; font-size: 24px; letter-spacing: 2px; }
 
         /* 3. HERO SECTION */
-        .hero {
-            background: #f2b600;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 60px 5%;
-            overflow: hidden;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
+        .hero { background: #0a0a0a; min-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 60px 5%; overflow: hidden; gap: 40px; }
 
-        .logo-container {
-            flex: 0.6;
-            display: flex;
-            justify-content: center;
-            z-index: 5;
-        }
-
-        /* UPDATED: GOLDEN LOGO WITH SHINE ANIMATION */
+        /* LOGO CIRCLE (SHINING GOLD) */
         .logo-circle {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            /* 1. SOLID GOLDEN BACKGROUND (replaces border) */
-            background: linear-gradient(90deg, #b8860b, #f2b600, #fff3b0, #f2b600, #b8860b);
-            background-size: 200% auto;
-            /* 2. Padding to make the golden background look like a border */
-            padding: 8px;
-            /* 3. Keep other properties */
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* 4. ATTACH THE ANIMATION */
-            animation: goldShine 3s linear infinite;
-        }
-
-        .logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%; /* Ensure the inner image is round */
-        }
-
-        /* LOTUS ANIMATION - UNCHANGED (98% copy) */
-        .lotus-cover {
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-        }
-
-        .petal {
-            position: absolute;
-            width: 120px;
-            height: 220px;
-            background: linear-gradient(to top, #d4a017, #f2b600);
-            border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
-            transform-origin: bottom center;
-            animation: openLotus 2.5s cubic-bezier(0.45, 0, 0.55, 1) forwards;
-        }
-
-        @keyframes openLotus {
-            0% { transform: rotate(var(--angle)) scale(1); opacity: 1; }
-            100% { transform: rotate(var(--angle)) scale(2) translateY(-300px); opacity: 0; }
-        }
-
-        .petal:nth-child(1) { --angle: 0deg; }
-        .petal:nth-child(2) { --angle: 45deg; }
-        .petal:nth-child(3) { --angle: 90deg; }
-        .petal:nth-child(4) { --angle: 135deg; }
-        .petal:nth-child(5) { --angle: 180deg; }
-        .petal:nth-child(6) { --angle: 225deg; }
-        .petal:nth-child(7) { --angle: 270deg; }
-        .petal:nth-child(8) { --angle: 315deg; }
-
-        /* KEYFRAMES FOR GOLD SHINE */
-        @keyframes goldShine {
-            to { background-position: 200% center; }
-        }
-
-        /* MIDNIGHT GOLD WELCOME CARD (UNCHANGED 98% copy) */
-        .text-box {
-            flex: 1;
-            min-width: 320px;
-            max-width: 450px;
-            background: #1a1a1a;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-            color: #fff;
-            z-index: 10;
-        }
-
-        .text-box::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
+            width: 350px; height: 350px; border-radius: 50%;
             background: linear-gradient(90deg, #b8860b, #f2b600, #fff3b0, #f2b600, #b8860b);
             background-size: 200% auto;
             animation: goldShine 3s linear infinite;
-            box-shadow: 0 -5px 20px rgba(212, 160, 23, 0.8);
+            padding: 8px; /* Border effect */
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 30px rgba(212, 160, 23, 0.3);
         }
+        .logo-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; background: #000; }
 
-        .text-box h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            color: #f2b600; /* GOLDEN TEXT */
-            margin-bottom: 5px;
-        }
+        /* WELCOME CARD */
+        .text-box { max-width: 500px; z-index: 2; }
+        .text-box h1 { font-family: 'Playfair Display', serif; font-size: 45px; color: #f2b600; margin-bottom: 10px; }
+        .arabic-h1 { font-size: 24px; color: #d4a017; margin-bottom: 20px; }
+        .text-box p { font-size: 16px; color: #ddd; line-height: 1.6; margin-bottom: 20px; }
+        .book-btn { background: #d4a017; color: #000; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+        .book-btn:hover { background: #fff; transform: scale(1.05); }
 
-        .arabic-h1 {
-            font-size: 22px;
-            color: #d4a017 !important; /* GOLDEN TEXT */
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
+        /* BABA OVERLAY */
+        .babae-overlay { height: 80vh; z-index: 1; filter: drop-shadow(0 0 10px rgba(212,160,23,0.3)); }
 
-        .text-box p {
-            font-size: 16px;
-            color: #ffffff;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-
-        .arabic-text {
-            direction: rtl;
-            color: #d4a017; /* GOLDEN TEXT */
-            border-top: 1px solid #333;
-            padding-top: 15px;
-            display: block;
-        }
-
-        .book-btn {
-            background: #f2b600; /* GOLDEN BUTTON */
-            color: #000;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-
-        .book-btn:hover {
-            background: #fff;
-            transform: scale(1.05);
-        }
-
-        /* THE CHOSEN NEW PREMIUM MODEL */
-        .babae-overlay {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            height: 90%;
-            z-index: 3;
-            filter: drop-shadow(-10px 0 15px rgba(0,0,0,0.2));
-            pointer-events: none;
-            object-fit: contain; /* Prevent stretching */
-        }
-
-        /* 4. SERVICES SECTION (UNCHANGED 98% copy) */
-        .services-section {
-            padding: 80px 5%;
-            background: #fff;
-            text-align: center;
-        }
-
-        .services-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
+        /* 4. SERVICES SECTION */
+        .services-section { padding: 80px 5%; text-align: center; background: #000; }
+        .services-section h2 { color: #d4a017; font-family: 'Playfair Display', serif; margin-bottom: 40px; font-size: 35px; }
+        .services-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
 
         .service-card {
-            background: #fff;
-            padding: 30px 15px;
-            border-radius: 20px;
-            text-decoration: none;
-            color: inherit;
-            flex: 1;
-            min-width: 250px;
-            max-width: 280px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
+            background: #111; padding: 30px; border-radius: 20px; text-decoration: none; color: #fff;
+            width: 260px; border: 1px solid #333; position: relative; overflow: hidden; transition: 0.3s;
         }
-
-        .service-card h3 {
-            color: #d4a017; /* GOLDEN TEXT */
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
+        .service-card:hover { border-color: #d4a017; }
         .service-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
             background: linear-gradient(90deg, #d4a017, #f2b600, #d4a017);
-            background-size: 200% auto;
-            animation: goldShine 4s linear infinite;
+            background-size: 200% auto; animation: goldShine 4s linear infinite;
         }
+        .service-card i { font-size: 40px; color: #f2b600; margin-bottom: 20px; }
+        .black-badge { background: #d4a017; color: #000; padding: 5px 15px; border-radius: 20px; font-weight: 700; margin-top: 15px; display: inline-block; }
 
-        .service-card i {
-            font-size: 30px;
-            color: #d4a017; /* GOLDEN TEXT */
-            margin-bottom: 15px;
-            display: block;
+        /* 5. PREMIUM PACKAGE */
+        .premium-box {
+            display: block; background: #111; color: #fff; padding: 50px; border-radius: 30px;
+            border: 2px solid #d4a017; max-width: 900px; margin: 50px auto; text-decoration: none; position: relative;
         }
+        .premium-box::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #b8860b, #f2b600, #b8860b); background-size: 200% auto; animation: goldShine 3s linear infinite; }
+        .gold-badge { background: #f2b600; color: #000; padding: 15px 30px; border-radius: 30px; font-weight: 800; display: inline-block; margin-top: 20px; }
 
-        .black-badge {
-            background: #000;
-            color: #f2b600; /* GOLDEN TEXT */
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 12px;
-            margin-top: 10px;
-            display: inline-block;
-        }
-
-        /* ... Other Sections (5. Premium Package, 6. Map, etc.) ... */
-        /* ... Keep existing CSS for everything else ... */
-
+        /* MOBILE */
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; }
-            .text-box { margin-left: 0; max-width: 95%; }
-            .babae-overlay { opacity: 0.2; height: 50%; bottom: -50px;}
-            .services-grid { gap: 10px; }
-            .premium-box { padding: 30px 15px;}
-            .map-social-wrapper { flex-direction: column; }
-            .icon-strip { flex-direction: row; padding: 20px; }
+            .babae-overlay { display: none; }
+            .logo-circle { width: 250px; height: 250px; }
         }
     </style>
 </head>
 <body>
 
     <header class="main-header">
-        <div class="navbar">
-            <h2>Sweet Cola Spa</h2>
-        </div>
+        <div class="navbar"><h2>Sweet Cola Spa</h2></div>
     </header>
 
-    <a href="https://wa.me/966560958973" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
     <section class="hero">
-        <div class="logo-container">
-            <div class="logo-circle">
-                <img src="Logo.png"> <div class="lotus-cover">
-                    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
-                    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
-                </div>
-            </div>
+        <div class="logo-circle">
+            <img src="Logo.png">
         </div>
+
         <div class="text-box">
             <h1>Sweet Cola Massage</h1>
             <h2 class="arabic-h1">سويت كولا مساج</h2>
             <p>Forget the stress of the city for a moment. Step into our world. Experience a unique relaxation journey.</p>
-            <span class="arabic-text">انسَ ضغوط المدينة للحظة. ادخل إلى عالمنا واختبر رحلة استرخاء فريدة لن تجدها in Riyadh.</span>
             <a href="https://wa.me/966560958973" class="book-btn">👉 Book Now / احجز الآن</a>
         </div>
+        
         <img src="image_16.png" class="babae-overlay">
     </section>
 
-    </section>
-
-    <section id="services" class="services-section">
+    <section class="services-section">
         <h2>Our Professional Services</h2>
         <div class="services-grid">
-            <a href="details.html" class="service-card"><i class="fas fa-hands-holding"></i><h3>Thai Massage</h3><div class="black-badge">150 SR</div></a>
-            <a href="details.html" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><div class="black-badge">150 SR</div></a>
-            <a href="details.html" class="service-card"><i class="fas fa-droplet"></i><h3>Oil Massage</h3><div class="black-badge">150 SR</div></a>
-            <a href="details.html" class="service-card"><i class="fas fa-bath"></i><h3>Moroccan Bath</h3><div class="black-badge">150 SR</div></a>
+            <a href="#" class="service-card"><i class="fas fa-hands-holding"></i><h3>Thai Massage</h3><div class="black-badge">150 SR</div></a>
+            <a href="#" class="service-card"><i class="fas fa-spa"></i><h3>Swedish Massage</h3><div class="black-badge">150 SR</div></a>
+            <a href="#" class="service-card"><i class="fas fa-droplet"></i><h3>Oil Massage</h3><div class="black-badge">150 SR</div></a>
+            <a href="#" class="service-card"><i class="fas fa-bath"></i><h3>Moroccan Bath</h3><div class="black-badge">150 SR</div></a>
         </div>
     </section>
 
-    <section class="premium-section">
-        <a href="details.html" class="premium-box">
+    <section style="background:#000; padding-bottom: 50px;">
+        <a href="#" class="premium-box">
             <h3>The Premium Package: 4-in-1 Luxury Ritual</h3>
             <p style="margin-top:15px;">Four high-end services into one seamless session of pure indulgence.</p>
             <div class="gold-badge">450 SR / FULL CARE</div>
         </a>
     </section>
-
-    <div class="map-social-wrapper">
-        <div class="map-area">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8507261352424!2d46.7866557!3d24.8005645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2effd68e538899%3A0xa53e0f232c0028b0!2sSweet%20Cola%20Massage%20In%20Riyadh!5e0!3m2!1sen!2ssa!4v1776890858106!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="icon-strip">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="tel:+966560958973"><i class="fas fa-phone-alt"></i></a>
-        </div>
-    </div>
-
-    <footer style="padding: 20px; text-align: center; background: #111; color: #d4a017;">
-        <p>© 2026 Sweet Cola Spa Riyadh.</p>
-    </footer>
 
 </body>
 </html>
