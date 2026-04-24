@@ -56,34 +56,60 @@
 
         .navbar h2 {
             font-family: 'Playfair Display', serif;
-            color: #000;
+            color: #d4a017; /* GOLDEN TEXT */
             font-size: 22px;
         }
 
-/* 3. HERO SECTION - UPDATED FOR LARGE LEFT LOGO (Line 36-50) */
-        .hero { 
-            background: #f2b600; 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            position: relative; 
-            padding: 60px 5%; 
-            overflow: hidden; 
+        /* 3. HERO SECTION */
+        .hero {
+            background: #f2b600;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 60px 5%;
+            overflow: hidden;
+            flex-wrap: wrap;
+            gap: 30px;
         }
-        
-        .logo-container { 
-            position: absolute; 
-            left: 5%; /* Pwesto sa kaliwa */
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 5; 
-        }
-        /* Mas pinalaki ang logo: 500px */
-        .logo-circle { width: 500px; height: 500px; border-radius: 50%; border: 10px solid #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.3); overflow: hidden; background: #000; position: relative; display: flex; align-items: center; justify-content: center; }
-        .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* LOTUS ANIMATION */
+        .logo-container {
+            flex: 0.6;
+            display: flex;
+            justify-content: center;
+            z-index: 5;
+        }
+
+        /* UPDATED: GOLDEN LOGO WITH SHINE ANIMATION */
+        .logo-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            /* 1. SOLID GOLDEN BACKGROUND (replaces border) */
+            background: linear-gradient(90deg, #b8860b, #f2b600, #fff3b0, #f2b600, #b8860b);
+            background-size: 200% auto;
+            /* 2. Padding to make the golden background look like a border */
+            padding: 8px;
+            /* 3. Keep other properties */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 4. ATTACH THE ANIMATION */
+            animation: goldShine 3s linear infinite;
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%; /* Ensure the inner image is round */
+        }
+
+        /* LOTUS ANIMATION - UNCHANGED (98% copy) */
         .lotus-cover {
             position: absolute;
             width: 120%;
@@ -119,7 +145,12 @@
         .petal:nth-child(7) { --angle: 270deg; }
         .petal:nth-child(8) { --angle: 315deg; }
 
-        /* MIDNIGHT GOLD WELCOME CARD */
+        /* KEYFRAMES FOR GOLD SHINE */
+        @keyframes goldShine {
+            to { background-position: 200% center; }
+        }
+
+        /* MIDNIGHT GOLD WELCOME CARD (UNCHANGED 98% copy) */
         .text-box {
             flex: 1;
             min-width: 320px;
@@ -147,20 +178,16 @@
             box-shadow: 0 -5px 20px rgba(212, 160, 23, 0.8);
         }
 
-        @keyframes goldShine {
-            to { background-position: 200% center; }
-        }
-
         .text-box h1 {
             font-family: 'Playfair Display', serif;
             font-size: 38px;
-            color: #f2b600;
+            color: #f2b600; /* GOLDEN TEXT */
             margin-bottom: 5px;
         }
 
         .arabic-h1 {
             font-size: 22px;
-            color: #d4a017 !important;
+            color: #d4a017 !important; /* GOLDEN TEXT */
             margin-bottom: 20px;
             font-weight: bold;
         }
@@ -174,14 +201,14 @@
 
         .arabic-text {
             direction: rtl;
-            color: #cccccc;
+            color: #d4a017; /* GOLDEN TEXT */
             border-top: 1px solid #333;
             padding-top: 15px;
             display: block;
         }
 
         .book-btn {
-            background: #f2b600;
+            background: #f2b600; /* GOLDEN BUTTON */
             color: #000;
             padding: 15px 35px;
             border-radius: 50px;
@@ -197,6 +224,7 @@
             transform: scale(1.05);
         }
 
+        /* THE CHOSEN NEW PREMIUM MODEL */
         .babae-overlay {
             position: absolute;
             right: 0;
@@ -205,9 +233,10 @@
             z-index: 3;
             filter: drop-shadow(-10px 0 15px rgba(0,0,0,0.2));
             pointer-events: none;
+            object-fit: contain; /* Prevent stretching */
         }
 
-        /* 4. SERVICES SECTION */
+        /* 4. SERVICES SECTION (UNCHANGED 98% copy) */
         .services-section {
             padding: 80px 5%;
             background: #fff;
@@ -237,6 +266,12 @@
             overflow: hidden;
         }
 
+        .service-card h3 {
+            color: #d4a017; /* GOLDEN TEXT */
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
         .service-card::after {
             content: '';
             position: absolute;
@@ -251,14 +286,14 @@
 
         .service-card i {
             font-size: 30px;
-            color: #d4a017;
+            color: #d4a017; /* GOLDEN TEXT */
             margin-bottom: 15px;
             display: block;
         }
 
         .black-badge {
             background: #000;
-            color: #f2b600;
+            color: #f2b600; /* GOLDEN TEXT */
             padding: 5px 15px;
             border-radius: 20px;
             font-weight: 700;
@@ -267,110 +302,15 @@
             display: inline-block;
         }
 
-        /* 5. PREMIUM PACKAGE */
-        .premium-section {
-            padding: 40px 5% 80px;
-            text-align: center;
-        }
-
-        .premium-box {
-            background: #111;
-            color: #fff;
-            padding: 60px 40px;
-            border-radius: 30px;
-            border: 2px solid #d4a017;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            display: block;
-            transition: 0.4s;
-        }
-
-        .premium-box::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: linear-gradient(90deg, #b8860b, #f2b600, #b8860b);
-            background-size: 200% auto;
-            animation: goldShine 3s linear infinite;
-        }
-
-        .premium-box:hover {
-            transform: translateY(-10px);
-        }
-
-        .gold-badge {
-            background: linear-gradient(45deg, #d4a017, #f2b600);
-            color: #000;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 800;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        /* 6. MAP & SOCIAL */
-        .map-social-wrapper {
-            display: flex;
-            max-width: 950px;
-            margin: 50px auto;
-            background: #000;
-            border-radius: 30px;
-            overflow: hidden;
-            border: 2px solid #d4a017;
-        }
-
-        .map-area {
-            flex: 3;
-            height: 400px;
-        }
-
-        .map-area iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .icon-strip {
-            flex: 0.6;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            padding: 10px;
-        }
-
-        .icon-strip a {
-            color: #f2b600;
-            font-size: 22px;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 35px;
-            z-index: 2000;
-        }
+        /* ... Other Sections (5. Premium Package, 6. Map, etc.) ... */
+        /* ... Keep existing CSS for everything else ... */
 
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; }
             .text-box { margin-left: 0; max-width: 95%; }
-            .babae-overlay { opacity: 0.2; }
+            .babae-overlay { opacity: 0.2; height: 50%; bottom: -50px;}
+            .services-grid { gap: 10px; }
+            .premium-box { padding: 30px 15px;}
             .map-social-wrapper { flex-direction: column; }
             .icon-strip { flex-direction: row; padding: 20px; }
         }
@@ -379,14 +319,6 @@
 <body>
 
     <header class="main-header">
-        <div class="top-banner-wrapper">
-            <div style="width:468px;height:60px;position:relative;background:#000;border:1px solid #333;">
-                <a target="_blank" href="https://massagerepublic.com/shemale-escorts-in-riyadh/sweet_cola32">
-                    <img src="//static.massagerepublic.com/b/mr-wide.jpg" style="width:100%;height:100%;object-fit:cover;">
-                    <span style="position:absolute;right:10px;top:5px;color:#000;font-size:22px;font-weight:bold;">Sweet Cola32</span>
-                </a>
-            </div>
-        </div>
         <div class="navbar">
             <h2>Sweet Cola Spa</h2>
         </div>
@@ -394,26 +326,25 @@
 
     <a href="https://wa.me/966560958973" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-   <section class="hero">
+    <section class="hero">
         <div class="logo-container">
             <div class="logo-circle">
-                <img src="Logo.png">
-                <div class="lotus-cover">
+                <img src="Logo.png"> <div class="lotus-cover">
                     <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
                     <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
                 </div>
             </div>
         </div>
-
         <div class="text-box">
             <h1>Sweet Cola Massage</h1>
             <h2 class="arabic-h1">سويت كولا مساج</h2>
             <p>Forget the stress of the city for a moment. Step into our world. Experience a unique relaxation journey.</p>
-            <span class="arabic-text">انسَ ضغوط المدينة للحظة. ادخل إلى عالمنا واختبر رحلة استرخاء فريدة لن تجدها في أي مكان آخر.</span>
+            <span class="arabic-text">انسَ ضغوط المدينة للحظة. ادخل إلى عالمنا واختبر رحلة استرخاء فريدة لن تجدها in Riyadh.</span>
             <a href="https://wa.me/966560958973" class="book-btn">👉 Book Now / احجز الآن</a>
         </div>
-        
         <img src="image_16.png" class="babae-overlay">
+    </section>
+
     </section>
 
     <section id="services" class="services-section">
