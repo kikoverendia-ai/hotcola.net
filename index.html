@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Cola Massage In Riyadh</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -30,52 +30,77 @@
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
-            padding: 40px 5% 100px 5%; /* Padding sa buong page */
+            /* Nagdagdag ng 180px top padding para hindi matakpan ng fixed header ang content */
+            padding: 180px 5% 100px 5%; 
         }
 
-        /* 2. HEADER BANNER (Pahiga sa pinakataas) */
+        /* 2. HEADER BANNER (ISINAGAD SA DULO, NAKAPAKO SA TAAS) */
         .header-banner {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto 40px auto; /* Centered, may space sa ilalim */
-            background: rgba(0,0,0,0.8);
-            padding: 25px 40px;
-            border-radius: 15px;
-            border: 1px solid #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; /* Sagad mula kaliwa hanggang kanan */
+            background: rgba(8, 8, 8, 0.95); /* Dark solid background */
+            border-bottom: 2px solid var(--gold);
+            padding: 20px 5%;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            position: relative;
-            z-index: 3;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            z-index: 100; /* Naka-angat sa lahat */
         }
 
-        .header-banner h2 { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 30px; margin-bottom: 10px; letter-spacing: 1px; }
-        .arabic-text { font-family: 'Playfair Display', serif; color: var(--gold-text); display: block; font-size: 16px; margin-bottom: 12px; line-height: 1.6; }
-        .header-banner p { color: #ccc; font-size: 14px; line-height: 1.5; margin-bottom: 0; }
+        /* HIGHLIGHTED CENTER TITLE */
+        .header-banner h2 { 
+            font-family: 'Playfair Display', serif; 
+            color: var(--gold-bright); 
+            font-size: 32px; 
+            font-weight: 900;
+            margin-bottom: 8px; 
+            letter-spacing: 1px; 
+            text-shadow: 0 0 15px rgba(242, 182, 0, 0.4); /* Glow effect */
+        }
+        
+        /* 1-LINE ARABIC TEXT */
+        .arabic-text { 
+            font-family: 'Playfair Display', serif; 
+            color: var(--gold-text); 
+            font-size: 13px; 
+            margin-bottom: 5px; 
+            /* Codes para mapilit sa isang linya */
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header-banner p { color: #ccc; font-size: 13px; line-height: 1.5; margin-bottom: 0; }
 
         /* 3. MAIN CONTENT (Logo sa kaliwa, Services sa kanan) */
         .main-content {
             display: flex;
-            align-items: flex-start;
+            align-items: center; /* Gitnang-gitna ang logo at services */
             justify-content: flex-start;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            gap: 50px;
+            gap: 60px; /* Space between logo and services */
             position: relative;
             z-index: 3;
         }
 
-        /* 4. LOGO (Naka-sticky para steady pag nag-scroll) */
+        /* 4. LOGO (PINALAKI PARA BALANSE SA SERVICES) */
         .logo-container { 
             flex-shrink: 0; 
             position: sticky;
-            top: 30px; 
+            top: 180px; 
         }
         
         .logo-ring {
-            width: 320px; height: 320px;
+            width: 420px; /* PINALAKI PARA PUMANTAY SA SERVICES BLOCK */
+            height: 420px; 
             border-radius: 50%;
             background: rgba(0,0,0,0.4);
-            box-shadow: 0 0 70px 20px rgba(230, 176, 18, 0.15);
+            box-shadow: 0 0 70px 20px rgba(230, 176, 18, 0.2);
             display: flex; align-items: center; justify-content: center;
             padding: 10px;
         }
@@ -87,11 +112,11 @@
             max-width: 650px;
         }
 
-        .services-header { font-family: 'Playfair Display', serif; color: var(--gold-text); font-size: 24px; margin-bottom: 20px; text-align: center; }
+        .services-header { font-family: 'Playfair Display', serif; color: var(--gold-bright); font-size: 24px; margin-bottom: 20px; text-align: center; letter-spacing: 1px;}
         
         .booking-grid { 
             display: grid; 
-            grid-template-columns: repeat(2, 1fr); /* 2 Columns Layout */
+            grid-template-columns: repeat(2, 1fr); 
             gap: 20px; 
         }
 
@@ -165,7 +190,7 @@
         }
         .service-card:hover .price-btn { background: #111; border-color: var(--gold); }
 
-        /* 7. PREMIUM CARD (Sakop ang 2 columns) */
+        /* 7. PREMIUM CARD */
         .premium-card {
             grid-column: span 2; 
             padding: 25px 20px;
@@ -197,29 +222,30 @@
         }
         .premium-card:hover .price-btn { background: #222 !important; }
 
-        /* 8. MODEL RIGHT (PINNED / FIXED) 
-           Kahit mag-scroll ang page, nakapako lang siya dito */
+        /* 8. MODEL RIGHT (PINNED / FIXED) */
         .babae-overlay {
             position: fixed; 
             right: 0; 
             bottom: 0;
             height: 95vh; 
-            z-index: 1; 
+            z-index: 99; /* Pinilit na nasa ibabaw ng content pero nasa ilalim ng header */
             object-fit: contain;
             pointer-events: none;
         }
 
         /* MOBILE ADJUSTMENT */
         @media (max-width: 1024px) {
-            body { padding: 20px; }
-            .header-banner { padding: 20px; }
+            body { padding: 180px 20px 50px 20px; }
+            .header-banner { padding: 15px 5%; }
+            .header-banner h2 { font-size: 24px; }
+            .arabic-text { width: 100%; font-size: 11px; }
             .main-content { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
             .logo-container { position: static; }
+            .logo-ring { width: 280px; height: 280px; }
             .babae-overlay { opacity: 0.15; }
             .services-section { max-width: 100%; }
             .booking-grid { grid-template-columns: 1fr; }
             .premium-card { grid-column: span 1; }
-            .arabic-text { direction: rtl; }
         }
     </style>
 </head>
@@ -227,7 +253,7 @@
 
     <div class="header-banner">
         <h2>Sweet Cola Massage In Riyadh</h2>
-        <span class="arabic-text"> "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية في حي إشبيلية الحيوي. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية تأخذكم بعيداً عن ضغوط الحياة اليومية. يوفر فريقنا الماهر مجموعة واسعة من الخدمات العلاجية المصممة لتجديد العقل والجسد والروح. ادخلوا عالم الطمأنينة واختبروا فن الاسترخاء بلمسة شخصية فريدة. نحن في "سويت كولا مساج" مكرسون لضمان خروجكم من كل زيارة بشعور من الانتعاش والحيوية.</span>
+        <div class="arabic-text"> "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية في حي إشبيلية الحيوي. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية تأخذكم بعيداً عن ضغوط الحياة اليومية. يوفر فريقنا الماهر مجموعة واسعة من الخدمات العلاجية المصممة لتجديد العقل والجسد والروح. ادخلوا عالم الطمأنينة واختبروا فن الاسترخاء بلمسة شخصية فريدة. نحن في "سويت كولا مساج" مكرسون لضمان خروجكم من كل زيارة بشعور من الانتعاش والحيوية.</div>
         <p>Opening in 2026, this spa offers an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
     </div>
 
