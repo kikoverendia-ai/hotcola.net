@@ -222,19 +222,15 @@
         }
         .premium-card:hover .price-btn { background: #222 !important; }
 
-        /* 8. MODEL BACKDROP EFFECT (PINNED) */
+        /* 8. MODEL RIGHT (PINNED / FIXED) */
         .babae-overlay {
             position: fixed; 
-            right: -5%;
+            right: 0; 
             bottom: 0;
-            height: 95vh;
-            z-index: 1; 
+            height: 95vh; 
+            z-index: 99; /* Pinilit na nasa ibabaw ng content pero nasa ilalim ng header */
             object-fit: contain;
             pointer-events: none;
-            
-            /* DITO YUNG MAGIC BLUR AT BLUE SHADOW EFFECT */
-            filter: sepia(1) hue-rotate(200deg) saturate(2) brightness(0.4) blur(12px);
-            opacity: 0.6;
         }
         @media (max-width: 1024px) {
             body { padding: 180px 20px 50px 20px; }
