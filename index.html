@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Cola Massage In Riyadh</title>
-    
+
     <link rel="icon" type="image/png" href="Logo_02.png">
-    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </head>
-   
+    
     <style>
         :root {
             --gold-text: #cca243;
@@ -18,11 +16,11 @@
             --dark-card: #0a0a0a;
             --gold: #d4a017;
             --gold-bright: #f2b600;
+            --pure-gold: #FFD700;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* 1. BACKGROUND (FIXED) */
         body {
             font-family: 'Inter', sans-serif;
             background-image: url('Background_01.jpg');
@@ -33,368 +31,175 @@
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
-            /* Nagdagdag ng 180px top padding para hindi matakpan ng fixed header ang content */
-            padding: 180px 5% 100px 5%; 
+            padding: 200px 5% 100px 5%; 
         }
 
-        /* 2. HEADER BANNER (ISINAGAD SA DULO, NAKAPAKO SA TAAS) */
+        /* 1. FIXED HEADER BANNER */
         .header-banner {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%; /* Sagad mula kaliwa hanggang kanan */
-            background: rgba(8, 8, 8, 0.95); /* Dark solid background */
+            top: 0; left: 0; width: 100%;
+            background: rgba(8, 8, 8, 0.95);
             border-bottom: 2px solid var(--gold);
             padding: 20px 5%;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            z-index: 100; /* Naka-angat sa lahat */
+            z-index: 100;
         }
 
-        /* HIGHLIGHTED CENTER TITLE */
         .header-banner h2 { 
             font-family: 'Playfair Display', serif; 
             color: var(--gold-bright); 
             font-size: 32px; 
             font-weight: 900;
             margin-bottom: 8px; 
-            letter-spacing: 1px; 
-            text-shadow: 0 0 15px rgba(242, 182, 0, 0.4); /* Glow effect */
-        }
-        
-        /* 1-LINE ARABIC TEXT */
-        .arabic-text { 
-            font-family: 'Playfair Display', serif; 
-            color: var(--gold-text); 
-            font-size: 13px; 
-            margin-bottom: 5px; 
-            /* Codes para mapilit sa isang linya */
-            white-space: nowrap; 
-            overflow: hidden; 
-            text-overflow: ellipsis; 
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
+            text-shadow: 0 0 15px rgba(242, 182, 0, 0.4);
         }
 
-        .header-banner p { color: #ccc; font-size: 13px; line-height: 1.5; margin-bottom: 0; }
+        .arabic-text-header { 
+            font-size: 13px; color: var(--gold-text);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+            width: 85%; margin: 0 auto 5px auto;
+        }
 
-        /* 3. MAIN CONTENT (Logo sa kaliwa, Services sa kanan) */
+        /* 2. MAIN CONTENT LAYOUT */
         .main-content {
             display: flex;
-            align-items: center; /* Gitnang-gitna ang logo at services */
-            justify-content: flex-start;
-            max-width: 1200px;
+            align-items: flex-start;
+            justify-content: center;
+            max-width: 1300px;
             margin: 0 auto;
-            gap: 60px; /* Space between logo and services */
+            gap: 50px;
             position: relative;
             z-index: 3;
         }
 
-        /* 4. LOGO (PINALAKI PARA BALANSE SA SERVICES) */
-        .logo-container { 
-            flex-shrink: 0; 
-            position: sticky;
-            top: 180px; 
-        }
-       .logo-ring {
-            width: 420px; 
-            height: 420px; 
+        /* 3. ANIMATED LOGO RING (FIXED SIZE) */
+        .logo-container { flex-shrink: 0; position: sticky; top: 200px; }
+        .logo-ring {
+            width: 420px; height: 420px;
             border-radius: 50%;
-            background: rgba(0,0,0,0.4);
-            box-shadow: 0 0 70px 20px rgba(230, 176, 18, 0.2);
+            position: relative;
+            overflow: hidden;
             display: flex; align-items: center; justify-content: center;
-            padding: 10px;
-            
-            /* ITO LANG ANG DINAGDAG NATIN: */
-            position: relative; /* Para hindi lumabas yung umiikot na ilaw */
-            overflow: hidden; /* Para maputol yung sobra sa bilog */
+            box-shadow: 0 0 50px rgba(230, 176, 18, 0.3);
         }
 
-        .logo-ring img { 
-            width: 100%; 
-            height: 100%; 
-            border-radius: 50%; 
-            object-fit: contain; 
-            
-            /* ITO LANG ANG DINAGDAG NATIN: */
-            position: relative; 
-            z-index: 2; /* Para laging nasa ibabaw ng ilaw yung picture ng logo mo */
-        }/* * LOGO RING ANIMATED EDGE LIGHTS (3 SEGMENTS)
-         
-        /* 24K PURE GOLD ANIMATED LIGHTS */
         .logo-ring::before {
             content: '';
             position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%; 
-            height: 300%;
-            
-            /* GINAMIT NATIN ANG #FFD700 PARA SA 24K PURE GOLD COLOR */
-            background: conic-gradient(
-                transparent 0deg, transparent 60deg, 
-                #FFD700 60deg, #FFD700 120deg, 
-                transparent 120deg, transparent 180deg, 
-                #FFD700 180deg, #FFD700 240deg, 
-                transparent 240deg, transparent 300deg, 
-                #FFD700 300deg, #FFD700 360deg
-            );
-            
-            z-index: 0;
+            width: 150%; height: 150%;
+            background: conic-gradient(transparent, var(--pure-gold), transparent 30%);
             animation: spin 3s linear infinite;
-            transform-origin: center;
-            /* DAGDAG NA GLOW EFFECT PARA MUKHANG TOTOO */
-            filter: blur(1px) drop-shadow(0 0 10px #FFD700);
         }
 
-        /* ANG COVER SA LOOB */
         .logo-ring::after {
             content: '';
             position: absolute;
-            inset: 6px; 
-            background: rgba(0,0,0,0.5); 
-            border-radius: 50%;
-            z-index: 1;
-            /* BOX SHADOW PARA MUKHANG NAKA-EMBOSS YUNG GINTO */
-            box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.3);
-        }
-
-        /* ANG COVER SA LOOB (PARA LUMITAW ANG BORDER WIDTH) (::after) */
-        .logo-ring::after {
-            content: '';
-            position: absolute;
-            inset: 6px; /* KAPAL NG BORDER LIGHTS: Medyo Makapal (6px) */
-            background: rgba(0,0,0,0.8); /* Dark semi-transparent inside cover */
+            inset: 8px;
+            background: #000;
             border-radius: 50%;
             z-index: 1;
         }
 
-        /* * Ginagamit na natin ang existing na 'spin' keyframes, pero ilalagay ko dito 
-         * para sigurado ka na meron: */
-        @keyframes spin { 
-            100% { transform: rotate(360deg); } 
-            
-        }
-        .logo-ring img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; }
-
-        /* 5. SERVICES SECTION */
-        .services-section {
-            flex: 1;
-            max-width: 650px;
+        .logo-ring img {
+            width: 90%; height: 90%;
+            border-radius: 50%;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
         }
 
-        .services-header { font-family: 'Playfair Display', serif; color: var(--gold-bright); font-size: 24px; margin-bottom: 20px; text-align: center; letter-spacing: 1px;}
-        
+        /* 4. SERVICES GRID */
+        .services-section { flex: 1; max-width: 700px; }
+        .services-header { 
+            font-family: 'Playfair Display', serif; 
+            color: var(--gold-bright); 
+            font-size: 26px; 
+            margin-bottom: 30px; 
+            text-align: center;
+        }
+
         .booking-grid { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
             gap: 20px; 
         }
 
-        /* 6. DETAILED SERVICE CARDS */
         .service-card {
             position: relative;
             background: var(--dark-card); 
-            padding: 20px 15px; 
-            border-radius: 18px; 
+            padding: 25px 15px; 
+            border-radius: 20px; 
             text-decoration: none; 
             color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow: hidden; 
-            transition: 0.3s;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            display: flex; flex-direction: column; align-items: center;
+            overflow: hidden; transition: 0.3s; text-align: center;
         }
-        .service-card:hover { transform: translateY(-5px); }
 
-        /* Dalawang Naghahabulang Gold Lights */
         .service-card::before {
-            content: '';
-            position: absolute;
-            top: -100%; left: -100%;
-            width: 300%; height: 300%;
-            background: conic-gradient(
-                transparent 0deg, transparent 90deg, 
-                var(--gold) 180deg, 
-                transparent 180deg, transparent 270deg, 
-                var(--gold) 360deg
-            );
-            z-index: 0;
-            animation: spin 3s linear infinite;
-            transform-origin: center;
+            content: ''; position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent, var(--gold), transparent 30%);
+            animation: spin 4s linear infinite;
         }
 
         .service-card::after {
+            content: ''; position: absolute;
+            inset: 3px; background: var(--dark-card);
+            border-radius: 17px; z-index: 1;
+        }
+
+        .card-content { position: relative; z-index: 2; width: 100%; }
+        .service-card i { font-size: 28px; color: var(--gold); margin-bottom: 10px; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 19px; margin-bottom: 5px; }
+        .service-card .arabic-title { font-size: 15px; color: var(--gold); font-weight: bold; display: block; margin-bottom: 10px; }
+        .service-card p { font-size: 12px; color: #bbb; margin-bottom: 15px; line-height: 1.4; }
+
+        .price-btn { 
+            background: #000; color: var(--gold-bright); 
+            padding: 10px 20px; border-radius: 50px; 
+            font-weight: 700; font-size: 13px;
+            border: 1px solid #333; transition: 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card:hover .price-btn { border-color: var(--gold); background: #111; }
+
+        .premium-card { grid-column: span 2; padding: 35px; }
+        .premium-card::before { background: conic-gradient(transparent, #fff, transparent 30%); }
+        .premium-card::after { background: var(--gold); }
+        .premium-card .card-content * { color: #000 !important; }
+        .premium-card .price-btn { background: #000 !important; color: #fff !important; }
+
+        /* 5. LOCATION MAP SECTION */
+        .map-section {
+            max-width: 1200px;
+            margin: 60px auto 0 auto;
+            padding: 0 5%;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+        }
+        .map-header {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-bright);
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            background: #111;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            border: 2px solid #333;
+        }
+        .map-container::before {
             content: '';
             position: absolute;
-            inset: 3px;
-            background: var(--dark-card);
-            border-radius: 15px;
-            z-index: 1;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent, var(--gold), transparent 30%);
+            animation: spin 6s linear infinite;
+            z-index: 0;
         }
-
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        .card-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%; }
-        
-        .service-card i { font-size: 24px; color: var(--gold); margin-bottom: 8px; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 3px; }
-        .service-card .arabic-title { font-size: 15px; color: var(--gold); font-weight: bold; margin-bottom: 8px; }
-        .service-card p { font-size: 11px; color: #ccc; line-height: 1.4; margin-bottom: 15px; }
-
-        /* Price Button */
-        .price-btn { 
-            background: #000; 
-            color: var(--gold-bright); 
-            padding: 8px 18px; 
-            border-radius: 50px; 
-            font-weight: 700; 
-            font-size: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            border: 1px solid #333;
-            transition: 0.3s;
-            margin-top: auto;
-        }
-        .service-card:hover .price-btn { background: #111; border-color: var(--gold); }
-
-        /* 7. PREMIUM CARD */
-        .premium-card {
-            grid-column: span 2; 
-            padding: 25px 20px;
-        }
-
-        .premium-card::after {
-            background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-        }
-        
-        .premium-card::before {
-            background: conic-gradient(
-                transparent 0deg, transparent 90deg, 
-                #000 180deg, 
-                transparent 180deg, transparent 270deg, 
-                #fff 360deg
-            );
-        }
-
-        .premium-card .card-content * { color: #000 !important; }
-        .premium-card p { font-weight: 600; color: #222 !important; font-size: 13px; }
-        .premium-card i { font-size: 30px !important; margin-bottom: 10px; }
-        .premium-card h3 { font-size: 22px !important; }
-        .premium-card .price-btn { 
-            background: #000 !important; 
-            color: var(--gold-bright) !important; 
-            border: none;
-            font-size: 14px;
-            padding: 10px 25px;
-        }
-        .premium-card:hover .price-btn { background: #222 !important; }
-
-       /* 8. MODEL BACKDROP EFFECT (PINNED) */
-        .babae-overlay {
-            position: fixed; 
-            right: -5%;
-            bottom: 0;
-            height: 95vh;
-            z-index: 1; 
-            object-fit: contain;
-            pointer-events: none;
-        }
-        @media (max-width: 1024px) {
-            body { padding: 180px 20px 50px 20px; }
-            .header-banner { padding: 15px 5%; }
-            .header-banner h2 { font-size: 24px; }
-            .arabic-text { width: 100%; font-size: 11px; }
-            .main-content { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
-            .logo-container { position: static; }
-            .logo-ring { width: 280px; height: 280px; }
-            .babae-overlay { opacity: 0.15; }
-            .services-section { max-width: 100%; }
-            .booking-grid { grid-template-columns: 1fr; }
-            .premium-card { grid-column: span 1; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header-banner">
-        <h2>Sweet Cola Massage In Riyadh</h2>
-        <div class="arabic-text"> "سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية في حي إشبيلية الحيوي. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية تأخذكم بعيداً عن ضغوط الحياة اليومية. يوفر فريقنا الماهر مجموعة واسعة من الخدمات العلاجية المصممة لتجديد العقل والجسد والروح. ادخلوا عالم الطمأنينة واختبروا فن الاسترخاء بلمسة شخصية فريدة. نحن في "سويت كولا مساج" مكرسون لضمان خروجكم من كل زيارة بشعور من الانتعاش والحيوية.</div>
-        <p>Opening in 2026, this spa offers an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
-    </div>
-
-    <div class="main-content">
-        
-        <div class="logo-container">
-            <div class="logo-ring">
-                <img src="Logo.png" alt="Sweet Cola Massage Logo">
-            </div>
-        </div>
-
-        <div class="services-section">
-            <h3 class="services-header">YOU WANT TO BOOK NOW?</h3>
-            
-            <div class="booking-grid">
-                
-                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Thai%20Massage%20150%2040mins" target="_blank" rel="noopener noreferrer" class="service-card">
-                    <div class="card-content">
-                        <i class="fas fa-hands-holding"></i>
-                        <h3>Thai Massage</h3>
-                        <span class="arabic-title">مساج تايلاندي</span>
-                        <p>Traditional deep stretch therapy to improve flexibility.<br>العلاج التقليدي للتمدد العميق لتحسين المرونة.</p>
-                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Swedish%20Massage%20150%2040mins" target="_blank" rel="noopener noreferrer" class="service-card">
-                    <div class="card-content">
-                        <i class="fas fa-spa"></i>
-                        <h3>Swedish Massage</h3>
-                        <span class="arabic-title">مساج سويدي</span>
-                        <p>Gentle strokes for stress relief and relaxation.<br>ضربات لطيفة لتخفيف التوتر والاسترخاء.</p>
-                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Oil%20Massage%20150%2040mins" target="_blank" rel="noopener noreferrer" class="service-card">
-                    <div class="card-content">
-                        <i class="fas fa-droplet"></i>
-                        <h3>Oil Massage</h3>
-                        <span class="arabic-title">مساج بالزيت</span>
-                        <p>Full body massage using premium essential oils.<br>تدليك كامل للجسم باستخدام زيوت عطرية فاخرة.</p>
-                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Moroccan%20Bath%20150%2040mins" target="_blank" rel="noopener noreferrer" class="service-card">
-                    <div class="card-content">
-                        <i class="fas fa-bath"></i>
-                        <h3>Moroccan Bath</h3>
-                        <span class="arabic-title">حمام مغربي</span>
-                        <p>Traditional skin cleansing to remove toxins.<br>تنظيف البشرة التقليدي لإزالة السموم.</p>
-                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
-                    </div>
-                </a>
-
-                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20the%20PREMIUM%20PACKAGE%20450SR" target="_blank" rel="noopener noreferrer" class="service-card premium-card">
-                    <div class="card-content">
-                        <i class="fas fa-crown"></i>
-                        <h3>PREMIUM PACKAGE</h3>
-                        <span class="arabic-title">باقة بريميوم</span>
-                        <p>2h 30m of Luxury: Moroccan Bath, Hot Stone, Mani & Pedi.<br>2 ساعة و30 دقيقة من الفخامة: حمام مغربي، حجر ساخن، منيكير وبديكير.</p>
-                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 450 SR / FULL CARE</div>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </div>
-
-<img src="image_16.png" alt="Model Overlay" class="babae-overlay">
-        
-</body>
-</html>
