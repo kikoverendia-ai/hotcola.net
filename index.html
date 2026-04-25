@@ -203,3 +203,124 @@
             animation: spin 6s linear infinite;
             z-index: 0;
         }
+        .map-container::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            background: #000;
+            border-radius: 21px;
+            z-index: 1;
+        }
+        .map-container iframe {
+            position: relative;
+            z-index: 2;
+            border-radius: 20px;
+        }
+
+        /* 6. BACKDROP MODEL */
+        .babae-overlay {
+            position: fixed; right: -5%; bottom: 0; height: 95vh;
+            z-index: 1; pointer-events: none; opacity: 0.8;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        @media (max-width: 1024px) {
+            body { padding-top: 220px; }
+            .main-content { flex-direction: column; align-items: center; }
+            .logo-container { position: static; }
+            .logo-ring { width: 300px; height: 300px; }
+            .booking-grid { grid-template-columns: 1fr; }
+            .premium-card { grid-column: span 1; }
+            .babae-overlay { opacity: 0.2; }
+            .map-container { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h2>Sweet Cola Massage In Riyadh</h2>
+        <div class="arabic-text-header">"سويت كولا مساج" في الرياض، ملاذكم الجديد للعافية في حي إشبيلية الحيوي. يفتتح المركز أبوابه في عام 2026، ليقدم تجربة استرخاء استثنائية تأخذكم بعيداً عن ضغوط الحياة اليومية.</div>
+        <p>Opening in 2026, an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
+    </div>
+
+    <div class="main-content">
+        <div class="logo-container">
+            <div class="logo-ring">
+                <img src="Logo.png" alt="Sweet Cola Logo">
+            </div>
+        </div>
+
+        <div class="services-section">
+            <h3 class="services-header">YOU WANT TO BOOK NOW?</h3>
+            <div class="booking-grid">
+
+                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Thai%20Massage" target="_blank" class="service-card">
+                    <div class="card-content">
+                        <i class="fas fa-hands-holding"></i>
+                        <h3>Thai Massage</h3>
+                        <span class="arabic-title">مساج تايلاندي</span>
+                        <p>Traditional deep stretch therapy to improve flexibility.</p>
+                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Swedish%20Massage" target="_blank" class="service-card">
+                    <div class="card-content">
+                        <i class="fas fa-spa"></i>
+                        <h3>Swedish Massage</h3>
+                        <span class="arabic-title">مساج سويدي</span>
+                        <p>Gentle strokes for stress relief and relaxation.</p>
+                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Oil%20Massage" target="_blank" class="service-card">
+                    <div class="card-content">
+                        <i class="fas fa-droplet"></i>
+                        <h3>Oil Massage</h3>
+                        <span class="arabic-title">مساج بالزيت</span>
+                        <p>Full body massage using premium essential oils.</p>
+                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Moroccan%20Bath" target="_blank" class="service-card">
+                    <div class="card-content">
+                        <i class="fas fa-bath"></i>
+                        <h3>Moroccan Bath</h3>
+                        <span class="arabic-title">حمام مغربي</span>
+                        <p>Traditional skin cleansing to remove toxins.</p>
+                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 150 SR / 40 MINS</div>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20the%20PREMIUM%20PACKAGE" target="_blank" class="service-card premium-card">
+                    <div class="card-content">
+                        <i class="fas fa-crown"></i>
+                        <h3>PREMIUM PACKAGE</h3>
+                        <span class="arabic-title">باقة بريميوم</span>
+                        <p>2h 30m of Luxury: Moroccan Bath, Hot Stone, Mani & Pedi.</p>
+                        <div class="price-btn"><i class="fab fa-whatsapp"></i> 450 SR / FULL CARE</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="map-section">
+        <h2 class="map-header">OUR LOCATION / موقعنا</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.585717646638!2d46.8048!3d24.8118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ4JzQyLjUiTiA0NsKwNDgnMTcuMyJF!5e0!3m2!1sen!2ssa!4v1714000000000!5m2!1sen!2ssa" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <img src="image_16.png" alt="Model" class="babae-overlay">
+
+</body>
+</html>
