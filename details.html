@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F812D65FTX">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F812D65FTX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F812D65FTX');
+    </script>
 
-  gtag('config', 'G-F812D65FTX');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Menu | Sweet Cola Spa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Logo_02.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <style>
         :root {
             --gold: #d4a017;
             --gold-bright: #f2b600;
+            --dark-card: #0a0a0a;
+            --pure-gold: #FFD700;
+            --yellow-btn: #e6b012;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        /* 1. BACKGROUND NA PAREHO SA PAGE 1 */
+
         body { 
             font-family: 'Inter', sans-serif; 
             background-image: url('Background_01.jpg');
@@ -37,72 +38,124 @@
             padding: 40px 5%; 
             text-align: center; 
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* 2. HEADER TEXTS (Ginawang pambagay sa dark background) */
-        .header-title { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 5px; color: #fff; }
-        .promo-text { color: var(--gold); font-weight: 700; font-size: 18px; margin-bottom: 40px; display: block; }
+        .header-title { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 5px; color: var(--gold-bright); text-shadow: 0 0 15px rgba(242, 182, 0, 0.4); }
+        .promo-text { color: #fff; font-weight: 700; font-size: 18px; margin-bottom: 40px; display: block; }
 
-        /* 3. GRID */
-        .booking-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        /* 1. AUTOMATIC PROMOTION SLIDER (Same as Page 1) */
+        .promotion-slider {
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            overflow: hidden;
+            position: relative;
+            z-index: 5;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--gold);
+            border-radius: 25px;
+            padding: 30px 0;
+        }
 
-        /* 4. BLACK CARDS WITH ANIMATED GOLD BORDER */
+        .slider-track {
+            display: flex;
+            width: calc(220px * 14 + 20px * 14); 
+            gap: 20px;
+            animation: slideRight 25s linear infinite;
+        }
+
+        .slide-item {
+            flex-shrink: 0;
+            position: relative;
+            width: 220px;
+            height: 300px;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Lightning Edge Effect */
+        .slide-item::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(transparent, var(--gold-bright), transparent 30%, transparent 50%, var(--pure-gold), transparent 80%);
+            animation: spin 4s linear infinite;
+            z-index: 1;
+        }
+
+        .slide-item::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: var(--dark-card);
+            border-radius: 17px;
+            z-index: 2;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-content img { width: 100%; height: 75%; object-fit: cover; }
+
+        .slide-content .shop-now-btn {
+            width: 100%; height: 25%;
+            background: var(--yellow-btn);
+            color: #000; font-weight: 900;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; text-decoration: none;
+        }
+
+        /* 2. BOOKING GRID */
+        .booking-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+
         .service-card { 
             position: relative;
             padding: 30px; 
             border-radius: 25px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
             text-decoration: none; 
             color: #fff; 
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow: hidden; /* Tinatago ang sobra ng ilaw */
+            overflow: hidden;
             transition: 0.3s;
         }
 
-        .service-card:hover { transform: translateY(-5px); }
-
-        /* THE 2 CHASING GOLD LIGHTS */
         .service-card::before {
             content: '';
             position: absolute;
             top: -100%; left: -100%;
             width: 300%; height: 300%;
-            background: conic-gradient(
-                transparent 0deg, 
-                transparent 90deg, 
-                var(--gold-bright) 180deg, 
-                transparent 180deg, 
-                transparent 270deg, 
-                var(--gold-bright) 360deg
-            );
+            background: conic-gradient(transparent 0deg, transparent 90deg, var(--gold-bright) 180deg, transparent 180deg, transparent 270deg, var(--gold-bright) 360deg);
             z-index: 0;
             animation: spin 3s linear infinite;
         }
 
-        /* ANG BLACK BACKGROUND SA LOOB NG CARD */
         .service-card::after {
             content: '';
             position: absolute;
-            inset: 3px; /* Kapal ng animated border */
-            background: #0a0a0a; /* Black background */
+            inset: 3px;
+            background: #0a0a0a;
             border-radius: 22px;
             z-index: 1;
         }
 
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        /* BRING ALL TEXT/CONTENT TO FRONT (OVER THE BACKGROUND) */
         .service-card > * { position: relative; z-index: 2; }
-
-        /* CARD TEXT STYLING */
         .service-card i { font-size: 30px; color: var(--gold); margin-bottom: 15px; }
         .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 5px; }
         .service-card .arabic-title { font-size: 20px; color: var(--gold); font-weight: bold; margin-bottom: 15px; }
         .service-card p { font-size: 14px; color: #ccc; line-height: 1.5; margin-bottom: 20px; }
-        
-        /* BLACK PRICE BUTTON */
+
         .price-btn { 
             background: #000; 
             color: var(--gold-bright); 
@@ -110,45 +163,24 @@
             border-radius: 50px; 
             font-weight: 700; 
             font-size: 16px;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             border: 1px solid #333;
         }
 
-        /* 5. PREMIUM CARD OVERRIDES (GOLD BACKGROUND) */
-        .premium-card::after {
-            background: linear-gradient(135deg, var(--gold), var(--gold-bright)); /* Gold na loob! */
-        }
-        
-        /* Premium Card Light Animation (Ginawa kong White at Black para lilitaw sa Gold) */
-        .premium-card::before {
-            background: conic-gradient(
-                transparent 0deg, 
-                transparent 90deg, 
-                #000 180deg, 
-                transparent 180deg, 
-                transparent 270deg, 
-                #fff 360deg
-            );
-        }
-
-        /* Black text sa loob ng Premium Gold Card */
+        /* PREMIUM CARD OVERRIDES */
+        .premium-card::after { background: var(--gold); }
+        .premium-card::before { background: conic-gradient(transparent 0deg, #000 180deg, #fff 360deg); }
         .premium-card > * { color: #000 !important; }
-        .premium-card i { color: #000 !important; }
-        .premium-card .arabic-title { color: #000 !important; }
-        .premium-card p { color: #222 !important; font-weight: 600; }
-        
-        /* Premium Price Button (Binaligtad) */
-        .premium-card .price-btn { 
-            background: #000 !important; 
-            color: var(--gold-bright) !important; 
-            border: none;
+        .premium-card p { color: #000 !important; font-weight: 600; }
+        .premium-card .price-btn { background: #000 !important; color: var(--gold-bright) !important; border: none; }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes slideRight { 
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-220px * 7 - 20px * 7)); }
         }
 
-        /* 6. BOTTOM NOTES */
         .note { font-size: 12px; color: #999; margin-top: 50px; font-style: italic; }
-        .back-link { display: inline-block; margin-top: 30px; color: var(--gold); text-decoration: none; font-weight: 600; }
-        .back-link:hover { color: #fff; }
+        .back-link { display: inline-block; margin-top: 30px; color: var(--gold); text-decoration: none; font-weight: 600; font-size: 18px; }
     </style>
 </head>
 <body>
@@ -156,52 +188,69 @@
     <h1 class="header-title">YOU WANT TO BOOK NOW?</h1>
     <span class="promo-text">DISCOUNT JUST TODAY! السعر المخفض اليوم فقط</span>
 
+    <section class="promotion-slider">
+        <div class="slider-track">
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_1.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_2.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_3.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_4.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_5.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_6.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_7.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_1.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_2.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_3.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_4.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_5.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_6.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_7.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">BOOK NOW</a></div></div>
+        </div>
+    </section>
+
     <div class="booking-grid">
-        
-        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Thai%20Massage%20150%2040mins" class="service-card">
+        <a href="https://wa.me/966560958973?text=Hi! I want to book Thai Massage" class="service-card">
             <i class="fas fa-hands-holding"></i>
             <h3>Thai Massage</h3>
             <span class="arabic-title">مساج تايلاندي</span>
-            <p>Traditional deep stretch therapy to improve flexibility and blood flow.<br>العلاج التقليدي للتمدد العميق لتحسين المرونة وتدفق الدم.</p>
+            <p>Traditional deep stretch therapy.<br>العلاج التقليدي للتمدد العميق.</p>
             <div class="price-btn">150 SR / 40 MINS</div>
         </a>
 
-        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Swedish%20Massage%20150%2040mins" class="service-card">
+        <a href="https://wa.me/966560958973?text=Hi! I want to book Swedish Massage" class="service-card">
             <i class="fas fa-spa"></i>
             <h3>Swedish Massage</h3>
             <span class="arabic-title">مساج سويدي</span>
-            <p>Gentle strokes for stress relief and total body relaxation.<br>ضربات لطيفة لتخفيف التوتر والاسترخاء التام للجسم.</p>
+            <p>Gentle strokes for relaxation.<br>ضربات لطيفة للاسترخاء.</p>
             <div class="price-btn">150 SR / 40 MINS</div>
         </a>
 
-        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Oil%20Massage%20150%2040mins" class="service-card">
+        <a href="https://wa.me/966560958973?text=Hi! I want to book Oil Massage" class="service-card">
             <i class="fas fa-droplet"></i>
             <h3>Oil Massage</h3>
             <span class="arabic-title">مساج بالزيت</span>
-            <p>Rhythmic full body massage using premium essential oils to calm the mind.<br>تدليك إيقاعي كامل للجسم باستخدام زيوت عطرية فاخرة لتهدئة العقل.</p>
+            <p>Full body calming massage.<br>تدليك مهدئ للجسم بالكامل.</p>
             <div class="price-btn">150 SR / 40 MINS</div>
         </a>
 
-        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20Moroccan%20Bath%20150%2040mins" class="service-card">
+        <a href="https://wa.me/966560958973?text=Hi! I want to book Moroccan Bath" class="service-card">
             <i class="fas fa-bath"></i>
             <h3>Moroccan Bath</h3>
             <span class="arabic-title">حمام مغربي</span>
-            <p>Traditional skin cleansing to remove toxins and dead skin cells.<br>تنظيف البشرة التقليدي لإزالة السموم وخلايا الجلد الميتة.</p>
+            <p>Traditional skin cleansing.<br>تنظيف البشرة التقليدي.</p>
             <div class="price-btn">150 SR / 40 MINS</div>
         </a>
 
-        <a href="https://wa.me/966560958973?text=I%20want%20to%20book%20the%20PREMIUM%20PACKAGE%20450SR" class="service-card premium-card">
+        <a href="https://wa.me/966560958973?text=Hi! I want to book the PREMIUM PACKAGE" class="service-card premium-card">
             <i class="fas fa-crown"></i>
             <h3>PREMIUM PACKAGE</h3>
             <span class="arabic-title">باقة بريميوم</span>
-            <p>2h 30m of Luxury: Moroccan Bath, Hot Stone, Mani & Pedi.<br>2 ساعة و30 دقيقة من الفخامة: حمام مغربي، حجر ساخن، منيكير وبديكير.</p>
+            <p>2h 30m of Luxury: Bath, Stone, Mani & Pedi.<br>2 ساعة و30 دقيقة من الفخامة.</p>
             <div class="price-btn">450 SR / FULL CARE</div>
         </a>
-
     </div>
 
-    <p class="note">* Discount will apply. Terms and conditions apply.</p>
-    <a href="index.html" class="back-link">← Back to Home</a>
+    <p class="note">* Discount will apply for early bookings. Terms apply.</p>
+    <a href="index.html" class="back-link">← Back to Home / العودة للرئيسية</a>
 
 </body>
 </html>
