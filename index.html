@@ -57,7 +57,7 @@
 
         .header-banner p { font-size: 13px; color: #ccc; }
 
-        /* 2. PROMOTION SLIDER (NOW FIRST) */
+        /* 2. PROMOTION SLIDER WITH LIGHTNING EDGE */
         .promotion-slider {
             max-width: 1300px;
             margin: 20px auto 60px auto;
@@ -67,30 +67,76 @@
             background: rgba(0,0,0,0.4);
             border-top: 1px solid var(--gold);
             border-bottom: 1px solid var(--gold);
-            padding: 30px 0;
+            padding: 40px 0;
         }
 
         .slider-track {
             display: flex;
-            width: calc(250px * 14); 
+            width: calc(250px * 14 + 20px * 14); 
             gap: 20px;
             animation: slideRight 25s linear infinite;
         }
 
         .slide-item {
-            flex-shrink: 0; width: 250px; height: 320px;
-            background: #000; border-radius: 15px; border: 1px solid #333;
-            overflow: hidden; display: flex; flex-direction: column; transition: 0.3s;
+            flex-shrink: 0;
+            position: relative;
+            width: 250px;
+            height: 340px;
+            background: var(--dark-card);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
         }
 
-        .slide-item img { width: 100%; height: 75%; object-fit: cover; }
+        /* Lightning Edge Effect */
+        .slide-item::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(transparent, var(--gold-bright), transparent 30%, transparent 50%, var(--pure-gold), transparent 80%);
+            animation: spin 4s linear infinite;
+            z-index: 0;
+        }
 
-        .slide-item .shop-now-btn {
-            width: 100%; height: 25%;
+        .slide-item::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            background: var(--dark-card);
+            border-radius: 16px;
+            z-index: 1;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-content img {
+            width: 100%;
+            height: 78%;
+            object-fit: cover;
+        }
+
+        .slide-content .shop-now-btn {
+            width: 100%;
+            height: 22%;
             background: var(--yellow-btn);
-            color: #000; font-weight: 900;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 14px; text-decoration: none;
+            color: #000;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            text-decoration: none;
+            letter-spacing: 1px;
         }
 
         /* 3. MAIN CONTENT (LOGO & BOOKING) */
@@ -160,13 +206,12 @@
             font-weight: 700; font-size: 13px; border: 1px solid #333;
         }
 
-        /* PREMIUM PACKAGE BUTTON FIX */
+        /* PREMIUM PACKAGE FIX */
         .premium-card { grid-column: span 2; padding: 35px; }
         .premium-card::before { background: conic-gradient(transparent, #fff, transparent 30%); }
         .premium-card::after { background: var(--gold); }
         .premium-card .card-content * { color: #000 !important; }
         
-        /* ITO ANG FIX: Ginawang Black Background na may Gold Text */
         .premium-card .price-btn { 
             background: #000 !important; 
             color: var(--gold-bright) !important; 
@@ -215,20 +260,20 @@
 
     <section class="promotion-slider">
         <div class="slider-track">
-            <div class="slide-item"><img src="Promotion_1.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_2.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_3.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_4.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_5.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_6.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_7.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_1.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_2.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_3.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_4.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_5.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_6.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
-            <div class="slide-item"><img src="Promotion_7.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_1.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_2.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_3.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_4.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_5.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_6.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_7.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_1.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_2.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_3.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_4.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_5.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_6.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
+            <div class="slide-item"><div class="slide-content"><img src="Promotion_7.jpg"><a href="https://wa.me/966560958973" class="shop-now-btn">SHOP NOW</a></div></div>
         </div>
     </section>
 
