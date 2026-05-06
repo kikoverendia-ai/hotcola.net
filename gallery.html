@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Gallery | Sweet Cola Spa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --gold: #d4a017; --black: #0a0a0a; }
+        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+        
+        /* HEADER */
+        .header { padding: 40px 20px; text-align: center; background: rgba(0,0,0,0.8); }
+        h1 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 32px; }
+
+        /* GALLERY GRID */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            filter: blur(15px); /* BLURRED BY DEFAULT */
+            pointer-events: none;
+            transition: 0.5s;
+        }
+        .gallery-item { width: 100%; border-radius: 10px; border: 1px solid #333; }
+
+        /* ACCESS OVERLAY */
+        #lock-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 100;
+        }
+        .lock-box {
+            background: var(--black);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid var(--gold);
+            text-align: center;
+            max-width: 350px;
+            box-shadow: 0 0 30px rgba(212, 160, 23, 0.3);
+        }
+        .lock-box i { font-size: 50px; color: var(--gold); margin-bottom: 20px; }
+        .lock-box input {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #222;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+        }
+        .btn-unlock {
+            background: var(--gold);
+            color: #000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        .whatsapp-link {
+            display: block;
+            margin-top: 20px;
+            color: #25d366;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* SHOW GALLERY CLASS */
+        .unlocked .gallery-container { filter: blur(0); pointer-events: auto; }
+        .unlocked #lock-overlay { display: none; }
+    </style>
+</head>
+<body id="main-body">
+
+    <div class="header">
+        <h1>VIP GALLERY</h1>
+        <p>Sweet Cola Spa Exclusive Selection</p>
+    </div>
+
+    <div id="lock-overlay">
+        <div class="lock-box">
+            <i class="fas fa-lock"></i>
+            <h2>Private Access</h2>
+            <p>Please enter the access code to view our gallery.</p>
+            <input type="text" id="accessCode" placeholder="Enter Code Here">
+            <button class="btn-unlock" onclick="checkCode()">UNLOCK NOW</button>
+            <a href="https://wa.me/966560958973?text=Hi! I want the Access Code for the Gallery." class="whatsapp-link">
+                <i class="fab fa-whatsapp"></i> Get Code via WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <img src="Gallery_1.jpg" class="gallery-item">
+        <img src="Gallery_2.jpg" class="gallery-item">
+        <img src="Gallery_3.jpg" class="gallery-item">
+        <img src="Gallery_4.jpg" class="gallery-item">
+        <img src="Gallery_5.jpg" class="gallery-item">
+        <img src="Gallery_6.jpg" class="gallery-item">
+    </div>
+
+    <script>
+        function checkCode() {
+            const codeInput = document.getElementById('accessCode').value;
+            // DITO MO I-SET ANG PASSWORD MO (HALIMBAWA: COLA2024)
+            const correctCode = "COLA2024"; 
+
+            if(codeInput === correctCode) {
+                document.getElementById('main-body').classList.add('unlocked');
+                alert("Access Granted! Welcome to Sweet Cola VIP Gallery.");
+            } else {
+                alert("Incorrect code. Please contact us on WhatsApp.");
+            }
+        }
+    </script>
+
+</body>
+</html>
