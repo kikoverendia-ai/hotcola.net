@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Policy | Sweet Cola Massage In Riyadh</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .policy-wrapper {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 8px solid #b8860b; /* Goldenrod color for a premium feel */
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: #1a1a1a;
+            font-size: 24pt;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .header span {
+            color: #b8860b;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        p, li {
+            font-size: 11pt;
+            text-align: justify;
+            color: #444;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .important-note {
+            background-color: #fff9e6;
+            border-left: 5px solid #b8860b;
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .policy-wrapper { padding: 20px; }
+            .header h1 { font-size: 18pt; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="policy-wrapper">
+    <div class="header">
+        <h1>Refund & Return Policy</h1>
+        <span>Sweet Cola Massage In Riyadh</span>
+    </div>
+
+    <p>Welcome to <strong>Sweet Cola Massage In Riyadh</strong>. We are dedicated to providing the best wellness and relaxation services in the city. To ensure a smooth experience for all our guests, please take a moment to read our official policy.</p>
+
+    <h2>1. Service Refunds</h2>
+    <p>All massage and spa services are non-refundable once the session has been completed. Refunds or credits are only issued if:</p>
+    <ul>
+        <li>The management cancels the appointment due to facility issues or staff unavailability.</li>
+        <li>A client is dissatisfied and requests to stop the service within the <strong>first 15 minutes</strong> of the session.</li>
+    </ul>
+
+    <h2>2. Appointments & Rescheduling</h2>
+    <p>Time is valuable for both our therapists and our clients. We kindly ask for your cooperation with the following:</p>
+    <ul>
+        <li><strong>Cancellation Notice:</strong> Please inform us at least <strong>2 hours</strong> before your scheduled appointment if you need to cancel or move your slot.</li>
+        <li><strong>Late Arrival:</strong> If you arrive more than 15 minutes late, we may need to shorten your session time to stay on schedule for the next client. The full service fee will still be charged.</li>
+    </ul>
+
+    <div class="important-note">
+        <strong>No-Show Policy:</strong> Clients who fail to show up for their appointment without any prior notice may be required to settle a deposit or pre-pay for any future bookings.
+    </div>
+
+    <h2>3. Product Returns</h2>
+    <p>For any wellness products (oils, creams, etc.) purchased at our shop:</p>
+    <ul>
+        <li>Items can be returned within <strong>7 days</strong> only if the product is found to be defective.</li>
+        <li>Products must remain <strong>unopened</strong> and in their original packaging for hygiene purposes.</li>
+        <li>A valid receipt is required for the transaction.</li>
+    </ul>
+
+    <h2>4. Customer Support</h2>
+    <p>If you have any questions or would like to provide feedback regarding your experience, please contact our management through our official Google Business Profile or our contact number.</p>
+
+    <div class="footer">
+        &copy; 2026 Sweet Cola Massage In Riyadh | Al Yarmuk District <br>
+        <em>Quality Relaxation, Professional Service.</em>
+    </div>
+</div>
+
+</body>
+</html>
