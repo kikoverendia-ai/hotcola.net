@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F812D65FTX">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F812D65FTX">
 </script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -41,7 +40,7 @@
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
-            padding: 180px 5% 50px 5%; 
+            padding: 240px 5% 50px 5%; /* Dinagdagan ang padding top para sa gallery button */
         }
 
         /* 1. FIXED HEADER BANNER */
@@ -66,9 +65,37 @@
         }
 
         .header-banner h3 { font-size: 14px; color: var(--gold-text); margin-bottom: 5px; font-weight: 400; }
-        .header-banner p { font-size: 13px; color: #ccc; }
+        .header-banner p { font-size: 13px; color: #ccc; margin-bottom: 15px; }
 
-        /* 2. PROMOTION SLIDER - STACKING REPAIR */
+        /* GALLERY BUTTON STYLE */
+        .gallery-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .gallery-access-btn {
+            background: linear-gradient(45deg, #d4a017, #f2b600);
+            color: #000;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 20px rgba(212, 160, 23, 0.5);
+            transition: 0.3s;
+            border: 2px solid #000;
+        }
+
+        .gallery-access-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(212, 160, 23, 0.8);
+        }
+
+        /* 2. PROMOTION SLIDER */
         .promotion-slider {
             max-width: 1300px;
             margin: 20px auto 60px auto;
@@ -100,7 +127,6 @@
             flex-direction: column;
         }
 
-        /* Lightning Edge REPAIR (Layer 1) */
         .slide-item::before {
             content: '';
             position: absolute;
@@ -111,7 +137,6 @@
             z-index: 1;
         }
 
-        /* Inner Black Box (Layer 2) */
         .slide-item::after {
             content: '';
             position: absolute;
@@ -121,7 +146,6 @@
             z-index: 2;
         }
 
-        /* Content (Layer 3) */
         .slide-content {
             position: relative;
             z-index: 3;
@@ -153,7 +177,7 @@
             z-index: 3;
         }
 
-        .logo-container { flex-shrink: 0; position: sticky; top: 180px; }
+        .logo-container { flex-shrink: 0; position: sticky; top: 240px; }
         .logo-ring {
             width: 420px; height: 420px; border-radius: 50%;
             position: relative; overflow: hidden;
@@ -240,9 +264,11 @@
         }
 
         @media (max-width: 1024px) {
-            body { padding-top: 220px; }
+            body { padding-top: 280px; }
+            .header-banner h2 { font-size: 24px; }
             .main-content { flex-direction: column; align-items: center; }
             .logo-ring { width: 300px; height: 300px; }
+            .logo-container { position: relative; top: 0; margin-bottom: 30px; }
             .booking-grid { grid-template-columns: 1fr; }
             .premium-card { grid-column: span 1; }
         }
@@ -254,6 +280,12 @@
         <h2>Sweet Cola Massage In Riyadh</h2>
         <h3>Sweet Cola Massage في الرياض هو منتجع صحي رئيسي يقع في منطقة اليارموك النابضة بالحياة في الرياض. نحن نقدم ملاذا للعافية والهدوء</h3>
         <p>Opening in 2026, an exquisite retreat designed to rejuvenate your mind, body, and spirit.</p>
+        
+        <div class="gallery-btn-container">
+            <a href="gallery.html" class="gallery-access-btn">
+                <i class="fas fa-lock"></i> VIEW VIP GALLERY (Code Required)
+            </a>
+        </div>
     </div>
 
     <section class="promotion-slider">
@@ -339,6 +371,5 @@
 
     <img src="image_16.png" alt="Model" class="babae-overlay">
 
-    </script>
 </body>
 </html>
